@@ -1,0 +1,17 @@
+2024/07/07 22:03:12 Attempting to insert into ClickHouse: timestamp=1720414992, value=20
+2024/07/07 22:03:12 Successfully inserted into ClickHouse: timestamp=1720414992, value=20
+2024/07/07 22:03:13 Attempting to insert into ClickHouse: timestamp=1720414993, value=10
+2024/07/07 22:03:13 Successfully inserted into ClickHouse: timestamp=1720414993, value=10
+2024/07/07 22:03:14 Attempting to insert into ClickHouse: timestamp=1720414994, value=24
+2024/07/07 22:03:14 Successfully inserted into ClickHouse: timestamp=1720414994, value=24
+2024/07/07 22:03:15 Attempting to insert into ClickHouse: timestamp=1720414995, value=99
+2024/07/07 22:03:15 Successfully inserted into ClickHouse: timestamp=1720414995, value=99
+2024/07/07 22:03:15 Sending data to Prometheus: random_value{value="99", timestamp="1720414995"} 1720414995
+2024/07/07 22:03:15 Successfully sent data to Prometheus: random_value{value="99", timestamp="1720414995"} 1720414995
+, Response: 
+2024/07/07 22:03:16 Attempting to insert into ClickHouse: timestamp=1720414996, value=29
+2024/07/07 22:03:16 Successfully inserted into ClickHouse: timestamp=1720414996, value=29
+2024/07/07 22:03:17 Attempting to insert into ClickHouse: timestamp=1720414997, value=77
+2024/07/07 22:03:17 Successfully inserted into ClickHouse: timestamp=1720414997, value=77
+2024/07/07 22:03:18 Attempting to insert into ClickHouse: timestamp=1720414998, value=37
+2024/07/07 22:03:18 Successfully inserted into ClickHouse: timestamp=1720414998, value=37
