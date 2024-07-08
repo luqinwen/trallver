@@ -1,0 +1,14 @@
+2024/07/07 21:57:25 Attempting to insert into ClickHouse: timestamp=1720414645, value=52
+2024/07/07 21:57:25 Successfully inserted into ClickHouse: timestamp=1720414645, value=52
+2024/07/07 21:57:26 Attempting to insert into ClickHouse: timestamp=1720414646, value=47
+2024/07/07 21:57:26 Successfully inserted into ClickHouse: timestamp=1720414646, value=47
+2024/07/07 21:57:27 Attempting to insert into ClickHouse: timestamp=1720414647, value=44
+2024/07/07 21:57:27 Successfully inserted into ClickHouse: timestamp=1720414647, value=44
+2024/07/07 21:57:28 Attempting to insert into ClickHouse: timestamp=1720414648, value=34
+2024/07/07 21:57:28 Successfully inserted into ClickHouse: timestamp=1720414648, value=34
+2024/07/07 21:57:29 Attempting to insert into ClickHouse: timestamp=1720414649, value=40
+2024/07/07 21:57:29 Successfully inserted into ClickHouse: timestamp=1720414649, value=40
+2024/07/07 21:57:30 Attempting to insert into ClickHouse: timestamp=1720414650, value=80
+2024/07/07 21:57:30 Successfully inserted into ClickHouse: timestamp=1720414650, value=80
+2024/07/07 21:57:31 Attempting to insert into ClickHouse: timestamp=1720414651, value=68
+2024/07/07 21:57:31 Successfully inserted into ClickHouse: timestamp=1720414651, value=68
