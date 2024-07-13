@@ -7,22 +7,33 @@ import (
     _ "github.com/ClickHouse/clickhouse-go"
 )
 
-var DB *sql.DB
+var ClickHouseDB *sql.DB
 
 func InitClickHouse() {
     var err error
-    DB, err = sql.Open("clickhouse", "tcp://localhost:9000?debug=true")
+    ClickHouseDB, err = sql.Open("clickhouse", "tcp://localhost:9000?debug=true")
     if err != nil {
         log.Fatalf("Error connecting to ClickHouse: %v", err)
     }
 
-    _, err = DB.Exec(`
-        CREATE TABLE IF NOT EXISTS my_table (
-            timestamp UInt64,
-            value     Int32
-        ) ENGINE = Log
+    if err = ClickHouseDB.Ping(); err != nil {
+        log.Fatalf("Failed to ping ClickHouse: %v", err)
+    }
+    log.Println("Successfully connected to ClickHouse")
+
+    _, err = ClickHouseDB.Exec(`
+        CREATE TABLE IF NOT EXISTS my_database.my_table (
+            timestamp DateTime,
+            ip String,
+            packet_loss Float64,
+            min_rtt Float64,
+            max_rtt Float64,
+            avg_rtt Float64
+        ) ENGINE = MergeTree()
+        ORDER BY timestamp
     `)
     if err != nil {
         log.Fatalf("Error creating table: %v", err)
     }
+    log.Println("ClickHouse table created successfully")
 }
