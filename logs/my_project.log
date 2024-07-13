@@ -15,3 +15,32 @@
 2024/07/07 22:03:17 Successfully inserted into ClickHouse: timestamp=1720414997, value=77
 2024/07/07 22:03:18 Attempting to insert into ClickHouse: timestamp=1720414998, value=37
 2024/07/07 22:03:18 Successfully inserted into ClickHouse: timestamp=1720414998, value=37
+2024/07/13 05:44:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874644, value=60
+2024/07/13 05:44:04 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874644, value=60
+2024/07/13 05:44:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874645, value=97
+2024/07/13 05:44:05 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874645, value=97
+2024/07/13 05:44:05 clickhouse.go:71: Sending data to Prometheus: random_value{value="97", timestamp="1720874645"} 1720874645
+2024/07/13 05:44:05 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="97", timestamp="1720874645"} 1720874645
+, Response: 
+2024/07/13 05:44:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874646, value=36
+2024/07/13 05:44:06 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874646, value=36
+2024/07/13 05:44:07 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874647, value=42
+2024/07/13 05:44:07 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874647, value=42
+2024/07/13 05:44:08 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874648, value=30
+2024/07/13 05:44:08 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874648, value=30
+2024/07/13 05:44:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874649, value=55
+2024/07/13 05:44:09 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874649, value=55
+2024/07/13 05:44:10 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874650, value=47
+2024/07/13 05:44:10 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874650, value=47
+2024/07/13 05:44:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874651, value=13
+2024/07/13 05:44:11 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874651, value=13
+2024/07/13 05:44:12 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874652, value=68
+2024/07/13 05:44:12 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874652, value=68
+2024/07/13 05:44:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874653, value=84
+2024/07/13 05:44:13 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874653, value=84
+2024/07/13 05:44:14 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874654, value=34
+2024/07/13 05:44:14 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874654, value=34
+2024/07/13 05:44:15 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874655, value=84
+2024/07/13 05:44:15 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874655, value=84
+2024/07/13 05:44:16 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874656, value=87
+2024/07/13 05:44:16 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874656, value=87
