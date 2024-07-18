@@ -7,16 +7,16 @@ import (
 	_ "github.com/ClickHouse/clickhouse-go"
 )
 
-var DB *sql.DB
+var ClickHouseDB *sql.DB
 
 func InitClickHouse() {
 	var err error
-	DB, err = sql.Open("clickhouse", "tcp://localhost:9000?debug=true")
+	ClickHouseDB, err = sql.Open("clickhouse", "tcp://localhost:9000?debug=true")
 	if err != nil {
 		log.Fatalf("Error connecting to ClickHouse: %v", err)
 	}
 
-	_, err = DB.Exec(`
+	_, err = ClickHouseDB.Exec(`
         CREATE TABLE IF NOT EXISTS my_table (
             timestamp UInt64,
             value     Int32
@@ -26,3 +26,4 @@ func InitClickHouse() {
 		log.Fatalf("Error creating table: %v", err)
 	}
 }
+
