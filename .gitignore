@@ -1,0 +1,19 @@
+# Ignore everything
+/*
+
+# But not these files...
+!.gitignore
+!config/
+!docker-compose.yml
+!github.com/
+!golang.org/
+!go.mod
+!go.sum
+!internal/
+!main.go
+!path/
+!prometheus.yml
+
+# Explicitly ignore logs directory
+logs/
+

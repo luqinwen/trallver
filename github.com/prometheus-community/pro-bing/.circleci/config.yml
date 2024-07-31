@@ -1,0 +1,48 @@
+---
+version: 2.1
+
+orbs:
+  goreleaser: hubci/goreleaser@2.3.0
+
+executors:
+  golang:
+    docker:
+    - image: cimg/go:1.20
+
+jobs:
+  build:
+    executor: golang
+    steps:
+      - checkout
+      - run: go mod download
+      - run: make
+
+workflows:
+  version: 2
+  pro-bing:
+    jobs:
+    - build:
+        filters:
+          tags:
+            only: /.*/
+    - goreleaser/release:
+        name: test-release
+        version: '1.16.2'
+        go-version: '1.20'
+        dry-run: true
+        requires:
+        - build
+        filters:
+          tags:
+            only: /.*/
+    - goreleaser/release:
+        name: release
+        version: '1.16.2'
+        go-version: '1.20'
+        requires:
+        - build
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore: /.*/

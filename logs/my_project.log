@@ -356,3 +356,105 @@
 2024/07/13 23:57:48 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
 2024/07/13 23:57:49 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940269, value=46
 2024/07/13 23:57:49 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:28 init_mysql.go:20: MySQL initialized...
+2024/07/31 05:37:28 main.go:30: Starting server on :8080
+2024/07/31 05:37:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429448, value=5
+2024/07/31 05:37:28 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429449, value=71
+2024/07/31 05:37:29 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429450, value=11
+2024/07/31 05:37:30 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429451, value=55
+2024/07/31 05:37:31 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429452, value=41
+2024/07/31 05:37:32 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429453, value=64
+2024/07/31 05:37:33 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429454, value=48
+2024/07/31 05:37:34 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429455, value=72
+2024/07/31 05:37:35 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:31 init_mysql.go:20: MySQL initialized...
+2024/07/31 06:08:31 main.go:30: Starting server on :8080
+2024/07/31 06:08:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431311, value=60
+2024/07/31 06:08:31 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431312, value=74
+2024/07/31 06:08:32 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431313, value=12
+2024/07/31 06:08:33 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431314, value=4
+2024/07/31 06:08:34 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431315, value=9
+2024/07/31 06:08:35 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431316, value=39
+2024/07/31 06:08:36 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431317, value=14
+2024/07/31 06:08:37 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431318, value=52
+2024/07/31 06:08:38 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:01 init_mysql.go:20: MySQL initialized...
+2024/07/31 06:13:01 main.go:30: Starting server on :8080
+2024/07/31 06:13:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431581, value=46
+2024/07/31 06:13:01 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431582, value=74
+2024/07/31 06:13:02 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431583, value=8
+2024/07/31 06:13:03 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431584, value=20
+2024/07/31 06:13:04 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431585, value=16
+2024/07/31 06:13:05 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431586, value=96
+2024/07/31 06:13:06 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:06 clickhouse.go:78: Sending data to Prometheus: random_value{value="96", timestamp="1722431586"} 1722431586
+2024/07/31 06:13:07 clickhouse.go:89: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/31 06:13:08 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431588, value=79
+2024/07/31 06:13:08 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431589, value=81
+2024/07/31 06:13:09 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:10 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431590, value=72
+2024/07/31 06:13:10 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431591, value=79
+2024/07/31 06:13:11 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:12 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431592, value=11
+2024/07/31 06:13:12 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431593, value=34
+2024/07/31 06:13:13 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:49:18 init_clickhouse.go:20: Failed to ping ClickHouse: code: 516, message: user: Authentication failed: password is incorrect or there is no user with such name
+2024/07/31 06:57:14 init_clickhouse.go:20: Failed to ping ClickHouse: code: 516, message: user: Authentication failed: password is incorrect or there is no user with such name
+2024/07/31 07:00:32 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/07/31 07:00:32 init_clickhouse.go:38: ClickHouse table created successfully
+2024/07/31 07:00:32 init_mysql.go:20: MySQL initialized...
+2024/07/31 07:00:32 main.go:30: Starting server on :8080
+2024/07/31 07:00:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434432, value=83
+2024/07/31 07:00:32 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434433, value=61
+2024/07/31 07:00:33 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434434, value=81
+2024/07/31 07:00:34 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434435, value=29
+2024/07/31 07:00:35 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434436, value=55
+2024/07/31 07:00:36 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434437, value=67
+2024/07/31 07:00:37 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434438, value=23
+2024/07/31 07:00:38 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:01:58 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/07/31 07:01:58 init_clickhouse.go:38: ClickHouse table created successfully
+2024/07/31 07:01:58 init_mysql.go:20: MySQL initialized...
+2024/07/31 07:01:58 main.go:30: Starting server on :8080
+2024/07/31 07:01:58 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434518, value=26
+2024/07/31 07:01:58 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:01:59 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434519, value=41
+2024/07/31 07:01:59 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:00 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434520, value=24
+2024/07/31 07:02:00 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434521, value=84
+2024/07/31 07:02:01 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434522, value=77
+2024/07/31 07:02:02 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434523, value=79
+2024/07/31 07:02:03 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434524, value=0
+2024/07/31 07:02:04 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist

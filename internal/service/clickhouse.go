@@ -44,7 +44,14 @@ func writeToClickHouse(conn *sql.DB, timestamp uint64, value int) {
         return
     }
 
-    stmt, err := tx.Prepare("INSERT INTO my_table (timestamp, value) VALUES (?, ?)")
+    // 插入完整数据
+    ip := "127.0.0.1" // 示例IP地址
+    packetLoss := 0.0 // 示例数据
+    minRtt := 0.0     // 示例数据
+    maxRtt := 0.0     // 示例数据
+    avgRtt := 0.0     // 示例数据
+
+    stmt, err := tx.Prepare("INSERT INTO my_table (timestamp, ip, packet_loss, min_rtt, max_rtt, avg_rtt) VALUES (?, ?, ?, ?, ?, ?)")
     if err != nil {
         log.Printf("Error preparing statement: %v", err)
         tx.Rollback()
@@ -52,7 +59,7 @@ func writeToClickHouse(conn *sql.DB, timestamp uint64, value int) {
     }
     defer stmt.Close()
 
-    _, err = stmt.Exec(timestamp, value)
+    _, err = stmt.Exec(time.Unix(int64(timestamp), 0), ip, packetLoss, minRtt, maxRtt, avgRtt)
     if err != nil {
         log.Printf("Error executing statement: %v", err)
         tx.Rollback()
@@ -62,7 +69,7 @@ func writeToClickHouse(conn *sql.DB, timestamp uint64, value int) {
     if err := tx.Commit(); err != nil {
         log.Printf("Error committing transaction: %v", err)
     } else {
-        log.Printf("Successfully inserted into ClickHouse: timestamp=%d, value=%d", timestamp, value)
+        log.Printf("Successfully inserted into ClickHouse: timestamp=%d, ip=%s, packet_loss=%f, min_rtt=%f, max_rtt=%f, avg_rtt=%f", timestamp, ip, packetLoss, minRtt, maxRtt, avgRtt)
     }
 }
 
