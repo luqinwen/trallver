@@ -1,0 +1,513 @@
+2024/07/07 22:03:12 Attempting to insert into ClickHouse: timestamp=1720414992, value=20
+2024/07/07 22:03:12 Successfully inserted into ClickHouse: timestamp=1720414992, value=20
+2024/07/07 22:03:13 Attempting to insert into ClickHouse: timestamp=1720414993, value=10
+2024/07/07 22:03:13 Successfully inserted into ClickHouse: timestamp=1720414993, value=10
+2024/07/07 22:03:14 Attempting to insert into ClickHouse: timestamp=1720414994, value=24
+2024/07/07 22:03:14 Successfully inserted into ClickHouse: timestamp=1720414994, value=24
+2024/07/07 22:03:15 Attempting to insert into ClickHouse: timestamp=1720414995, value=99
+2024/07/07 22:03:15 Successfully inserted into ClickHouse: timestamp=1720414995, value=99
+2024/07/07 22:03:15 Sending data to Prometheus: random_value{value="99", timestamp="1720414995"} 1720414995
+2024/07/07 22:03:15 Successfully sent data to Prometheus: random_value{value="99", timestamp="1720414995"} 1720414995
+, Response: 
+2024/07/07 22:03:16 Attempting to insert into ClickHouse: timestamp=1720414996, value=29
+2024/07/07 22:03:16 Successfully inserted into ClickHouse: timestamp=1720414996, value=29
+2024/07/07 22:03:17 Attempting to insert into ClickHouse: timestamp=1720414997, value=77
+2024/07/07 22:03:17 Successfully inserted into ClickHouse: timestamp=1720414997, value=77
+2024/07/07 22:03:18 Attempting to insert into ClickHouse: timestamp=1720414998, value=37
+2024/07/07 22:03:18 Successfully inserted into ClickHouse: timestamp=1720414998, value=37
+2024/07/13 05:44:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874644, value=60
+2024/07/13 05:44:04 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874644, value=60
+2024/07/13 05:44:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874645, value=97
+2024/07/13 05:44:05 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874645, value=97
+2024/07/13 05:44:05 clickhouse.go:71: Sending data to Prometheus: random_value{value="97", timestamp="1720874645"} 1720874645
+2024/07/13 05:44:05 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="97", timestamp="1720874645"} 1720874645
+, Response: 
+2024/07/13 05:44:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874646, value=36
+2024/07/13 05:44:06 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874646, value=36
+2024/07/13 05:44:07 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874647, value=42
+2024/07/13 05:44:07 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874647, value=42
+2024/07/13 05:44:08 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874648, value=30
+2024/07/13 05:44:08 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874648, value=30
+2024/07/13 05:44:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874649, value=55
+2024/07/13 05:44:09 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874649, value=55
+2024/07/13 05:44:10 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874650, value=47
+2024/07/13 05:44:10 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874650, value=47
+2024/07/13 05:44:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874651, value=13
+2024/07/13 05:44:11 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874651, value=13
+2024/07/13 05:44:12 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874652, value=68
+2024/07/13 05:44:12 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874652, value=68
+2024/07/13 05:44:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874653, value=84
+2024/07/13 05:44:13 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874653, value=84
+2024/07/13 05:44:14 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874654, value=34
+2024/07/13 05:44:14 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874654, value=34
+2024/07/13 05:44:15 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874655, value=84
+2024/07/13 05:44:15 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874655, value=84
+2024/07/13 05:44:16 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720874656, value=87
+2024/07/13 05:44:16 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720874656, value=87
+2024/07/13 06:40:31 main.go:31: Starting server on :8080
+2024/07/13 06:40:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878031, value=99
+2024/07/13 06:40:31 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878031, value=99
+2024/07/13 06:40:31 clickhouse.go:71: Sending data to Prometheus: random_value{value="99", timestamp="1720878031"} 1720878031
+2024/07/13 06:40:31 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="99", timestamp="1720878031"} 1720878031
+, Response: 
+2024/07/13 06:40:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878032, value=77
+2024/07/13 06:40:32 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878032, value=77
+2024/07/13 06:40:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878033, value=30
+2024/07/13 06:40:33 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878033, value=30
+2024/07/13 06:41:12 main.go:31: Starting server on :8080
+2024/07/13 06:41:12 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878072, value=7
+2024/07/13 06:41:12 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878072, value=7
+2024/07/13 06:41:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878073, value=77
+2024/07/13 06:41:13 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878073, value=77
+2024/07/13 06:41:14 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878074, value=7
+2024/07/13 06:41:14 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878074, value=7
+2024/07/13 06:41:14 probe_service.go:19: Received probe task: {IP:127.0.0.1 Count:5 Port:80 Threshold:3}
+2024/07/13 06:41:15 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878075, value=51
+2024/07/13 06:41:15 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878075, value=51
+2024/07/13 06:41:16 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878076, value=3
+2024/07/13 06:41:16 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878076, value=3
+2024/07/13 06:41:17 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878077, value=61
+2024/07/13 06:41:17 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878077, value=61
+2024/07/13 06:41:17 probe_service.go:19: Received probe task: {IP:127.0.0.1 Count:5 Port:80 Threshold:3}
+2024/07/13 06:41:18 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878078, value=70
+2024/07/13 06:41:18 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878078, value=70
+2024/07/13 06:41:19 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878079, value=92
+2024/07/13 06:41:19 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878079, value=92
+2024/07/13 06:41:19 clickhouse.go:71: Sending data to Prometheus: random_value{value="92", timestamp="1720878079"} 1720878079
+2024/07/13 06:41:19 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="92", timestamp="1720878079"} 1720878079
+, Response: 
+2024/07/13 06:41:20 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878080, value=72
+2024/07/13 06:41:20 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878080, value=72
+2024/07/13 06:41:21 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878081, value=15
+2024/07/13 06:41:21 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878081, value=15
+2024/07/13 06:41:22 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878082, value=12
+2024/07/13 06:41:22 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878082, value=12
+2024/07/13 06:41:23 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878083, value=18
+2024/07/13 06:41:23 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878083, value=18
+2024/07/13 06:41:24 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878084, value=24
+2024/07/13 06:41:24 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878084, value=24
+2024/07/13 06:41:25 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878085, value=3
+2024/07/13 06:41:25 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878085, value=3
+2024/07/13 06:41:26 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878086, value=76
+2024/07/13 06:41:26 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878086, value=76
+2024/07/13 06:41:27 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878087, value=72
+2024/07/13 06:41:27 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878087, value=72
+2024/07/13 06:41:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878088, value=99
+2024/07/13 06:41:28 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878088, value=99
+2024/07/13 06:41:28 clickhouse.go:71: Sending data to Prometheus: random_value{value="99", timestamp="1720878088"} 1720878088
+2024/07/13 06:41:28 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="99", timestamp="1720878088"} 1720878088
+, Response: 
+2024/07/13 06:41:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878089, value=37
+2024/07/13 06:41:29 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878089, value=37
+2024/07/13 06:41:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878090, value=49
+2024/07/13 06:41:30 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878090, value=49
+2024/07/13 06:41:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878091, value=49
+2024/07/13 06:41:31 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878091, value=49
+2024/07/13 06:41:31 probe_service.go:19: Received probe task: {IP:127.0.0.1 Count:5 Port:80 Threshold:3}
+2024/07/13 06:41:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878092, value=92
+2024/07/13 06:41:32 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878092, value=92
+2024/07/13 06:41:32 clickhouse.go:71: Sending data to Prometheus: random_value{value="92", timestamp="1720878092"} 1720878092
+2024/07/13 06:41:32 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="92", timestamp="1720878092"} 1720878092
+, Response: 
+2024/07/13 06:41:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878093, value=82
+2024/07/13 06:41:33 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878093, value=82
+2024/07/13 06:41:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878094, value=78
+2024/07/13 06:41:34 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878094, value=78
+2024/07/13 06:41:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878095, value=27
+2024/07/13 06:41:35 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878095, value=27
+2024/07/13 06:41:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878096, value=92
+2024/07/13 06:41:36 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878096, value=92
+2024/07/13 06:41:36 clickhouse.go:71: Sending data to Prometheus: random_value{value="92", timestamp="1720878096"} 1720878096
+2024/07/13 06:41:36 clickhouse.go:84: Successfully sent data to Prometheus: random_value{value="92", timestamp="1720878096"} 1720878096
+, Response: 
+2024/07/13 06:41:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878097, value=18
+2024/07/13 06:41:37 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878097, value=18
+2024/07/13 06:41:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878098, value=54
+2024/07/13 06:41:38 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878098, value=54
+2024/07/13 06:41:39 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878099, value=78
+2024/07/13 06:41:39 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878099, value=78
+2024/07/13 06:41:40 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878100, value=23
+2024/07/13 06:41:40 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878100, value=23
+2024/07/13 06:41:41 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878101, value=9
+2024/07/13 06:41:41 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878101, value=9
+2024/07/13 06:41:42 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878102, value=3
+2024/07/13 06:41:42 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878102, value=3
+2024/07/13 06:41:43 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720878103, value=5
+2024/07/13 06:41:43 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720878103, value=5
+2024/07/13 22:07:37 main.go:31: Starting server on :8080
+2024/07/13 22:07:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933657, value=35
+2024/07/13 22:07:37 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933657, value=35
+2024/07/13 22:07:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933658, value=55
+2024/07/13 22:07:38 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933658, value=55
+2024/07/13 22:07:39 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933659, value=98
+2024/07/13 22:07:39 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933659, value=98
+2024/07/13 22:07:39 clickhouse.go:71: Sending data to Prometheus: random_value{value="98", timestamp="1720933659"} 1720933659
+2024/07/13 22:07:40 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:07:41 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933661, value=45
+2024/07/13 22:07:41 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933661, value=45
+2024/07/13 22:07:42 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933662, value=78
+2024/07/13 22:07:42 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933662, value=78
+2024/07/13 22:07:43 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933663, value=0
+2024/07/13 22:07:43 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933663, value=0
+2024/07/13 22:07:44 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933664, value=25
+2024/07/13 22:07:44 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933664, value=25
+2024/07/13 22:07:45 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933665, value=0
+2024/07/13 22:07:45 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933665, value=0
+2024/07/13 22:07:46 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933666, value=29
+2024/07/13 22:07:46 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933666, value=29
+2024/07/13 22:07:47 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933667, value=80
+2024/07/13 22:07:47 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933667, value=80
+2024/07/13 22:07:48 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933668, value=82
+2024/07/13 22:07:48 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933668, value=82
+2024/07/13 22:07:49 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933669, value=42
+2024/07/13 22:07:49 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933669, value=42
+2024/07/13 22:07:50 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933670, value=21
+2024/07/13 22:07:50 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933670, value=21
+2024/07/13 22:07:51 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933671, value=94
+2024/07/13 22:07:51 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933671, value=94
+2024/07/13 22:07:51 clickhouse.go:71: Sending data to Prometheus: random_value{value="94", timestamp="1720933671"} 1720933671
+2024/07/13 22:07:52 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:07:53 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933673, value=43
+2024/07/13 22:07:53 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933673, value=43
+2024/07/13 22:07:54 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933674, value=93
+2024/07/13 22:07:54 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933674, value=93
+2024/07/13 22:07:54 clickhouse.go:71: Sending data to Prometheus: random_value{value="93", timestamp="1720933674"} 1720933674
+2024/07/13 22:07:55 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:07:56 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933676, value=19
+2024/07/13 22:07:56 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933676, value=19
+2024/07/13 22:07:57 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933677, value=22
+2024/07/13 22:07:57 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933677, value=22
+2024/07/13 22:07:58 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933678, value=30
+2024/07/13 22:07:58 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933678, value=30
+2024/07/13 22:07:59 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933679, value=46
+2024/07/13 22:07:59 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933679, value=46
+2024/07/13 22:08:00 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933680, value=78
+2024/07/13 22:08:00 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933680, value=78
+2024/07/13 22:08:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933681, value=55
+2024/07/13 22:08:01 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933681, value=55
+2024/07/13 22:08:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933682, value=77
+2024/07/13 22:08:02 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933682, value=77
+2024/07/13 22:08:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933683, value=73
+2024/07/13 22:08:03 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933683, value=73
+2024/07/13 22:08:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933684, value=84
+2024/07/13 22:08:04 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933684, value=84
+2024/07/13 22:08:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933685, value=12
+2024/07/13 22:08:05 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933685, value=12
+2024/07/13 22:08:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933686, value=92
+2024/07/13 22:08:06 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933686, value=92
+2024/07/13 22:08:06 clickhouse.go:71: Sending data to Prometheus: random_value{value="92", timestamp="1720933686"} 1720933686
+2024/07/13 22:08:07 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:08:08 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933688, value=65
+2024/07/13 22:08:08 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933688, value=65
+2024/07/13 22:08:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933689, value=81
+2024/07/13 22:08:09 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933689, value=81
+2024/07/13 22:08:10 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933690, value=33
+2024/07/13 22:08:10 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933690, value=33
+2024/07/13 22:08:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933691, value=91
+2024/07/13 22:08:11 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933691, value=91
+2024/07/13 22:08:11 clickhouse.go:71: Sending data to Prometheus: random_value{value="91", timestamp="1720933691"} 1720933691
+2024/07/13 22:08:12 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:08:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933693, value=8
+2024/07/13 22:08:13 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933693, value=8
+2024/07/13 22:09:15 main.go:31: Starting server on :8080
+2024/07/13 22:09:15 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933755, value=98
+2024/07/13 22:09:15 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933755, value=98
+2024/07/13 22:09:15 clickhouse.go:71: Sending data to Prometheus: random_value{value="98", timestamp="1720933755"} 1720933755
+2024/07/13 22:09:16 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:09:17 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933757, value=36
+2024/07/13 22:09:17 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933757, value=36
+2024/07/13 22:09:18 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933758, value=12
+2024/07/13 22:09:18 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933758, value=12
+2024/07/13 22:09:19 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933759, value=92
+2024/07/13 22:09:19 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933759, value=92
+2024/07/13 22:09:19 clickhouse.go:71: Sending data to Prometheus: random_value{value="92", timestamp="1720933759"} 1720933759
+2024/07/13 22:09:20 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:09:21 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933761, value=59
+2024/07/13 22:09:21 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933761, value=59
+2024/07/13 22:09:22 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933762, value=17
+2024/07/13 22:09:22 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933762, value=17
+2024/07/13 22:09:23 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933763, value=11
+2024/07/13 22:09:23 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933763, value=11
+2024/07/13 22:09:24 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933764, value=53
+2024/07/13 22:09:24 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933764, value=53
+2024/07/13 22:09:25 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933765, value=46
+2024/07/13 22:09:25 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933765, value=46
+2024/07/13 22:09:26 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933766, value=57
+2024/07/13 22:09:26 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933766, value=57
+2024/07/13 22:09:27 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933767, value=81
+2024/07/13 22:09:27 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933767, value=81
+2024/07/13 22:09:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933768, value=4
+2024/07/13 22:09:28 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933768, value=4
+2024/07/13 22:09:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933769, value=74
+2024/07/13 22:09:29 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933769, value=74
+2024/07/13 22:09:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933770, value=43
+2024/07/13 22:09:30 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933770, value=43
+2024/07/13 22:09:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933771, value=97
+2024/07/13 22:09:31 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933771, value=97
+2024/07/13 22:09:31 clickhouse.go:71: Sending data to Prometheus: random_value{value="97", timestamp="1720933771"} 1720933771
+2024/07/13 22:09:32 probe_service.go:19: Received probe task: {IP:127.0.0.1 Count:5 Port:80 Threshold:3}
+2024/07/13 22:09:32 icmp_probe.go:31: Starting probe to 127.0.0.1
+2024/07/13 22:09:32 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 22:09:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933773, value=73
+2024/07/13 22:09:33 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933773, value=73
+2024/07/13 22:09:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933774, value=43
+2024/07/13 22:09:34 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933774, value=43
+2024/07/13 22:09:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933775, value=88
+2024/07/13 22:09:35 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933775, value=88
+2024/07/13 22:09:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933776, value=37
+2024/07/13 22:09:36 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933776, value=37
+2024/07/13 22:09:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933777, value=88
+2024/07/13 22:09:37 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933777, value=88
+2024/07/13 22:09:37 probe_service.go:19: Received probe task: {IP:127.0.0.1 Count:5 Port:80 Threshold:3}
+2024/07/13 22:09:37 icmp_probe.go:31: Starting probe to 127.0.0.1
+2024/07/13 22:09:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933778, value=11
+2024/07/13 22:09:38 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933778, value=11
+2024/07/13 22:09:39 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933779, value=87
+2024/07/13 22:09:39 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933779, value=87
+2024/07/13 22:09:40 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933780, value=49
+2024/07/13 22:09:40 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933780, value=49
+2024/07/13 22:09:41 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933781, value=50
+2024/07/13 22:09:41 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933781, value=50
+2024/07/13 22:09:42 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933782, value=86
+2024/07/13 22:09:42 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933782, value=86
+2024/07/13 22:09:43 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933783, value=70
+2024/07/13 22:09:43 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933783, value=70
+2024/07/13 22:09:44 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933784, value=52
+2024/07/13 22:09:44 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933784, value=52
+2024/07/13 22:09:45 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933785, value=72
+2024/07/13 22:09:45 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933785, value=72
+2024/07/13 22:09:46 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933786, value=75
+2024/07/13 22:09:46 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933786, value=75
+2024/07/13 22:09:47 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933787, value=33
+2024/07/13 22:09:47 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933787, value=33
+2024/07/13 22:09:48 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933788, value=23
+2024/07/13 22:09:48 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933788, value=23
+2024/07/13 22:09:49 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933789, value=56
+2024/07/13 22:09:49 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933789, value=56
+2024/07/13 22:09:50 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933790, value=59
+2024/07/13 22:09:50 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933790, value=59
+2024/07/13 22:09:51 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933791, value=27
+2024/07/13 22:09:51 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933791, value=27
+2024/07/13 22:09:52 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933792, value=18
+2024/07/13 22:09:52 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933792, value=18
+2024/07/13 22:09:53 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933793, value=28
+2024/07/13 22:09:53 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933793, value=28
+2024/07/13 22:09:54 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933794, value=29
+2024/07/13 22:09:54 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933794, value=29
+2024/07/13 22:09:55 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720933795, value=39
+2024/07/13 22:09:55 clickhouse.go:65: Successfully inserted into ClickHouse: timestamp=1720933795, value=39
+2024/07/13 23:41:13 init_mysql.go:20: MySQL initialized...
+2024/07/13 23:41:13 main.go:30: Starting server on :8080
+2024/07/13 23:41:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939273, value=93
+2024/07/13 23:41:13 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:13 clickhouse.go:71: Sending data to Prometheus: random_value{value="93", timestamp="1720939273"} 1720939273
+2024/07/13 23:41:14 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 23:41:15 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939275, value=28
+2024/07/13 23:41:15 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:16 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939276, value=38
+2024/07/13 23:41:16 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:17 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939277, value=76
+2024/07/13 23:41:17 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:18 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939278, value=96
+2024/07/13 23:41:18 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:18 clickhouse.go:71: Sending data to Prometheus: random_value{value="96", timestamp="1720939278"} 1720939278
+2024/07/13 23:41:19 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 23:41:20 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939280, value=64
+2024/07/13 23:41:20 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:21 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939281, value=0
+2024/07/13 23:41:21 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:22 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939282, value=55
+2024/07/13 23:41:22 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:23 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939283, value=51
+2024/07/13 23:41:23 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:24 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939284, value=86
+2024/07/13 23:41:24 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:25 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939285, value=5
+2024/07/13 23:41:25 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:26 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939286, value=81
+2024/07/13 23:41:26 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:27 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939287, value=79
+2024/07/13 23:41:27 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939288, value=71
+2024/07/13 23:41:28 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939289, value=77
+2024/07/13 23:41:29 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:41:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720939290, value=69
+2024/07/13 23:41:30 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:40 init_mysql.go:20: MySQL initialized...
+2024/07/13 23:57:40 main.go:30: Starting server on :8080
+2024/07/13 23:57:40 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940260, value=11
+2024/07/13 23:57:40 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:41 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940261, value=60
+2024/07/13 23:57:41 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:42 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940262, value=10
+2024/07/13 23:57:42 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:43 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940263, value=11
+2024/07/13 23:57:43 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:44 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940264, value=93
+2024/07/13 23:57:44 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:44 clickhouse.go:71: Sending data to Prometheus: random_value{value="93", timestamp="1720940264"} 1720940264
+2024/07/13 23:57:45 clickhouse.go:82: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/13 23:57:46 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940266, value=21
+2024/07/13 23:57:46 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:47 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940267, value=74
+2024/07/13 23:57:47 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:48 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940268, value=70
+2024/07/13 23:57:48 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/13 23:57:49 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1720940269, value=46
+2024/07/13 23:57:49 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:28 init_mysql.go:20: MySQL initialized...
+2024/07/31 05:37:28 main.go:30: Starting server on :8080
+2024/07/31 05:37:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429448, value=5
+2024/07/31 05:37:28 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429449, value=71
+2024/07/31 05:37:29 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429450, value=11
+2024/07/31 05:37:30 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429451, value=55
+2024/07/31 05:37:31 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429452, value=41
+2024/07/31 05:37:32 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429453, value=64
+2024/07/31 05:37:33 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429454, value=48
+2024/07/31 05:37:34 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 05:37:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722429455, value=72
+2024/07/31 05:37:35 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:31 init_mysql.go:20: MySQL initialized...
+2024/07/31 06:08:31 main.go:30: Starting server on :8080
+2024/07/31 06:08:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431311, value=60
+2024/07/31 06:08:31 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431312, value=74
+2024/07/31 06:08:32 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431313, value=12
+2024/07/31 06:08:33 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431314, value=4
+2024/07/31 06:08:34 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431315, value=9
+2024/07/31 06:08:35 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431316, value=39
+2024/07/31 06:08:36 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431317, value=14
+2024/07/31 06:08:37 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:08:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431318, value=52
+2024/07/31 06:08:38 clickhouse.go:49: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:01 init_mysql.go:20: MySQL initialized...
+2024/07/31 06:13:01 main.go:30: Starting server on :8080
+2024/07/31 06:13:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431581, value=46
+2024/07/31 06:13:01 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431582, value=74
+2024/07/31 06:13:02 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431583, value=8
+2024/07/31 06:13:03 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431584, value=20
+2024/07/31 06:13:04 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431585, value=16
+2024/07/31 06:13:05 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431586, value=96
+2024/07/31 06:13:06 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:06 clickhouse.go:78: Sending data to Prometheus: random_value{value="96", timestamp="1722431586"} 1722431586
+2024/07/31 06:13:07 clickhouse.go:89: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/07/31 06:13:08 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431588, value=79
+2024/07/31 06:13:08 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431589, value=81
+2024/07/31 06:13:09 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:10 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431590, value=72
+2024/07/31 06:13:10 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431591, value=79
+2024/07/31 06:13:11 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:12 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431592, value=11
+2024/07/31 06:13:12 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:13:13 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722431593, value=34
+2024/07/31 06:13:13 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 06:49:18 init_clickhouse.go:20: Failed to ping ClickHouse: code: 516, message: user: Authentication failed: password is incorrect or there is no user with such name
+2024/07/31 06:57:14 init_clickhouse.go:20: Failed to ping ClickHouse: code: 516, message: user: Authentication failed: password is incorrect or there is no user with such name
+2024/07/31 07:00:32 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/07/31 07:00:32 init_clickhouse.go:38: ClickHouse table created successfully
+2024/07/31 07:00:32 init_mysql.go:20: MySQL initialized...
+2024/07/31 07:00:32 main.go:30: Starting server on :8080
+2024/07/31 07:00:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434432, value=83
+2024/07/31 07:00:32 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434433, value=61
+2024/07/31 07:00:33 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434434, value=81
+2024/07/31 07:00:34 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434435, value=29
+2024/07/31 07:00:35 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434436, value=55
+2024/07/31 07:00:36 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:37 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434437, value=67
+2024/07/31 07:00:37 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:00:38 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434438, value=23
+2024/07/31 07:00:38 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:01:58 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/07/31 07:01:58 init_clickhouse.go:38: ClickHouse table created successfully
+2024/07/31 07:01:58 init_mysql.go:20: MySQL initialized...
+2024/07/31 07:01:58 main.go:30: Starting server on :8080
+2024/07/31 07:01:58 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434518, value=26
+2024/07/31 07:01:58 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:01:59 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434519, value=41
+2024/07/31 07:01:59 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:00 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434520, value=24
+2024/07/31 07:02:00 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434521, value=84
+2024/07/31 07:02:01 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434522, value=77
+2024/07/31 07:02:02 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434523, value=79
+2024/07/31 07:02:03 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/07/31 07:02:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722434524, value=0
+2024/07/31 07:02:04 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:27:26 init_clickhouse.go:20: Failed to ping ClickHouse: driver: bad connection
+2024/08/01 06:29:59 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/01 06:29:59 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/01 06:29:59 init_mysql.go:20: MySQL initialized...
+2024/08/01 06:29:59 main.go:30: Starting server on :8080
+2024/08/01 06:29:59 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722518999, value=5
+2024/08/01 06:29:59 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:00 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519000, value=71
+2024/08/01 06:30:00 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:01 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519001, value=4
+2024/08/01 06:30:01 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:02 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519002, value=15
+2024/08/01 06:30:02 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:03 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519003, value=34
+2024/08/01 06:30:03 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:04 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519004, value=16
+2024/08/01 06:30:04 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:05 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519005, value=44
+2024/08/01 06:30:05 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:06 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519006, value=78
+2024/08/01 06:30:06 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:07 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519007, value=92
+2024/08/01 06:30:07 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:07 clickhouse.go:78: Sending data to Prometheus: random_value{value="92", timestamp="1722519007"} 1722519007
+2024/08/01 06:30:08 clickhouse.go:89: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/08/01 06:30:09 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519009, value=97
+2024/08/01 06:30:09 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:09 clickhouse.go:78: Sending data to Prometheus: random_value{value="97", timestamp="1722519009"} 1722519009
+2024/08/01 06:30:10 clickhouse.go:89: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/08/01 06:30:11 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519011, value=97
+2024/08/01 06:30:11 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:30:11 clickhouse.go:78: Sending data to Prometheus: random_value{value="97", timestamp="1722519011"} 1722519011
+2024/08/01 06:30:12 clickhouse.go:89: Error sending data to Prometheus: dial tcp 192.168.188.130:9091: i/o timeout
+2024/08/01 06:35:17 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/01 06:35:17 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/01 06:35:17 init_mysql.go:20: MySQL initialized...
+2024/08/01 06:35:17 main.go:30: Starting server on :8080
+2024/08/01 06:35:17 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519317, value=90
+2024/08/01 06:35:17 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:18 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519318, value=15
+2024/08/01 06:35:18 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:19 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519319, value=15
+2024/08/01 06:35:19 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:20 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519320, value=80
+2024/08/01 06:35:20 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:21 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519321, value=45
+2024/08/01 06:35:21 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:22 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519322, value=65
+2024/08/01 06:35:22 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:23 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519323, value=15
+2024/08/01 06:35:23 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/01 06:35:24 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519324, value=68
+2024/08/01 06:35:24 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
