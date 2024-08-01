@@ -79,7 +79,7 @@ func sendToPrometheus(hertzClient *client.Client, timestamp uint64, value int) {
 
     req := &protocol.Request{}
     req.SetMethod("POST")
-    req.SetRequestURI("http://192.168.188.130:9091/metrics/job/random")
+    req.SetRequestURI("http://172.20.10.4:9091/metrics/job/random")
     req.Header.Set("Content-Type", "text/plain")
     req.SetBodyString(metrics)
 
