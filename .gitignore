@@ -13,6 +13,7 @@
 !main.go
 !path/
 !prometheus.yml
+!config.yml
 
 # Explicitly ignore logs directory
 logs/

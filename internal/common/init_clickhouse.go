@@ -2,16 +2,22 @@ package common
 
 import (
     "database/sql"
+    "fmt"
     "log"
 
     _ "github.com/ClickHouse/clickhouse-go"
+    "github.com/spf13/viper"
 )
 
 var ClickHouseDB *sql.DB
 
 func InitClickHouse() {
+    dsn := fmt.Sprintf("tcp://%s:%d?debug=true",
+        viper.GetString("database.clickhouse.host"),
+        viper.GetInt("database.clickhouse.port"))
+
     var err error
-    ClickHouseDB, err = sql.Open("clickhouse", "tcp://localhost:9000?debug=true")
+    ClickHouseDB, err = sql.Open("clickhouse", dsn)
     if err != nil {
         log.Fatalf("Error connecting to ClickHouse: %v", err)
     }
