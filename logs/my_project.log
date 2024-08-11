@@ -511,3 +511,56 @@
 2024/08/01 06:35:23 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
 2024/08/01 06:35:24 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1722519324, value=68
 2024/08/01 06:35:24 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:16 init_clickhouse.go:20: Failed to ping ClickHouse: driver: bad connection
+2024/08/08 20:23:25 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/08 20:23:25 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/08 20:23:26 init_mysql.go:20: MySQL initialized...
+2024/08/08 20:23:26 main.go:30: Starting server on :8080
+2024/08/08 20:23:26 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173806, value=10
+2024/08/08 20:23:26 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:27 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173807, value=24
+2024/08/08 20:23:27 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:28 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173808, value=52
+2024/08/08 20:23:28 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:29 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173809, value=56
+2024/08/08 20:23:29 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:30 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173810, value=18
+2024/08/08 20:23:30 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:31 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173811, value=77
+2024/08/08 20:23:31 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:32 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173812, value=22
+2024/08/08 20:23:32 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:33 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173813, value=11
+2024/08/08 20:23:33 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:34 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173814, value=28
+2024/08/08 20:23:34 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:35 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173815, value=69
+2024/08/08 20:23:35 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:36 clickhouse.go:40: Attempting to insert into ClickHouse: timestamp=1723173816, value=99
+2024/08/08 20:23:36 clickhouse.go:56: Error preparing statement: Error 1146 (42S02): Table 'my_database.my_table' doesn't exist
+2024/08/08 20:23:36 clickhouse.go:78: Sending data to Prometheus: random_value{value="99", timestamp="1723173816"} 1723173816
+2024/08/08 20:30:26 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/08 20:30:26 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/08 20:30:26 init_mysql.go:20: MySQL initialized...
+2024/08/08 20:30:26 main.go:30: Starting server on :8080
+2024/08/08 20:30:26 main.go:32: Failed to start server: listen tcp :8080: bind: address already in use
+2024/08/08 20:30:50 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/08 20:30:50 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/08 20:30:50 init_mysql.go:20: MySQL initialized...
+2024/08/08 20:30:50 main.go:30: Starting server on :8080
+2024/08/08 20:30:50 main.go:32: Failed to start server: listen tcp :8080: bind: address already in use
+2024/08/08 20:37:28 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/08 20:37:28 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/08 20:37:28 init_mysql.go:20: MySQL initialized...
+2024/08/08 20:37:33 main.go:34: Starting server on :8080
+2024/08/08 20:37:33 clickhouse.go:38: Attempting to insert into ClickHouse: timestamp=1723174653, value=21
+2024/08/08 20:37:33 main.go:36: Failed to start server: listen tcp :8080: bind: address already in use
+2024/08/08 20:38:18 init_clickhouse.go:22: Successfully connected to ClickHouse
+2024/08/08 20:38:18 init_clickhouse.go:38: ClickHouse table created successfully
+2024/08/08 20:38:18 init_mysql.go:20: MySQL initialized...
+2024/08/08 20:38:23 main.go:34: Starting server on :8080
+2024/08/08 20:38:23 clickhouse.go:38: Attempting to insert into ClickHouse: timestamp=1723174703, value=7
+2024/08/08 20:38:23 clickhouse.go:49: Retrying... attempts left: 2
+2024/08/08 20:38:24 clickhouse.go:49: Retrying... attempts left: 1
+2024/08/08 20:38:25 clickhouse.go:49: Retrying... attempts left: 0
+2024/08/08 20:38:26 clickhouse.go:53: Failed to verify table existence after multiple attempts

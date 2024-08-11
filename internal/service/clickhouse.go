@@ -17,7 +17,6 @@ const (
 )
 
 func RunService(conn *sql.DB, hertzClient *client.Client) {
-    // 设置随机数种子
     rand.Seed(time.Now().UnixNano())
 
     for {
@@ -28,7 +27,6 @@ func RunService(conn *sql.DB, hertzClient *client.Client) {
         writeToClickHouse(conn, timestamp, randomNumber)
 
         if randomNumber > Threshold {
-            // 发送到Prometheus
             sendToPrometheus(hertzClient, timestamp, randomNumber)
         }
 
@@ -38,20 +36,37 @@ func RunService(conn *sql.DB, hertzClient *client.Client) {
 
 func writeToClickHouse(conn *sql.DB, timestamp uint64, value int) {
     log.Printf("Attempting to insert into ClickHouse: timestamp=%d, value=%d", timestamp, value)
+
+    // 检查表是否存在
+    var tableExists bool
+    retries := 3
+    for retries > 0 {
+        err := conn.QueryRow("EXISTS TABLE my_database.my_table").Scan(&tableExists)
+        if err == nil && tableExists {
+            break
+        }
+        retries--
+        log.Printf("Retrying... attempts left: %d", retries)
+        time.Sleep(1 * time.Second)
+    }
+    if retries == 0 {
+        log.Fatalf("Failed to verify table existence after multiple attempts")
+        return
+    }
+
     tx, err := conn.Begin()
     if err != nil {
         log.Printf("Error beginning transaction: %v", err)
         return
     }
 
-    // 插入完整数据
-    ip := "127.0.0.1" // 示例IP地址
-    packetLoss := 0.0 // 示例数据
-    minRtt := 0.0     // 示例数据
-    maxRtt := 0.0     // 示例数据
-    avgRtt := 0.0     // 示例数据
+    ip := "127.0.0.1"
+    packetLoss := 0.0
+    minRtt := 0.0
+    maxRtt := 0.0
+    avgRtt := 0.0
 
-    stmt, err := tx.Prepare("INSERT INTO my_table (timestamp, ip, packet_loss, min_rtt, max_rtt, avg_rtt) VALUES (?, ?, ?, ?, ?, ?)")
+    stmt, err := tx.Prepare("INSERT INTO my_database.my_table (timestamp, ip, packet_loss, min_rtt, max_rtt, avg_rtt) VALUES (?, ?, ?, ?, ?, ?)")
     if err != nil {
         log.Printf("Error preparing statement: %v", err)
         tx.Rollback()

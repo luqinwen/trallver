@@ -12,7 +12,8 @@ import (
 )
 
 func main() {
-    config.Init()
+    config.InitConfig() // 初始化 Viper 配置
+    config.Init()       // 初始化日志和数据库
 
     // 初始化 Hertz 客户端
     hertzClient, err := client.NewClient()
