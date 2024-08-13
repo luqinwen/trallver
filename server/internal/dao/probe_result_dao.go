@@ -1,8 +1,8 @@
 package dao
 
 import (
-    "my_project/internal/common"
-    "my_project/internal/model"
+    "my_project/server/internal/common"
+    "my_project/server/internal/model"
     "log"
 )
 
