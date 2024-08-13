@@ -3,7 +3,7 @@ package router
 import (
     
     "github.com/gorilla/mux"
-    "my_project/internal/service"
+    "my_project/server/internal/service"
 )
 
 // InitializeRoutes 初始化路由

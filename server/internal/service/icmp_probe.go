@@ -2,12 +2,13 @@ package service
 
 import (
     "log"
-    "my_project/internal/dao"
-    "my_project/internal/model"
+    "my_project/server/internal/dao"
+    "my_project/server/internal/model"
     "github.com/prometheus-community/pro-bing"
     "time"
 )
 
+// ExecuteProbeTask 执行探测任务
 func ExecuteProbeTask(task model.ProbeTask) {
     pinger, err := probing.NewPinger(task.IP)
     if err != nil {
@@ -41,7 +42,8 @@ func ExecuteProbeTask(task model.ProbeTask) {
     pinger.Run()
 }
 
+// ReportToPrometheus 上报探测结果到 Prometheus
 func ReportToPrometheus(stats *probing.Statistics) {
-    // 实现上报Prometheus的逻辑
+    // 实现上报 Prometheus 的逻辑
     log.Printf("Reporting to Prometheus: %+v", stats)
 }
