@@ -1,7 +1,6 @@
-# config/client_config.yaml
 probe:
   ip: "8.8.8.8"           # 探测目标 IP
   count: 4                # 探测次数
   threshold: 90           # 丢包率阈值
   timeout: 5              # 探测超时时间（秒）
-log_file: "logs/client.log" # 日志文件路径
+log_file: "/root/logs/client.log" # 日志文件路径，确保路径与 Dockerfile 中一致

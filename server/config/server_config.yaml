@@ -1,3 +1,4 @@
+mode: "real"  
 mysql:
   user: "root"              # MySQL 用户名
   password: "password"      # MySQL 密码

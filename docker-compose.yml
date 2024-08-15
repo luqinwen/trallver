@@ -1,63 +1,20 @@
-version: '3.7'
+version: '3.8'
 
 services:
-  mysql:
-    image: mysql:latest
-    container_name: my_project_mysql
+  app:
+    image: docker/compose:1.29.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./client:/client
+      - ./server:/server
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: my_database
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-
-  clickhouse:
-    image: yandex/clickhouse-server:latest
-    container_name: clickhouse
-    ports:
-      - "8123:8123"
-      - "9000:9000"
-    volumes:
-      - clickhouse_data:/var/lib/clickhouse
-
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - prometheus_data:/prometheus
-      - ./server/config/prometheus.yml:/etc/prometheus/prometheus.yml
-
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana_data:/var/lib/grafana
-
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-
-  pushgateway:
-    image: prom/pushgateway:latest
-    container_name: pushgateway
-    ports:
-      - "9091:9091"
-
-volumes:
-  clickhouse_data:
-  prometheus_data:
-  grafana_data:
-  rabbitmq_data:
-  db_data:
+      - PROJECT_NAME=${PROJECT_NAME}
+    working_dir: /app
+    entrypoint: >
+      sh -c "
+      if [ \"$PROJECT_NAME\" = \"client\" ]; then
+        docker-compose -f /client/docker-compose.yml up;
+      elif [ \"$PROJECT_NAME\" = \"server\" ]; then
+        docker-compose -f /server/docker-compose.yml up;
+      fi
+      "
