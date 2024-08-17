@@ -1,8 +1,12 @@
-2024/08/14 15:15:34 log_config.go:33: Log initialized successfully
-2024/08/14 15:15:34 main.go:25: Starting ICMP Probe Client
-2024/08/14 15:15:34 icmp_probe.go:14: Failed to create pinger: addr cannot be empty
-2024/08/14 15:15:34 icmp_probe.go:42: Reporting results for IP: , PacketLoss: 0% to server
-2024/08/14 15:16:19 log_config.go:33: Log initialized successfully
-2024/08/14 15:16:19 main.go:25: Starting ICMP Probe Client
-2024/08/14 15:16:19 icmp_probe.go:14: Failed to create pinger: addr cannot be empty
-2024/08/14 15:16:19 icmp_probe.go:42: Reporting results for IP: , PacketLoss: 0% to server
+2024/08/17 07:56:42 log_config.go:33: Log initialized successfully
+2024/08/17 07:56:42 main.go:25: Starting ICMP Probe Client
+2024/08/17 07:56:42 icmp_probe.go:14: Failed to create pinger: addr cannot be empty
+2024/08/17 07:56:42 icmp_probe.go:42: Reporting results for IP: , PacketLoss: 0% to server
+2024/08/17 08:22:50 log_config.go:33: Log initialized successfully
+2024/08/17 08:22:50 main.go:25: Starting ICMP Probe Client
+2024/08/17 08:22:50 icmp_probe.go:14: Failed to create pinger: addr cannot be empty
+2024/08/17 08:22:50 icmp_probe.go:42: Reporting results for IP: , PacketLoss: 0% to server
+2024/08/17 08:23:45 log_config.go:33: Log initialized successfully
+2024/08/17 08:23:45 main.go:25: Starting ICMP Probe Client
+2024/08/17 08:23:45 icmp_probe.go:14: Failed to create pinger: addr cannot be empty
+2024/08/17 08:23:45 icmp_probe.go:42: Reporting results for IP: , PacketLoss: 0% to server

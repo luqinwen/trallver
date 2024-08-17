@@ -30,7 +30,9 @@ services:
       - "9090:9090"
     volumes:
       - prometheus_data:/prometheus
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config:/root/config  # 挂载整个配置文件夹到/root/config
+      # Prometheus 配置文件在容器内的路径将是 /root/config/prometheus.yml
+      - /root/logs:/root/logs # 挂载日志目录
 
   grafana:
     image: grafana/grafana:latest
@@ -44,8 +46,8 @@ services:
     image: rabbitmq:3-management
     container_name: server_rabbitmq
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "5673:5672"  # 将 5672 改为其他未占用的端口
+      - "15673:15672"  # 将 15672 改为其他未占用的端口
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 
