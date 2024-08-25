@@ -4,12 +4,11 @@ global:
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
-      - targets: ['172.20.10.4']
+      - targets: ['localhost:9090']  # Prometheus 自身的地址
   - job_name: 'clickhouse'
     static_configs:
-      - targets: ['clickhouse:9000']
+      - targets: ['clickhouse:9000']  # 使用服务名称
   - job_name: 'pushgateway'
     static_configs:
-      - targets: ['pushgateway:9091']
-
+      - targets: ['pushgateway:9091']  # 使用服务名称
 

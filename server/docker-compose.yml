@@ -5,14 +5,17 @@ services:
     image: mysql:latest
     container_name: server_mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: ""  # 设置空密码
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # 允许使用空密码
       MYSQL_DATABASE: my_database
       MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: ""  # 如果'user'用户也使用空密码
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - my_network
 
   clickhouse:
     image: yandex/clickhouse-server:latest
@@ -22,6 +25,8 @@ services:
       - "9000:9000"
     volumes:
       - clickhouse_data:/var/lib/clickhouse
+    networks:
+      - my_network
 
   prometheus:
     image: prom/prometheus:latest
@@ -31,8 +36,9 @@ services:
     volumes:
       - prometheus_data:/prometheus
       - ./config:/root/config  # 挂载整个配置文件夹到/root/config
-      # Prometheus 配置文件在容器内的路径将是 /root/config/prometheus.yml
       - /root/logs:/root/logs # 挂载日志目录
+    networks:
+      - my_network
 
   grafana:
     image: grafana/grafana:latest
@@ -41,21 +47,46 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    networks:
+      - my_network
 
   rabbitmq:
     image: rabbitmq:3-management
     container_name: server_rabbitmq
     ports:
-      - "5673:5672"  # 将 5672 改为其他未占用的端口
-      - "15673:15672"  # 将 15672 改为其他未占用的端口
+      - "5672:5672"  
+      - "15672:15672"  
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - my_network
 
   pushgateway:
     image: prom/pushgateway:latest
     container_name: server_pushgateway
     ports:
       - "9091:9091"
+    networks:
+      - my_network
+
+  server-app:
+    build: .
+    container_name: server_app
+    volumes:
+      - ./config:/root/config  # 确保配置文件被正确挂载
+      - ./logs:/root/logs
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - clickhouse
+      - prometheus
+      - rabbitmq
+    environment:
+      - CONFIG_PATH=/root/config/server_config.yaml
+    command: ["./server-app"]
+    networks:
+      - my_network
 
 volumes:
   clickhouse_data:
@@ -63,3 +94,7 @@ volumes:
   grafana_data:
   rabbitmq_data:
   db_data:
+
+networks:
+  my_network:
+    external: true
