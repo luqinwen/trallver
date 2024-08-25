@@ -1,32 +1,41 @@
 package main
 
 import (
-    "log"
-    "my_project/client/config"
-    "my_project/client/service"
-    "my_project/client/model" // 正确导入 model 包
+	"log"
+	"my_project/client/config"
+	"my_project/client/service"
+	"time"
 )
 
 func main() {
-    // 初始化配置文件
     config.InitConfig()
-
-    // 初始化日志
-    config.InitLog(config.ClientConfig.LogFile)
-
-    log.Println("Starting ICMP Probe Client")
-
-    // 从配置文件加载探测任务
-    task := &model.ProbeTask{ // 使用 model.ProbeTask 而不是 service.ProbeTask
-        IP:        config.ClientConfig.Probe.IP,
-        Count:     config.ClientConfig.Probe.Count,
-        Threshold: config.ClientConfig.Probe.Threshold,
-        Timeout:   config.ClientConfig.Probe.Timeout,
+    config.InitLog()
+    
+    ch, err := config.InitRabbitMQ()
+    if err != nil {
+        log.Fatalf("Failed to initialize RabbitMQ: %v", err)
+        return
     }
+    defer ch.Close()
 
-    // 执行探测任务
-    service.ExecuteProbeTask(task)
+    for {
+        log.Println("Waiting to receive probe task from RabbitMQ...")
+        task := service.ReceiveProbeTaskFromMQ(ch)
+        if task == nil {
+            log.Println("No task received, retrying in 5 seconds...")
+            time.Sleep(5 * time.Second)
+            continue
+        }
 
-    // 上报探测结果
-    service.ReportResultsToServer(task)
+        log.Printf("Received task: %+v", task)
+        result := service.ExecuteProbeTask(task)
+        if result == nil {
+            log.Println("Failed to execute probe task, retrying...")
+            continue
+        }
+
+        log.Println("Reporting results to RabbitMQ...")
+        service.ReportResultsToMQ(ch, result)
+    }
 }
+

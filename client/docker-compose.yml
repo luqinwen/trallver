@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  client-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: client_app
+    environment:
+      - CONFIG_PATH=/root/config/client_config.yaml
+    volumes:
+      - ./config:/root/config  # 挂载本地 config 目录到容器内的 /root/config 目录
+      - ./logs:/root/logs  # 挂载本地 logs 目录到容器内的 /root/logs 目录
+    ports:
+      - "8081:8081"
+    command: ["./client-app"]
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true

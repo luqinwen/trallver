@@ -1,14 +1,11 @@
 package router
 
 import (
-    
-    "github.com/gorilla/mux"
     "my_project/server/internal/service"
+    "github.com/cloudwego/hertz/pkg/app/server"
+    "github.com/streadway/amqp"
 )
 
-// InitializeRoutes 初始化路由
-func InitializeRoutes() *mux.Router {
-    router := mux.NewRouter()
-    router.HandleFunc("/probe", service.HandleProbeTask).Methods("POST")
-    return router
+func InitializeRoutes(h *server.Hertz, ch *amqp.Channel) {
+    h.POST("/probe_task", service.HandleProbeTask(ch))       // 任务下发
 }

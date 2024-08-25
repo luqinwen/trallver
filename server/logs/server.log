@@ -1,0 +1,696 @@
+2024/08/22 15:51:19 log_config.go:33: Log initialized successfully
+2024/08/22 15:51:19 init_clickhouse.go:26: Failed to ping ClickHouse: dial tcp 127.0.0.1:9000: connect: connection refused
+2024/08/22 15:52:04 log_config.go:33: Log initialized successfully
+2024/08/22 15:52:04 init_clickhouse.go:26: Failed to ping ClickHouse: dial tcp 127.0.0.1:9000: connect: connection refused
+2024/08/22 15:54:44 log_config.go:33: Log initialized successfully
+2024/08/22 15:54:44 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/22 15:54:44 init_clickhouse.go:42: Error creating table: code: 81, message: Database my_database doesn't exist
+2024/08/22 15:57:41 log_config.go:33: Log initialized successfully
+2024/08/22 15:57:42 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/22 15:57:42 init_clickhouse.go:42: Error creating table: code: 81, message: Database my_database doesn't exist
+2024/08/23 01:19:30 log_config.go:33: Log initialized successfully
+2024/08/23 01:19:30 init_clickhouse.go:26: Failed to ping ClickHouse: dial tcp 172.19.0.3:9000: connect: connection refused
+2024/08/23 01:25:30 log_config.go:33: Log initialized successfully
+2024/08/23 01:25:30 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 01:25:30 init_clickhouse.go:44: ClickHouse table created successfully
+2024/08/23 01:25:30 init_mysql.go:27: Failed to ping MySQL: dial tcp 127.0.0.1:3306: connect: connection refused
+2024/08/23 01:29:39 log_config.go:33: Log initialized successfully
+2024/08/23 01:29:39 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 01:29:39 init_clickhouse.go:44: ClickHouse table created successfully
+2024/08/23 01:29:39 init_mysql.go:27: Failed to ping MySQL: dial tcp 127.0.0.1:3306: connect: connection refused
+2024/08/23 01:35:25 log_config.go:33: Log initialized successfully
+2024/08/23 01:35:25 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 01:35:25 init_clickhouse.go:35: ClickHouse database created successfully or already exists
+2024/08/23 01:35:25 init_clickhouse.go:52: ClickHouse table created successfully
+2024/08/23 01:35:25 init_mysql.go:27: Failed to ping MySQL: Error 1130: Host '172.20.0.8' is not allowed to connect to this MySQL server
+2024/08/23 01:40:07 log_config.go:33: Log initialized successfully
+2024/08/23 01:40:07 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 01:40:07 init_clickhouse.go:35: ClickHouse database created successfully or already exists
+2024/08/23 01:40:07 init_clickhouse.go:52: ClickHouse table created successfully
+2024/08/23 01:40:07 init_mysql.go:27: Failed to ping MySQL: Error 1130: Host '172.20.0.8' is not allowed to connect to this MySQL server
+2024/08/23 02:01:04 log_config.go:33: Log initialized successfully
+2024/08/23 02:01:04 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 02:01:04 init_clickhouse.go:35: ClickHouse database created successfully or already exists
+2024/08/23 02:01:04 init_clickhouse.go:52: ClickHouse table created successfully
+2024/08/23 02:01:04 init_mysql.go:27: Failed to ping MySQL: Error 1049 (42000): Unknown database 'my_database'
+2024/08/23 02:02:04 log_config.go:33: Log initialized successfully
+2024/08/23 02:02:04 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 02:02:04 init_clickhouse.go:35: ClickHouse database created successfully or already exists
+2024/08/23 02:02:04 init_clickhouse.go:52: ClickHouse table created successfully
+2024/08/23 02:02:04 init_mysql.go:29: MySQL initialized...
+2024/08/23 02:02:04 main.go:20: Starting Hertz server on :8080
+2024/08/23 02:27:31 log_config.go:33: Log initialized successfully
+2024/08/23 02:27:31 init_clickhouse.go:26: Failed to ping ClickHouse: dial tcp 172.22.0.5:9000: connect: connection refused
+2024/08/23 02:38:34 log_config.go:33: Log initialized successfully
+2024/08/23 02:38:34 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.22.0.7:9000: connect: connection refused
+2024/08/23 02:38:36 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp 172.22.0.7:9000: connect: connection refused
+2024/08/23 02:38:38 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (3/5): dial tcp 172.22.0.7:9000: connect: connection refused
+2024/08/23 02:38:40 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 02:38:40 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/23 02:38:40 init_clickhouse.go:62: ClickHouse table created successfully
+2024/08/23 02:38:40 init_mysql.go:29: MySQL initialized...
+2024/08/23 02:38:40 main.go:20: Starting Hertz server on :8080
+2024/08/23 02:48:50 log_config.go:33: Log initialized successfully
+2024/08/23 02:48:50 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.23.0.4:9000: connect: connection refused
+2024/08/23 02:48:52 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp 172.23.0.4:9000: connect: connection refused
+2024/08/23 02:48:54 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (3/5): dial tcp 172.23.0.4:9000: connect: connection refused
+2024/08/23 02:48:56 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/23 02:48:56 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/23 02:48:56 init_clickhouse.go:62: ClickHouse table created successfully
+2024/08/23 02:48:56 init_mysql.go:29: MySQL initialized...
+2024/08/23 02:48:56 main.go:20: Starting Hertz server on :8080
+2024/08/23 02:49:21 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-23 02:49:21.555577975 +0000 UTC m=+31.012182169 UpdatedAt:2024-08-23 02:49:21.555578209 +0000 UTC m=+31.012182363 PacketLoss:0 MinRTT:0s MaxRTT:0s AvgRTT:0s}
+2024/08/24 02:39:52 log_config.go:33: Log initialized successfully
+2024/08/24 02:39:52 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.23.0.5:9000: connect: connection refused
+2024/08/24 02:39:55 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 02:39:55 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 02:39:55 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 02:39:55 init_mysql.go:27: Failed to ping MySQL: dial tcp 172.23.0.4:3306: connect: connection refused
+2024/08/24 02:45:19 log_config.go:33: Log initialized successfully
+2024/08/24 02:45:19 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.19.0.2:9000: connect: connection refused
+2024/08/24 02:45:21 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 02:45:21 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 02:45:21 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 02:45:21 init_mysql.go:27: Failed to ping MySQL: dial tcp 172.19.0.3:3306: connect: connection refused
+2024/08/24 02:51:22 log_config.go:33: Log initialized successfully
+2024/08/24 02:51:22 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 02:51:22 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 02:51:22 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 02:51:22 init_mysql.go:29: MySQL initialized...
+2024/08/24 02:51:22 main.go:20: Starting Hertz server on :8080
+2024/08/24 02:58:29 log_config.go:33: Log initialized successfully
+2024/08/24 02:58:29 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 02:58:29 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 02:58:29 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 02:58:29 init_mysql.go:27: Failed to ping MySQL: dial tcp 172.22.0.7:3306: connect: connection refused
+2024/08/24 03:05:50 log_config.go:33: Log initialized successfully
+2024/08/24 03:05:50 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 03:05:50 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 03:05:50 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 03:05:50 init_mysql.go:29: MySQL initialized...
+2024/08/24 03:05:50 main.go:20: Starting Hertz server on :8080
+2024/08/24 03:09:39 log_config.go:33: Log initialized successfully
+2024/08/24 03:09:39 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.23.0.3:9000: connect: connection refused
+2024/08/24 03:09:41 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 03:09:41 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 03:09:41 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 03:09:41 init_mysql.go:29: MySQL initialized...
+2024/08/24 03:09:41 main.go:20: Starting Hertz server on :8080
+2024/08/24 03:16:40 log_config.go:33: Log initialized successfully
+2024/08/24 03:16:40 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.24.0.2:9000: connect: connection refused
+2024/08/24 03:16:42 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp 172.24.0.2:9000: connect: connection refused
+2024/08/24 03:16:44 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 03:16:44 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 03:16:44 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 03:16:44 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 03:16:44 main.go:20: Starting Hertz server on :8080
+2024/08/24 03:16:54 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 03:16:54.635245189 +0000 UTC m=+14.223653910 UpdatedAt:2024-08-24 03:16:54.635245409 +0000 UTC m=+14.223654106}
+2024/08/24 03:21:51 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 03:21:51.965223899 +0000 UTC m=+311.553632638 UpdatedAt:2024-08-24 03:21:51.965224129 +0000 UTC m=+311.553632846}
+2024/08/24 03:46:48 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 03:46:48.675804756 +0000 UTC m=+1808.264213484 UpdatedAt:2024-08-24 03:46:48.675804943 +0000 UTC m=+1808.264213648}
+2024/08/24 03:49:32 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 03:49:32.910576217 +0000 UTC m=+1972.498984960 UpdatedAt:2024-08-24 03:49:32.910576396 +0000 UTC m=+1972.498985097}
+2024/08/24 03:49:46 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 03:49:46.184907319 +0000 UTC m=+1985.773316122 UpdatedAt:2024-08-24 03:49:46.184907603 +0000 UTC m=+1985.773316302}
+2024/08/24 04:05:47 log_config.go:33: Log initialized successfully
+2024/08/24 04:05:47 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.28.0.2:9000: connect: connection refused
+2024/08/24 04:05:49 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp 172.28.0.2:9000: connect: connection refused
+2024/08/24 04:05:51 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 04:05:51 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 04:05:51 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 04:05:51 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 04:05:51 main.go:20: Starting Hertz server on :8080
+2024/08/24 04:37:50 log_config.go:33: Log initialized successfully
+2024/08/24 04:37:50 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 04:37:50 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 04:37:50 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 04:37:50 init_mysql.go:36: Failed to ping MySQL (attempt 1): dial tcp 172.26.0.7:3306: connect: connection refused
+2024/08/24 04:37:52 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 04:37:52 main.go:20: Starting Hertz server on :8080
+2024/08/24 04:38:46 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 04:38:46.437861593 +0000 UTC m=+56.169357509 UpdatedAt:2024-08-24 04:38:46.437861823 +0000 UTC m=+56.169357718}
+2024/08/24 04:45:09 log_config.go:33: Log initialized successfully
+2024/08/24 04:45:09 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.26.0.6:9000: connect: connection refused
+2024/08/24 04:45:11 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 04:45:11 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 04:45:11 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 04:45:11 init_mysql.go:36: Failed to ping MySQL (attempt 1): dial tcp 172.26.0.9:3306: connect: connection refused
+2024/08/24 04:45:13 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 04:45:13 main.go:20: Starting Hertz server on :8080
+2024/08/24 04:45:21 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 04:45:21.982745556 +0000 UTC m=+12.461981153 UpdatedAt:2024-08-24 04:45:21.982745695 +0000 UTC m=+12.461981256}
+2024/08/24 06:06:30 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 06:06:30.830508574 +0000 UTC m=+4423.087577511 UpdatedAt:2024-08-24 06:06:30.830508744 +0000 UTC m=+4423.087577665}
+2024/08/24 06:11:23 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 06:11:23.617422024 +0000 UTC m=+4715.874490939 UpdatedAt:2024-08-24 06:11:23.617422136 +0000 UTC m=+4715.874491040}
+2024/08/24 06:25:48 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 06:25:48.450084337 +0000 UTC m=+5580.707153275 UpdatedAt:2024-08-24 06:25:48.450084509 +0000 UTC m=+5580.707153431}
+2024/08/24 06:28:15 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 06:28:15.449068371 +0000 UTC m=+5727.706137311 UpdatedAt:2024-08-24 06:28:15.44906854 +0000 UTC m=+5727.706137462}
+2024/08/24 06:42:43 log_config.go:33: Log initialized successfully
+2024/08/24 06:42:43 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:42:45 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:42:47 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (3/5): dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:42:49 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (4/5): dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:42:51 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (5/5): dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:42:53 init_clickhouse.go:37: Failed to connect to ClickHouse after retries: dial tcp: lookup clickhouse on 127.0.0.53:53: server misbehaving
+2024/08/24 06:45:19 log_config.go:33: Log initialized successfully
+2024/08/24 06:45:19 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.26.0.7:9000: connect: connection refused
+2024/08/24 06:45:21 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 06:45:21 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 06:45:21 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 06:45:21 init_mysql.go:36: Failed to ping MySQL (attempt 1): dial tcp 172.26.0.5:3306: connect: connection refused
+2024/08/24 06:45:23 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 06:45:23 main.go:20: Starting Hertz server on :8080
+2024/08/24 06:49:38 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 06:49:38.086399094 +0000 UTC m=+258.696509468 UpdatedAt:2024-08-24 06:49:38.086399328 +0000 UTC m=+258.696509678}
+2024/08/24 07:24:01 log_config.go:33: Log initialized successfully
+2024/08/24 07:24:01 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.26.0.2:9000: connect: connection refused
+2024/08/24 07:24:03 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 07:24:03 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 07:24:03 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 07:24:03 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 07:24:03 main.go:20: Starting Hertz server on :8080
+2024/08/24 07:32:40 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:32:40.123216577 +0000 UTC m=+519.198443056 UpdatedAt:2024-08-24 07:32:40.123216908 +0000 UTC m=+519.198443362}
+2024/08/24 07:33:40 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:33:40.022543626 +0000 UTC m=+579.097770086 UpdatedAt:2024-08-24 07:33:40.022543794 +0000 UTC m=+579.097770238}
+2024/08/24 07:36:45 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:36:45.130649467 +0000 UTC m=+764.205875927 UpdatedAt:2024-08-24 07:36:45.130649636 +0000 UTC m=+764.205876080}
+2024/08/24 07:37:45 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:37:45.676098291 +0000 UTC m=+824.751324740 UpdatedAt:2024-08-24 07:37:45.676098431 +0000 UTC m=+824.751324880}
+2024/08/24 07:41:41 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:41:41.093687405 +0000 UTC m=+1060.168913853 UpdatedAt:2024-08-24 07:41:41.093687547 +0000 UTC m=+1060.168913982}
+2024/08/24 07:46:15 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:46:15.007724693 +0000 UTC m=+1334.082951123 UpdatedAt:2024-08-24 07:46:15.007724826 +0000 UTC m=+1334.082951240}
+2024/08/24 07:49:22 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:49:22.441835113 +0000 UTC m=+1521.517061574 UpdatedAt:2024-08-24 07:49:22.441835298 +0000 UTC m=+1521.517061742}
+2024/08/24 07:53:56 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 07:53:56.988121554 +0000 UTC m=+1796.063348051 UpdatedAt:2024-08-24 07:53:56.988121759 +0000 UTC m=+1796.063348202}
+2024/08/24 07:54:00 icmp_probe.go:43: Received probe result: {IP:8.8.8.8 Timestamp:2024-08-24 07:54:00.101380697 +0000 UTC PacketLoss:0 MinRTT:9.887815ms MaxRTT:10.467003ms AvgRTT:10.1533ms Threshold:10 Success:true}
+2024/08/24 07:54:00 probe_result_dao.go:31: Error preparing statement: insert statement supported only in the batch mode (use begin/commit)
+2024/08/24 07:54:00 icmp_probe.go:48: Failed to store probe result to ClickHouse: insert statement supported only in the batch mode (use begin/commit)
+2024/08/24 07:59:29 log_config.go:33: Log initialized successfully
+2024/08/24 07:59:29 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (1/5): dial tcp 172.26.0.5:9000: connect: connection refused
+2024/08/24 07:59:31 init_clickhouse.go:31: Failed to ping ClickHouse, attempt (2/5): dial tcp 172.26.0.5:9000: connect: connection refused
+2024/08/24 07:59:33 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 07:59:33 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 07:59:33 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 07:59:33 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 07:59:33 main.go:20: Starting Hertz server on :8080
+2024/08/24 08:00:02 icmp_probe.go:30: Assigning probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 08:00:02.875313852 +0000 UTC m=+33.999997868 UpdatedAt:2024-08-24 08:00:02.875314203 +0000 UTC m=+33.999998190}
+2024/08/24 08:00:05 icmp_probe.go:43: Received probe result: {IP:8.8.8.8 Timestamp:2024-08-24 08:00:05.957004047 +0000 UTC PacketLoss:0 MinRTT:7.203987ms MaxRTT:13.280177ms AvgRTT:9.658269ms Threshold:10 Success:true}
+2024/08/24 08:00:05 probe_result_dao.go:58: Successfully inserted into ClickHouse: timestamp=1724486405, ip=8.8.8.8, packet_loss=0.000000, min_rtt=7203.000000, max_rtt=13280.000000, avg_rtt=9658.000000
+2024/08/24 12:21:22 log_config.go:33: Log initialized successfully
+2024/08/24 12:21:22 server_config.go:52: Failed to connect to RabbitMQ: dial tcp 127.0.0.1:5672: connect: connection refused
+2024/08/24 12:24:07 log_config.go:33: Log initialized successfully
+2024/08/24 12:24:07 server_config.go:52: Failed to connect to RabbitMQ: dial tcp 127.0.0.1:5672: connect: connection refused
+2024/08/24 12:27:30 log_config.go:33: Log initialized successfully
+2024/08/24 12:27:30 server_config.go:52: Failed to connect to RabbitMQ: dial tcp 127.0.0.1:5673: connect: connection refused
+2024/08/24 12:31:59 log_config.go:33: Log initialized successfully
+2024/08/24 12:31:59 server_config.go:52: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused
+2024/08/24 12:36:39 log_config.go:33: Log initialized successfully
+2024/08/24 12:36:39 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:36:44 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:36:49 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:36:54 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:36:59 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:37:04 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 12:37:04 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 12:37:04 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 12:37:04 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 12:37:04 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 12:37:04 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:37:09 main.go:29: Starting Hertz server on :8080
+2024/08/24 12:57:31 log_config.go:33: Log initialized successfully
+2024/08/24 12:57:31 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:57:36 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:57:41 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:57:46 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:57:51 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:57:56 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 12:57:56 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 12:57:56 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 12:57:56 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 12:57:56 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 12:57:56 server_config.go:64: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 12:58:01 main.go:29: Starting Hertz server on :8080
+2024/08/24 13:16:46 log_config.go:33: Log initialized successfully
+2024/08/24 13:16:46 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:16:46 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:16:47 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:16:47 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:16:47 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 13:16:47 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 13:16:47 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 13:16:47 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 13:16:47 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 13:16:47 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:16:47 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:16:47 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:16:47 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:16:47 main.go:29: Starting Hertz server on :8080
+2024/08/24 13:21:10 log_config.go:33: Log initialized successfully
+2024/08/24 13:21:10 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:21:10 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:21:10 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:15 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/24 13:21:15 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:20 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/24 13:21:20 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:25 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/24 13:21:25 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:30 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/24 13:21:30 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:35 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 13:21:35 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 13:21:35 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 13:21:35 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 13:21:35 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 13:21:35 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:21:35 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:21:35 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:21:40 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/24 13:21:40 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:21:40 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:21:40 main.go:29: Starting Hertz server on :8080
+2024/08/24 13:27:20 log_config.go:33: Log initialized successfully
+2024/08/24 13:27:20 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:27:20 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:27:20 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:27:30 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/24 13:27:30 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:27:40 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/24 13:27:40 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/24 13:27:50 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/24 13:27:50 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:27:50 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:27:50 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 13:27:50 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 13:27:50 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 13:27:50 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 13:27:50 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 13:27:50 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:27:50 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:27:50 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:27:50 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:27:50 main.go:29: Starting Hertz server on :8080
+2024/08/24 13:34:28 log_config.go:33: Log initialized successfully
+2024/08/24 13:34:28 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:34:28 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:34:28 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:34:38 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/24 13:34:38 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:34:48 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/24 13:34:48 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:34:58 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/24 13:34:58 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:34:58 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:34:58 server_config.go:97: Successfully declared task_queue
+2024/08/24 13:34:58 server_config.go:115: Successfully declared result_queue
+2024/08/24 13:34:58 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 13:34:58 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 13:34:58 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 13:34:58 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 13:34:58 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 13:34:58 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:34:58 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:34:58 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:34:58 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:34:58 server_config.go:97: Successfully declared task_queue
+2024/08/24 13:34:58 server_config.go:115: Successfully declared result_queue
+2024/08/24 13:34:58 main.go:29: Starting Hertz server on :8080
+2024/08/24 13:45:52 probe_task_dao.go:13: Error preparing statement: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/24 13:45:52 icmp_probe.go:32: Failed to insert task into MySQL: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/24 13:49:25 log_config.go:33: Log initialized successfully
+2024/08/24 13:49:25 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:49:25 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:49:25 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:49:35 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/24 13:49:35 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:49:45 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/24 13:49:45 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/24 13:49:55 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/24 13:49:55 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:49:55 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:49:55 server_config.go:97: Successfully declared task_queue
+2024/08/24 13:49:55 server_config.go:115: Successfully declared result_queue
+2024/08/24 13:49:55 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 13:49:55 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 13:49:55 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 13:49:55 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 13:49:55 init_mysql.go:67: Table probe_tasks ensured.
+2024/08/24 13:49:55 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 13:49:55 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 13:49:55 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 13:49:55 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 13:49:55 server_config.go:97: Successfully declared task_queue
+2024/08/24 13:49:55 server_config.go:115: Successfully declared result_queue
+2024/08/24 13:49:55 main.go:29: Starting Hertz server on :8080
+2024/08/24 14:00:39 probe_task_dao.go:13: Error preparing statement: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/24 14:00:39 icmp_probe.go:32: Failed to insert task into MySQL: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/24 14:06:23 log_config.go:33: Log initialized successfully
+2024/08/24 14:06:23 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 14:06:23 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 14:06:23 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 14:06:23 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 14:06:23 server_config.go:97: Successfully declared task_queue
+2024/08/24 14:06:23 server_config.go:115: Successfully declared result_queue
+2024/08/24 14:06:23 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/24 14:06:23 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/24 14:06:23 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/24 14:06:23 init_mysql.go:41: MySQL initialized successfully
+2024/08/24 14:06:24 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/24 14:06:24 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/24 14:06:24 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/24 14:06:24 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/24 14:06:24 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/24 14:06:24 server_config.go:97: Successfully declared task_queue
+2024/08/24 14:06:24 server_config.go:115: Successfully declared result_queue
+2024/08/24 14:06:24 main.go:29: Starting Hertz server on :8080
+2024/08/24 14:07:14 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 14:07:14.016696884 +0000 UTC m=+50.946652235 UpdatedAt:2024-08-24 14:07:14.016697084 +0000 UTC m=+50.946652417}
+2024/08/24 14:07:14 icmp_probe.go:45: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=my_routing_key, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-24T14:07:14.016696884Z","updated_at":"2024-08-24T14:07:14.016697084Z"}
+2024/08/24 14:07:14 icmp_probe.go:62: Task published successfully to RabbitMQ
+2024/08/24 14:27:08 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-24 14:27:08.826852894 +0000 UTC m=+1245.756808280 UpdatedAt:2024-08-24 14:27:08.826853145 +0000 UTC m=+1245.756808489}
+2024/08/24 14:27:08 icmp_probe.go:45: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=my_routing_key, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-24T14:27:08.826852894Z","updated_at":"2024-08-24T14:27:08.826853145Z"}
+2024/08/24 14:27:08 icmp_probe.go:57: Failed to publish task to queue: Exception (504) Reason: "channel/connection is not open"
+2024/08/25 02:00:51 log_config.go:33: Log initialized successfully
+2024/08/25 02:00:51 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 02:00:51 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 02:00:51 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:01:01 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 02:01:01 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:01:11 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 02:01:11 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:01:21 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 02:01:21 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 02:01:21 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/25 02:01:21 server_config.go:97: Successfully declared task_queue
+2024/08/25 02:01:21 server_config.go:115: Successfully declared result_queue
+2024/08/25 02:01:21 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 02:01:21 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 02:01:21 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 02:01:21 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 02:01:22 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 02:01:22 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 02:01:22 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 02:01:22 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 02:01:22 server_config.go:79: Successfully created RabbitMQ channel
+2024/08/25 02:01:22 server_config.go:97: Successfully declared task_queue
+2024/08/25 02:01:22 server_config.go:115: Successfully declared result_queue
+2024/08/25 02:01:22 main.go:29: Starting Hertz server on :8080
+2024/08/25 02:01:48 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 02:01:48.202403485 +0000 UTC m=+56.547555738 UpdatedAt:2024-08-25 02:01:48.202403698 +0000 UTC m=+56.547555935}
+2024/08/25 02:01:48 icmp_probe.go:45: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=my_routing_key, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T02:01:48.202403485Z","updated_at":"2024-08-25T02:01:48.202403698Z"}
+2024/08/25 02:01:48 icmp_probe.go:62: Task published successfully to RabbitMQ
+2024/08/25 02:10:42 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 02:10:42.522626496 +0000 UTC m=+590.867778764 UpdatedAt:2024-08-25 02:10:42.522626675 +0000 UTC m=+590.867778916}
+2024/08/25 02:10:42 icmp_probe.go:45: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=my_routing_key, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T02:10:42.522626496Z","updated_at":"2024-08-25T02:10:42.522626675Z"}
+2024/08/25 02:10:42 icmp_probe.go:57: Failed to publish task to queue: Exception (504) Reason: "channel/connection is not open"
+2024/08/25 02:46:21 log_config.go:33: Log initialized successfully
+2024/08/25 02:46:21 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 02:46:21 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 02:46:21 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:46:31 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 02:46:31 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:46:41 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 02:46:41 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:46:51 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 02:46:51 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 02:47:01 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/25 02:47:01 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 02:47:01 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 02:47:01 server_config.go:117: Successfully declared task_queue
+2024/08/25 02:47:01 server_config.go:136: Successfully declared result_queue
+2024/08/25 02:47:01 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 02:47:01 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 02:47:01 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 02:47:01 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 02:47:01 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 02:47:01 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 02:47:01 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 02:47:01 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 02:47:01 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 02:47:01 server_config.go:117: Successfully declared task_queue
+2024/08/25 02:47:01 server_config.go:136: Successfully declared result_queue
+2024/08/25 02:47:01 main.go:30: Starting Hertz server on :8080
+2024/08/25 02:47:34 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 02:47:34.014348896 +0000 UTC m=+72.587295246 UpdatedAt:2024-08-25 02:47:34.014349145 +0000 UTC m=+72.587295459}
+2024/08/25 02:47:34 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T02:47:34.014348896Z","updated_at":"2024-08-25T02:47:34.014349145Z"}
+2024/08/25 02:47:34 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 03:07:08 log_config.go:33: Log initialized successfully
+2024/08/25 03:07:08 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:07:08 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:07:08 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:07:18 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 03:07:18 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:07:28 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 03:07:28 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:07:38 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 03:07:38 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:07:48 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/25 03:07:48 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:07:48 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:07:48 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:07:48 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:07:48 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 03:07:48 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 03:07:48 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 03:07:48 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 03:07:48 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 03:07:48 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:07:48 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:07:48 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:07:48 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:07:48 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:07:48 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:07:48 main.go:30: Starting Hertz server on :8080
+2024/08/25 03:08:20 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 03:08:20.852803768 +0000 UTC m=+72.373649110 UpdatedAt:2024-08-25 03:08:20.85280386 +0000 UTC m=+72.373649186}
+2024/08/25 03:08:20 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T03:08:20.852803768Z","updated_at":"2024-08-25T03:08:20.85280386Z"}
+2024/08/25 03:08:20 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 03:20:10 icmp_probe.go:85: Registering consumer for queue: result_queue
+2024/08/25 03:20:10 icmp_probe.go:114: Consumer registered successfully
+2024/08/25 03:20:10 icmp_probe.go:117: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-25T03:08:23.998574754Z","packet_loss":0,"min_rtt":9340634,"max_rtt":48242633,"avg_rtt":33536147,"threshold":10,"success":true}
+2024/08/25 03:20:10 icmp_probe.go:126: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-25 03:08:23.998574754 +0000 UTC PacketLoss:0 MinRTT:9.340634ms MaxRTT:48.242633ms AvgRTT:33.536147ms Threshold:10 Success:true}
+2024/08/25 03:20:10 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724555303, ip=8.8.8.8, packet_loss=0.000000, min_rtt=9340.000000, max_rtt=48242.000000, avg_rtt=33536.000000
+2024/08/25 03:43:20 log_config.go:33: Log initialized successfully
+2024/08/25 03:43:20 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:43:20 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:43:20 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:43:30 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 03:43:30 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:43:40 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 03:43:40 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 03:43:50 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 03:43:50 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:43:50 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:43:50 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:43:50 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:43:50 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 03:43:50 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 03:43:50 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 03:43:50 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 03:43:50 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 03:43:50 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:43:50 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:43:50 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:43:50 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:43:50 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:43:50 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:43:50 main.go:41: Starting Hertz server on :8080
+2024/08/25 03:43:50 main.go:27: Starting background worker to process result queue messages
+2024/08/25 03:43:50 main.go:30: Failed to handle probe results: 0x1324be0
+2024/08/25 03:48:25 log_config.go:33: Log initialized successfully
+2024/08/25 03:48:25 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:48:25 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:48:25 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:48:25 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:48:25 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:48:25 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:48:25 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 03:48:25 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 03:48:25 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 03:48:25 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 03:48:26 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 03:48:26 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 03:48:26 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 03:48:26 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 03:48:26 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 03:48:26 server_config.go:117: Successfully declared task_queue
+2024/08/25 03:48:26 server_config.go:136: Successfully declared result_queue
+2024/08/25 03:48:26 main.go:32: Starting Hertz server on :8080
+2024/08/25 03:49:11 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 03:49:11.404596793 +0000 UTC m=+46.215479783 UpdatedAt:2024-08-25 03:49:11.404597032 +0000 UTC m=+46.215479982}
+2024/08/25 03:49:11 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T03:49:11.404596793Z","updated_at":"2024-08-25T03:49:11.404597032Z"}
+2024/08/25 03:49:11 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 03:49:47 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 03:49:47.732538349 +0000 UTC m=+82.543421328 UpdatedAt:2024-08-25 03:49:47.732538549 +0000 UTC m=+82.543421486}
+2024/08/25 03:49:47 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T03:49:47.732538349Z","updated_at":"2024-08-25T03:49:47.732538549Z"}
+2024/08/25 03:49:47 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 06:16:36 log_config.go:33: Log initialized successfully
+2024/08/25 06:16:36 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:16:36 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:16:36 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:16:46 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 06:16:46 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:16:56 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 06:16:56 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:17:06 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 06:17:06 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:17:06 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:17:06 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:17:06 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:17:06 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 06:17:06 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 06:17:06 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 06:17:06 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 06:17:06 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 06:17:06 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:17:06 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:17:06 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:17:06 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:17:06 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:17:06 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:17:06 main.go:32: Starting Hertz server on :8080
+2024/08/25 06:18:13 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 06:18:13.294434596 +0000 UTC m=+97.376882014 UpdatedAt:2024-08-25 06:18:13.294434897 +0000 UTC m=+97.376882252}
+2024/08/25 06:18:13 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T06:18:13.294434596Z","updated_at":"2024-08-25T06:18:13.294434897Z"}
+2024/08/25 06:18:13 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 06:25:11 log_config.go:33: Log initialized successfully
+2024/08/25 06:25:11 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:25:11 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:25:11 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:25:21 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 06:25:21 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:25:31 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 06:25:31 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:25:41 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 06:25:41 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:25:51 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/25 06:25:51 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:26:01 server_config.go:61: Attempt 6: Connecting to RabbitMQ...
+2024/08/25 06:26:01 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:26:11 server_config.go:61: Attempt 7: Connecting to RabbitMQ...
+2024/08/25 06:26:11 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:26:11 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:26:11 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:26:11 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:26:11 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 06:26:11 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 06:26:11 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 06:26:11 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 06:26:11 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 06:26:11 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:26:11 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:26:11 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:26:11 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:26:11 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:26:11 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:26:11 main.go:32: Starting Hertz server on :8080
+2024/08/25 06:27:35 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 06:27:35.9652266 +0000 UTC m=+148.431545661 UpdatedAt:2024-08-25 06:27:35.965226693 +0000 UTC m=+148.431545743}
+2024/08/25 06:27:35 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T06:27:35.9652266Z","updated_at":"2024-08-25T06:27:35.965226693Z"}
+2024/08/25 06:27:35 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 06:33:16 log_config.go:33: Log initialized successfully
+2024/08/25 06:33:16 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:33:16 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:33:16 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:33:26 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 06:33:26 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:33:36 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 06:33:36 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.5:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:33:46 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 06:33:46 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:33:46 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:33:46 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:33:46 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:33:46 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 06:33:46 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 06:33:46 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 06:33:46 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 06:33:46 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 06:33:46 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:33:46 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:33:46 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:33:46 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:33:46 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:33:46 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:33:46 main.go:32: Starting Hertz server on :8080
+2024/08/25 06:34:02 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 06:34:02.602492386 +0000 UTC m=+45.951439970 UpdatedAt:2024-08-25 06:34:02.602492615 +0000 UTC m=+45.951440179}
+2024/08/25 06:34:02 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T06:34:02.602492386Z","updated_at":"2024-08-25T06:34:02.602492615Z"}
+2024/08/25 06:34:02 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 06:34:52 icmp_probe.go:85: Registering consumer for queue: result_queue
+2024/08/25 06:34:52 icmp_probe.go:114: Consumer registered successfully
+2024/08/25 06:34:52 icmp_probe.go:117: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-25T06:34:43.528041116Z","packet_loss":0,"min_rtt":6179250,"max_rtt":24731262,"avg_rtt":12863518,"threshold":10,"success":true}
+2024/08/25 06:34:52 icmp_probe.go:126: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-25 06:34:43.528041116 +0000 UTC PacketLoss:0 MinRTT:6.17925ms MaxRTT:24.731262ms AvgRTT:12.863518ms Threshold:10 Success:true}
+2024/08/25 06:34:52 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724567683, ip=8.8.8.8, packet_loss=0.000000, min_rtt=6179.000000, max_rtt=24731.000000, avg_rtt=12863.000000
+2024/08/25 06:45:29 log_config.go:33: Log initialized successfully
+2024/08/25 06:45:29 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:45:29 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:45:29 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:45:39 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 06:45:39 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:45:49 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 06:45:49 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:45:59 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 06:45:59 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 06:46:09 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/25 06:46:09 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:46:09 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:46:09 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:46:09 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:46:09 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 06:46:09 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 06:46:09 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 06:46:09 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 06:46:09 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 06:46:09 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 06:46:09 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 06:46:09 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 06:46:09 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 06:46:09 server_config.go:117: Successfully declared task_queue
+2024/08/25 06:46:09 server_config.go:136: Successfully declared result_queue
+2024/08/25 06:46:09 main.go:35: Starting Hertz server on :8080
+2024/08/25 06:46:09 icmp_probe.go:84: Registering consumer for queue: result_queue
+2024/08/25 06:46:09 icmp_probe.go:113: Consumer registered successfully
+2024/08/25 06:46:39 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 06:46:39.822922003 +0000 UTC m=+70.896181549 UpdatedAt:2024-08-25 06:46:39.822922244 +0000 UTC m=+70.896181734}
+2024/08/25 06:46:39 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T06:46:39.822922003Z","updated_at":"2024-08-25T06:46:39.822922244Z"}
+2024/08/25 06:46:39 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/25 06:46:42 icmp_probe.go:116: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-25T06:46:42.892726476Z","packet_loss":0,"min_rtt":8468402,"max_rtt":16359172,"avg_rtt":12313086,"threshold":10,"success":true}
+2024/08/25 06:46:42 icmp_probe.go:125: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-25 06:46:42.892726476 +0000 UTC PacketLoss:0 MinRTT:8.468402ms MaxRTT:16.359172ms AvgRTT:12.313086ms Threshold:10 Success:true}
+2024/08/25 06:46:42 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724568402, ip=8.8.8.8, packet_loss=0.000000, min_rtt=8468.000000, max_rtt=16359.000000, avg_rtt=12313.000000
+2024/08/25 07:24:33 log_config.go:33: Log initialized successfully
+2024/08/25 07:24:33 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 07:24:33 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 07:24:33 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 07:24:33 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 07:24:34 server_config.go:117: Successfully declared task_queue
+2024/08/25 07:24:34 server_config.go:136: Successfully declared result_queue
+2024/08/25 07:24:34 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 07:24:34 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 07:24:34 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 07:24:34 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 07:24:34 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 07:24:34 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 07:24:34 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 07:24:34 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 07:24:34 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 07:24:34 server_config.go:117: Successfully declared task_queue
+2024/08/25 07:24:34 server_config.go:136: Successfully declared result_queue
+2024/08/25 07:24:34 main.go:35: Starting Hertz server on :8080
+2024/08/25 07:24:34 icmp_probe.go:84: Registering consumer for queue: result_queue
+2024/08/25 07:24:34 icmp_probe.go:113: Consumer registered successfully
+2024/08/25 07:24:52 probe_task_dao.go:13: Error preparing statement: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/25 07:24:52 icmp_probe.go:32: Failed to insert task into MySQL: Error 1054 (42S22): Unknown column 'status' in 'field list'
+2024/08/25 07:28:55 probe_task_dao.go:13: Error preparing statement: Error 1146 (42S02): Table 'my_database.probe_tasks' doesn't exist
+2024/08/25 07:28:55 icmp_probe.go:32: Failed to insert task into MySQL: Error 1146 (42S02): Table 'my_database.probe_tasks' doesn't exist
+2024/08/25 07:29:05 probe_task_dao.go:13: Error preparing statement: Error 1146 (42S02): Table 'my_database.probe_tasks' doesn't exist
+2024/08/25 07:29:05 icmp_probe.go:32: Failed to insert task into MySQL: Error 1146 (42S02): Table 'my_database.probe_tasks' doesn't exist
+2024/08/25 07:32:05 log_config.go:33: Log initialized successfully
+2024/08/25 07:32:05 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 07:32:05 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 07:32:05 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 07:32:15 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/25 07:32:15 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 07:32:25 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/25 07:32:25 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 07:32:35 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/25 07:32:35 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/25 07:32:45 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/25 07:32:45 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 07:32:45 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 07:32:45 server_config.go:117: Successfully declared task_queue
+2024/08/25 07:32:45 server_config.go:136: Successfully declared result_queue
+2024/08/25 07:32:46 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/25 07:32:46 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/25 07:32:46 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/25 07:32:46 init_mysql.go:41: MySQL initialized successfully
+2024/08/25 07:32:46 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/25 07:32:46 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/25 07:32:46 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/25 07:32:46 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/25 07:32:46 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/25 07:32:46 server_config.go:117: Successfully declared task_queue
+2024/08/25 07:32:46 server_config.go:136: Successfully declared result_queue
+2024/08/25 07:32:46 main.go:35: Starting Hertz server on :8080
+2024/08/25 07:32:46 icmp_probe.go:84: Registering consumer for queue: result_queue
+2024/08/25 07:32:46 icmp_probe.go:113: Consumer registered successfully
+2024/08/25 07:33:03 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 07:33:03.445495829 +0000 UTC m=+57.640935195 UpdatedAt:2024-08-25 07:33:03.44549609 +0000 UTC m=+57.640935398}
+2024/08/25 07:33:03 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 07:33:03.445495829 +0000 UTC m=+57.640935195 UpdatedAt:2024-08-25 07:33:03.44549609 +0000 UTC m=+57.640935398}
+2024/08/25 07:33:03 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T07:33:03.445495829Z","updated_at":"2024-08-25T07:33:03.44549609Z"}
+2024/08/25 07:33:03 icmp_probe.go:77: Task published successfully to RabbitMQ
