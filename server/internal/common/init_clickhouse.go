@@ -54,7 +54,8 @@ func InitClickHouse() {
             max_rtt Float64,
             avg_rtt Float64,
             threshold   Int32,
-            success     UInt8 
+            success     UInt8,
+            latency_ms     UInt32
         ) ENGINE = MergeTree()
         ORDER BY timestamp
     `)

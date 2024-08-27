@@ -12,4 +12,6 @@ type ProbeResult struct {
     AvgRTT      time.Duration `json:"avg_rtt"`     // 平均往返时间
     Threshold   int           `json:"threshold"`   // 丢包率阈值（来自任务）
     Success     bool          `json:"success"`     // 探测是否成功
+    DispatchTime time.Time     `json:"dispatch_time"`// 新增字段，用于记录任务下发时间
+
 }

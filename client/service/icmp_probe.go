@@ -12,8 +12,55 @@ import (
 	"github.com/streadway/amqp"
 )
 
+// StartConsuming 启动消息消费
+func StartConsuming(ch *amqp.Channel) {
+    log.Println("Starting to consume messages from RabbitMQ...")
+
+    msgs, err := ch.Consume(
+        viper.GetString("rabbitmq.task_queue"),
+        "",
+        true,  // 自动确认
+        false, // 非独占
+        false, // 不阻塞
+        false, // 本地
+        nil,
+    )
+    if err != nil {
+        log.Fatalf("Failed to register a consumer: %v", err)
+    }
+
+    go func() {
+        log.Println("Consumer is now listening for messages...")
+        for msg := range msgs {
+            log.Printf("Received a message from RabbitMQ: %s", msg.Body)
+            var task model.ProbeTask
+            err := json.Unmarshal(msg.Body, &task)
+            if err != nil {
+                log.Printf("Failed to unmarshal task: %v", err)
+                continue
+            }
+            log.Printf("Received probe task from server: %+v", task)
+
+            result := ExecuteProbeTask(&task)
+            if result == nil {
+                log.Printf("Task execution failed for task: %+v", task)
+                continue
+            }
+
+            log.Printf("Task executed successfully, reporting result: %+v", result)
+            ReportResultsToMQ(ch, result)
+        }
+
+        log.Println("Consumer loop has exited, no more messages are being processed.")
+    }()
+}
+
+
 // ExecuteProbeTask 执行探测任务
 func ExecuteProbeTask(task *model.ProbeTask) *model.ProbeResult {
+
+    startTime := time.Now() // 记录任务开始处理时间
+
     pinger, err := probing.NewPinger(task.IP)
     if err != nil {
         log.Printf("Failed to create pinger: %v", err)
@@ -43,6 +90,11 @@ func ExecuteProbeTask(task *model.ProbeTask) *model.ProbeResult {
     log.Printf("Starting probe to %s", task.IP)
     pinger.Run()
 
+    endTime := time.Now() // 记录任务处理结束时间
+    processingLatency := endTime.Sub(startTime).Milliseconds() // 计算处理时延
+    log.Printf("Processing latency: %v ms", processingLatency)
+
+
     // 创建 ProbeResult 结构体并返回
     result := &model.ProbeResult{
         IP:         task.IP,
@@ -53,74 +105,10 @@ func ExecuteProbeTask(task *model.ProbeTask) *model.ProbeResult {
         AvgRTT:     avgRTT,
         Threshold:  task.Threshold,
         Success:    packetLoss <= float64(task.Threshold),
+        DispatchTime: task.DispatchTime,
     }
 
     return result
-}
-
-func ReceiveProbeTaskFromMQ(ch *amqp.Channel) *model.ProbeTask {
-    if ch == nil {
-        log.Println("RabbitMQ channel is nil. Attempting to reconnect...")
-        var err error
-        ch, err = config.InitRabbitMQ()
-        if err != nil {
-            log.Printf("Failed to reconnect to RabbitMQ: %v", err)
-            return nil
-        }
-    }
-    
-    log.Println("Waiting for tasks from RabbitMQ...")
-
-    err := ch.QueueBind(
-        viper.GetString("rabbitmq.task_queue"),      // 队列名称
-        viper.GetString("rabbitmq.task_routing_key"), // 路由键
-        viper.GetString("rabbitmq.exchange"),        // 交换机名称
-        false,                                       // 是否阻塞
-        nil,                                         // 其他属性
-    )
-    if err != nil {
-        log.Printf("Failed to bind queue to exchange: %v", err)
-        return nil
-    }
-
-    msgs, err := ch.Consume(
-        viper.GetString("rabbitmq.task_queue"),
-        "",
-        true,
-        false,
-        false,
-        false,
-        nil,
-    )
-
-    if err != nil {
-        log.Printf("Failed to register a consumer: %v", err)
-        if err == amqp.ErrClosed {
-            log.Println("Channel is closed. Attempting to reconnect...")
-            ch, err = config.InitRabbitMQ()
-            if err != nil {
-                log.Printf("Failed to reconnect to RabbitMQ: %v", err)
-                return nil
-            }
-            return ReceiveProbeTaskFromMQ(ch)
-        }
-        return nil
-    }
-
-    for msg := range msgs {
-        log.Printf("Received a message from RabbitMQ: %s", msg.Body)
-        var task model.ProbeTask
-        err := json.Unmarshal(msg.Body, &task)
-        if err != nil {
-            log.Printf("Failed to unmarshal task: %v", err)
-            continue
-        }
-        log.Printf("Received probe task from server: %+v", task)
-        return &task
-    }
-
-    log.Println("No more messages in the queue.")
-    return nil
 }
 
 

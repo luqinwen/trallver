@@ -12,6 +12,7 @@ type ProbeTask struct {
     Timeout   int       `json:"timeout"`     // 探测超时时间（秒）
     CreatedAt time.Time `json:"created_at"`  // 任务创建时间
     UpdatedAt time.Time `json:"updated_at"`  // 任务更新时间
+    DispatchTime time.Time `json:"dispatch_time"` // 添加此字段
 }
 
 

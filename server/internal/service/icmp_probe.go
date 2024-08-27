@@ -16,66 +16,74 @@ import (
 	"github.com/streadway/amqp"
 )
 
+func CreateProbeTask() *model.ProbeTask {
+    return &model.ProbeTask{
+        IP:        "8.8.8.8", // 示例IP，实际可从请求或数据库中获取
+        Count:     4,
+        Threshold: 10, // 丢包率阈值
+        Timeout:   5,  // 超时时间
+        CreatedAt: time.Now(),
+        UpdatedAt: time.Now(),
+    }
+}
+
+func ProcessProbeTask(ch *amqp.Channel, task *model.ProbeTask) error {
+    
+    task.DispatchTime = time.Now()
+
+    err := dao.StoreProbeTask(task)
+    if err != nil {
+        log.Printf("Failed to insert task into MySQL: %v", err)
+        return err
+    }
+    log.Printf("Assigned probe task to client: %+v", task)
+
+    body, err := json.Marshal(task)
+    if err != nil {
+        log.Printf("Failed to marshal probe task: %v", err)
+        return err
+    }
+
+    err = ch.QueueBind(
+        viper.GetString("rabbitmq.task_queue"),
+        viper.GetString("rabbitmq.task_routing_key"),
+        viper.GetString("rabbitmq.exchange"),
+        false,
+        nil,
+    )
+    if err != nil {
+        log.Printf("Failed to bind queue to exchange: %v", err)
+        return err
+    }
+
+    err = ch.Publish(
+        viper.GetString("rabbitmq.exchange"),
+        viper.GetString("rabbitmq.task_routing_key"),
+        false,
+        false,
+        amqp.Publishing{
+            ContentType: "application/json",
+            Body:        body,
+        })
+    if err != nil {
+        log.Printf("Failed to publish task to queue: %v", err)
+        return err
+    }
+
+    log.Println("Task published successfully to RabbitMQ")
+    return nil
+}
+
 func HandleProbeTask(ch *amqp.Channel) app.HandlerFunc {
     return func(ctx context.Context, c *app.RequestContext) {
-        task := model.ProbeTask{
-            IP:        "8.8.8.8", // 示例IP，实际可从请求或数据库中获取
-            Count:     4,
-            Threshold: 10, // 丢包率阈值
-            Timeout:   5,  // 超时时间
-            CreatedAt: time.Now(),
-            UpdatedAt: time.Now(),
-        }
+        task := CreateProbeTask()
 
-        err := dao.StoreProbeTask(&task)
+        err := ProcessProbeTask(ch, task)
         if err != nil {
-            log.Printf("Failed to insert task into MySQL: %v", err)
-            c.String(500, "Failed to insert task into MySQL")
-            return
+            c.String(500, "Failed to assign task")
+        } else {
+            c.String(200, "Task assigned successfully")
         }
-        log.Printf("Assigned probe task to client: %+v", task)
-
-        body, err := json.Marshal(task)
-        if err != nil {
-            log.Printf("Failed to marshal probe task: %v", err)
-            c.String(500, "Failed to marshal probe task")
-            return
-        }
-        
-        // 绑定队列到交换机，确保消息能够正确路由
-        err = ch.QueueBind(
-            viper.GetString("rabbitmq.task_queue"),
-            viper.GetString("rabbitmq.task_routing_key"),
-            viper.GetString("rabbitmq.exchange"),
-            false,
-            nil,
-        )
-        if err != nil {
-            log.Printf("Failed to bind queue to exchange: %v", err)
-            c.String(500, "Failed to bind queue to exchange")
-            return
-        }
-
-        log.Printf("Publishing task to RabbitMQ: exchange=%s, routing_key=%s, body=%s", viper.GetString("rabbitmq.exchange"), viper.GetString("rabbitmq.routing_key"), string(body))
-
-
-        err = ch.Publish(
-            viper.GetString("rabbitmq.exchange"),
-            viper.GetString("rabbitmq.task_routing_key"),
-            false,
-            false,
-            amqp.Publishing{
-                ContentType: "application/json",
-                Body:        body,
-            })
-        if err != nil {
-            log.Printf("Failed to publish task to queue: %v", err)
-            c.String(500, "Failed to publish task to queue")
-            return
-        }
-
-        log.Println("Task published successfully to RabbitMQ")
-        c.String(200, "Task assigned successfully")
     }
 }
 
@@ -114,7 +122,7 @@ func HandleProbeResults(ch *amqp.Channel) {
 
     for msg := range msgs {
         log.Printf("Received message from RabbitMQ: %s", string(msg.Body))
-
+    
         var result model.ProbeResult
         err := json.Unmarshal(msg.Body, &result)
         if err != nil {
@@ -124,8 +132,13 @@ func HandleProbeResults(ch *amqp.Channel) {
 
         log.Printf("Processed probe result: %+v", result)
 
+        receiveTime := time.Now() // 记录接收时间
+        totalLatency := receiveTime.Sub(result.DispatchTime).Milliseconds()
+        log.Printf("Total latency from task dispatch to result receive: %v ms", totalLatency)
+
         timestamp := result.Timestamp.Unix()
-        err = dao.StoreClickHouse(timestamp, result.IP, result.PacketLoss, float64(result.MinRTT.Microseconds()), float64(result.MaxRTT.Microseconds()), float64(result.AvgRTT.Microseconds()))
+        
+        err = dao.StoreClickHouse(timestamp, result.IP, result.PacketLoss, float64(result.MinRTT.Microseconds()), float64(result.MaxRTT.Microseconds()), float64(result.AvgRTT.Microseconds()), uint32(totalLatency),)
         if err != nil {
             log.Printf("Failed to store probe result to ClickHouse: %v", err)
             continue

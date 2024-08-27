@@ -694,3 +694,455 @@
 2024/08/25 07:33:03 icmp_probe.go:36: Assigned probe task to client: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-25 07:33:03.445495829 +0000 UTC m=+57.640935195 UpdatedAt:2024-08-25 07:33:03.44549609 +0000 UTC m=+57.640935398}
 2024/08/25 07:33:03 icmp_probe.go:59: Publishing task to RabbitMQ: exchange=my_exchange, routing_key=, body={"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-25T07:33:03.445495829Z","updated_at":"2024-08-25T07:33:03.44549609Z"}
 2024/08/25 07:33:03 icmp_probe.go:77: Task published successfully to RabbitMQ
+2024/08/26 12:32:32 log_config.go:33: Log initialized successfully
+2024/08/26 12:32:32 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:32:32 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:32:32 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:32:42 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 12:32:42 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:32:52 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/26 12:32:52 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:33:02 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/26 12:33:03 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 12:33:03 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 12:33:03 server_config.go:117: Successfully declared task_queue
+2024/08/26 12:33:03 server_config.go:136: Successfully declared result_queue
+2024/08/26 12:33:03 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/26 12:33:03 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/26 12:33:03 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/26 12:33:03 init_mysql.go:41: MySQL initialized successfully
+2024/08/26 12:33:03 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/26 12:33:03 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:33:03 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:33:03 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 12:33:03 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 12:33:03 server_config.go:117: Successfully declared task_queue
+2024/08/26 12:33:03 server_config.go:136: Successfully declared result_queue
+2024/08/26 12:33:03 main.go:48: Starting Hertz server on :8080
+2024/08/26 12:33:03 icmp_probe.go:89: Registering consumer for queue: result_queue
+2024/08/26 12:33:03 icmp_probe.go:118: Consumer registered successfully
+2024/08/26 12:34:03 main.go:35: Automatically sending task to client
+2024/08/26 12:34:03 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:34:03.003214164 +0000 UTC m=+90.163564823 UpdatedAt:2024-08-26 12:34:03.003214394 +0000 UTC m=+90.163565018}
+2024/08/26 12:34:03 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:34:03.003214164 +0000 UTC m=+90.163564823 UpdatedAt:2024-08-26 12:34:03.003214394 +0000 UTC m=+90.163565018}
+2024/08/26 12:34:03 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:34:06 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T12:34:06.081059924Z","packet_loss":0,"min_rtt":7416072,"max_rtt":12009034,"avg_rtt":9310482,"threshold":10,"success":true}
+2024/08/26 12:34:06 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 12:34:06.081059924 +0000 UTC PacketLoss:0 MinRTT:7.416072ms MaxRTT:12.009034ms AvgRTT:9.310482ms Threshold:10 Success:true}
+2024/08/26 12:34:06 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724675646, ip=8.8.8.8, packet_loss=0.000000, min_rtt=7416.000000, max_rtt=12009.000000, avg_rtt=9310.000000
+2024/08/26 12:35:03 main.go:35: Automatically sending task to client
+2024/08/26 12:35:03 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:35:03.00324428 +0000 UTC m=+150.163594910 UpdatedAt:2024-08-26 12:35:03.00324446 +0000 UTC m=+150.163595080}
+2024/08/26 12:35:03 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:35:03.00324428 +0000 UTC m=+150.163594910 UpdatedAt:2024-08-26 12:35:03.00324446 +0000 UTC m=+150.163595080}
+2024/08/26 12:35:03 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:36:03 main.go:35: Automatically sending task to client
+2024/08/26 12:36:03 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:36:03.002830925 +0000 UTC m=+210.163181579 UpdatedAt:2024-08-26 12:36:03.002831125 +0000 UTC m=+210.163181742}
+2024/08/26 12:36:03 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:36:03.002830925 +0000 UTC m=+210.163181579 UpdatedAt:2024-08-26 12:36:03.002831125 +0000 UTC m=+210.163181742}
+2024/08/26 12:36:03 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:36:06 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T12:36:06.184425915Z","packet_loss":0,"min_rtt":7317671,"max_rtt":144455653,"avg_rtt":64909611,"threshold":10,"success":true}
+2024/08/26 12:36:06 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 12:36:06.184425915 +0000 UTC PacketLoss:0 MinRTT:7.317671ms MaxRTT:144.455653ms AvgRTT:64.909611ms Threshold:10 Success:true}
+2024/08/26 12:36:06 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724675766, ip=8.8.8.8, packet_loss=0.000000, min_rtt=7317.000000, max_rtt=144455.000000, avg_rtt=64909.000000
+2024/08/26 12:37:03 main.go:35: Automatically sending task to client
+2024/08/26 12:37:03 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:37:03.003291297 +0000 UTC m=+270.163641963 UpdatedAt:2024-08-26 12:37:03.003291511 +0000 UTC m=+270.163642142}
+2024/08/26 12:37:03 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:37:03.003291297 +0000 UTC m=+270.163641963 UpdatedAt:2024-08-26 12:37:03.003291511 +0000 UTC m=+270.163642142}
+2024/08/26 12:37:03 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:39:38 log_config.go:33: Log initialized successfully
+2024/08/26 12:39:38 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:39:38 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:39:38 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:39:48 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 12:39:48 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:39:58 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/26 12:39:58 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 12:40:08 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/26 12:40:08 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 12:40:08 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 12:40:08 server_config.go:117: Successfully declared task_queue
+2024/08/26 12:40:08 server_config.go:136: Successfully declared result_queue
+2024/08/26 12:40:08 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/26 12:40:08 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/26 12:40:08 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/26 12:40:08 init_mysql.go:41: MySQL initialized successfully
+2024/08/26 12:40:08 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/26 12:40:08 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:40:08 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:40:08 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 12:40:08 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 12:40:08 server_config.go:117: Successfully declared task_queue
+2024/08/26 12:40:08 server_config.go:136: Successfully declared result_queue
+2024/08/26 12:40:08 main.go:48: Starting Hertz server on :8080
+2024/08/26 12:40:08 icmp_probe.go:89: Registering consumer for queue: result_queue
+2024/08/26 12:40:08 icmp_probe.go:118: Consumer registered successfully
+2024/08/26 12:41:08 main.go:35: Automatically sending task to client
+2024/08/26 12:41:08 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:41:08.003702397 +0000 UTC m=+90.056343533 UpdatedAt:2024-08-26 12:41:08.00370273 +0000 UTC m=+90.056343778}
+2024/08/26 12:41:08 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:41:08.003702397 +0000 UTC m=+90.056343533 UpdatedAt:2024-08-26 12:41:08.00370273 +0000 UTC m=+90.056343778}
+2024/08/26 12:41:08 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:41:11 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T12:41:11.125404059Z","packet_loss":0,"min_rtt":10069723,"max_rtt":12609474,"avg_rtt":11444031,"threshold":10,"success":true}
+2024/08/26 12:41:11 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 12:41:11.125404059 +0000 UTC PacketLoss:0 MinRTT:10.069723ms MaxRTT:12.609474ms AvgRTT:11.444031ms Threshold:10 Success:true}
+2024/08/26 12:41:11 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724676071, ip=8.8.8.8, packet_loss=0.000000, min_rtt=10069.000000, max_rtt=12609.000000, avg_rtt=11444.000000
+2024/08/26 12:42:08 main.go:35: Automatically sending task to client
+2024/08/26 12:42:08 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:42:08.004490529 +0000 UTC m=+150.057131600 UpdatedAt:2024-08-26 12:42:08.004490712 +0000 UTC m=+150.057131780}
+2024/08/26 12:42:08 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:42:08.004490529 +0000 UTC m=+150.057131600 UpdatedAt:2024-08-26 12:42:08.004490712 +0000 UTC m=+150.057131780}
+2024/08/26 12:42:08 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:43:08 main.go:35: Automatically sending task to client
+2024/08/26 12:43:08 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:43:08.00276992 +0000 UTC m=+210.055411011 UpdatedAt:2024-08-26 12:43:08.002770174 +0000 UTC m=+210.055411242}
+2024/08/26 12:43:08 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:43:08.00276992 +0000 UTC m=+210.055411011 UpdatedAt:2024-08-26 12:43:08.002770174 +0000 UTC m=+210.055411242}
+2024/08/26 12:43:08 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:43:11 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T12:43:11.103880923Z","packet_loss":0,"min_rtt":8574242,"max_rtt":10175198,"avg_rtt":9350698,"threshold":10,"success":true}
+2024/08/26 12:43:11 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 12:43:11.103880923 +0000 UTC PacketLoss:0 MinRTT:8.574242ms MaxRTT:10.175198ms AvgRTT:9.350698ms Threshold:10 Success:true}
+2024/08/26 12:43:11 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724676191, ip=8.8.8.8, packet_loss=0.000000, min_rtt=8574.000000, max_rtt=10175.000000, avg_rtt=9350.000000
+2024/08/26 12:44:08 main.go:35: Automatically sending task to client
+2024/08/26 12:44:08 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:44:08.003119348 +0000 UTC m=+270.055760393 UpdatedAt:2024-08-26 12:44:08.003119452 +0000 UTC m=+270.055760496}
+2024/08/26 12:44:08 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:44:08.003119348 +0000 UTC m=+270.055760393 UpdatedAt:2024-08-26 12:44:08.003119452 +0000 UTC m=+270.055760496}
+2024/08/26 12:44:08 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 12:45:08 main.go:35: Automatically sending task to client
+2024/08/26 12:45:08 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:45:08.005139083 +0000 UTC m=+330.057780121 UpdatedAt:2024-08-26 12:45:08.005139182 +0000 UTC m=+330.057780210}
+2024/08/26 12:45:08 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:45:08.005139083 +0000 UTC m=+330.057780121 UpdatedAt:2024-08-26 12:45:08.005139182 +0000 UTC m=+330.057780210}
+2024/08/26 12:45:08 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 13:02:32 log_config.go:33: Log initialized successfully
+2024/08/26 13:02:32 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 13:02:32 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 13:02:32 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:02:42 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 13:02:42 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:02:52 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/26 13:02:52 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:03:02 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/26 13:03:02 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 13:03:02 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 13:03:02 server_config.go:117: Successfully declared task_queue
+2024/08/26 13:03:02 server_config.go:136: Successfully declared result_queue
+2024/08/26 13:03:02 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/26 13:03:02 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/26 13:03:02 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/26 13:03:02 init_mysql.go:41: MySQL initialized successfully
+2024/08/26 13:03:02 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/26 13:03:02 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 13:03:02 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 13:03:02 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 13:03:02 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 13:03:02 server_config.go:117: Successfully declared task_queue
+2024/08/26 13:03:02 server_config.go:136: Successfully declared result_queue
+2024/08/26 13:03:02 main.go:48: Starting Hertz server on :8080
+2024/08/26 13:03:02 icmp_probe.go:89: Registering consumer for queue: result_queue
+2024/08/26 13:03:02 icmp_probe.go:118: Consumer registered successfully
+2024/08/26 13:04:02 main.go:35: Automatically sending task to client
+2024/08/26 13:04:02 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:04:02.001149282 +0000 UTC m=+90.102114867 UpdatedAt:2024-08-26 13:04:02.001149399 +0000 UTC m=+90.102114981}
+2024/08/26 13:04:02 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:04:02.001149282 +0000 UTC m=+90.102114867 UpdatedAt:2024-08-26 13:04:02.001149399 +0000 UTC m=+90.102114981}
+2024/08/26 13:04:02 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 13:04:05 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T13:04:05.137521973Z","packet_loss":0,"min_rtt":6016772,"max_rtt":18557160,"avg_rtt":11661999,"threshold":10,"success":true}
+2024/08/26 13:04:05 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 13:04:05.137521973 +0000 UTC PacketLoss:0 MinRTT:6.016772ms MaxRTT:18.55716ms AvgRTT:11.661999ms Threshold:10 Success:true}
+2024/08/26 13:04:05 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724677445, ip=8.8.8.8, packet_loss=0.000000, min_rtt=6016.000000, max_rtt=18557.000000, avg_rtt=11661.000000
+2024/08/26 13:05:02 main.go:35: Automatically sending task to client
+2024/08/26 13:05:02 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:05:02.002282293 +0000 UTC m=+150.103247880 UpdatedAt:2024-08-26 13:05:02.002282442 +0000 UTC m=+150.103248012}
+2024/08/26 13:05:02 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:05:02.002282293 +0000 UTC m=+150.103247880 UpdatedAt:2024-08-26 13:05:02.002282442 +0000 UTC m=+150.103248012}
+2024/08/26 13:05:02 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/26 13:05:05 icmp_probe.go:121: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-26T13:05:05.077111639Z","packet_loss":0,"min_rtt":8256165,"max_rtt":37478936,"avg_rtt":20655225,"threshold":10,"success":true}
+2024/08/26 13:05:05 icmp_probe.go:130: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-26 13:05:05.077111639 +0000 UTC PacketLoss:0 MinRTT:8.256165ms MaxRTT:37.478936ms AvgRTT:20.655225ms Threshold:10 Success:true}
+2024/08/26 13:05:05 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724677505, ip=8.8.8.8, packet_loss=0.000000, min_rtt=8256.000000, max_rtt=37478.000000, avg_rtt=20655.000000
+2024/08/26 13:12:37 log_config.go:33: Log initialized successfully
+2024/08/26 13:12:37 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 13:12:37 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 13:12:37 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:12:47 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 13:12:47 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:12:57 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/26 13:12:57 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/26 13:13:07 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/26 13:13:07 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 13:13:07 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 13:13:07 server_config.go:117: Successfully declared task_queue
+2024/08/26 13:13:07 server_config.go:136: Successfully declared result_queue
+2024/08/26 13:13:07 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/26 13:13:07 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/26 13:13:07 init_clickhouse.go:64: ClickHouse table created successfully
+2024/08/26 13:13:07 init_mysql.go:41: MySQL initialized successfully
+2024/08/26 13:13:07 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/26 13:13:07 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 13:13:07 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 13:13:07 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/26 13:13:07 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/26 13:13:07 server_config.go:117: Successfully declared task_queue
+2024/08/26 13:13:07 server_config.go:136: Successfully declared result_queue
+2024/08/26 13:13:07 main.go:48: Starting Hertz server on :8080
+2024/08/26 13:13:07 icmp_probe.go:89: Registering consumer for queue: result_queue
+2024/08/26 13:13:07 icmp_probe.go:118: Consumer registered successfully
+2024/08/26 13:14:07 main.go:35: Automatically sending task to client
+2024/08/26 13:14:07 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:14:07.005509699 +0000 UTC m=+89.653649573 UpdatedAt:2024-08-26 13:14:07.005509948 +0000 UTC m=+89.653649782}
+2024/08/26 13:14:07 icmp_probe.go:36: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:14:07.005509699 +0000 UTC m=+89.653649573 UpdatedAt:2024-08-26 13:14:07.005509948 +0000 UTC m=+89.653649782}
+2024/08/26 13:14:07 icmp_probe.go:70: Task published successfully to RabbitMQ
+2024/08/27 01:57:47 log_config.go:33: Log initialized successfully
+2024/08/27 01:57:47 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 01:57:47 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 01:57:47 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 01:57:57 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/27 01:57:57 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 01:58:07 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/27 01:58:07 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 01:58:17 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/27 01:58:17 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 01:58:17 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 01:58:17 server_config.go:117: Successfully declared task_queue
+2024/08/27 01:58:17 server_config.go:136: Successfully declared result_queue
+2024/08/27 01:58:17 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/27 01:58:17 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/27 01:58:17 init_clickhouse.go:65: ClickHouse table created successfully
+2024/08/27 01:58:17 init_mysql.go:41: MySQL initialized successfully
+2024/08/27 01:58:17 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/27 01:58:17 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 01:58:17 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 01:58:17 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 01:58:17 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 01:58:17 server_config.go:117: Successfully declared task_queue
+2024/08/27 01:58:17 server_config.go:136: Successfully declared result_queue
+2024/08/27 01:58:17 main.go:48: Starting Hertz server on :8080
+2024/08/27 01:58:17 icmp_probe.go:92: Registering consumer for queue: result_queue
+2024/08/27 01:58:17 icmp_probe.go:121: Consumer registered successfully
+2024/08/27 01:59:17 main.go:35: Automatically sending task to client
+2024/08/27 01:59:17 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 01:59:17.000852025 +0000 UTC m=+89.600598669 UpdatedAt:2024-08-27 01:59:17.000852328 +0000 UTC m=+89.600598965 DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC m=+89.600600933}
+2024/08/27 01:59:17 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 01:59:17.000852025 +0000 UTC m=+89.600598669 UpdatedAt:2024-08-27 01:59:17.000852328 +0000 UTC m=+89.600598965 DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC m=+89.600600933}
+2024/08/27 01:59:17 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 01:59:20 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T01:59:20.085723719Z","packet_loss":0,"min_rtt":6479904,"max_rtt":49610996,"avg_rtt":22712859,"threshold":10,"success":true,"dispatch_time":"2024-08-27T01:59:17.000854298Z"}
+2024/08/27 01:59:20 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 01:59:20.085723719 +0000 UTC PacketLoss:0 MinRTT:6.479904ms MaxRTT:49.610996ms AvgRTT:22.712859ms Threshold:10 Success:true DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC}
+2024/08/27 01:59:20 icmp_probe.go:137: Total latency from task dispatch to result receive: 3089 ms
+2024/08/27 01:59:20 probe_result_dao.go:27: Error executing statement: latency_ms (UInt32): unexpected type float64
+2024/08/27 01:59:20 icmp_probe.go:143: Failed to store probe result to ClickHouse: latency_ms (UInt32): unexpected type float64
+2024/08/27 02:09:00 log_config.go:33: Log initialized successfully
+2024/08/27 02:09:00 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:09:00 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:09:00 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.6:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:09:10 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/27 02:09:10 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.6:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:09:20 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/27 02:09:20 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.6:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:09:30 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/27 02:09:30 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:09:30 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:09:30 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:09:30 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:09:30 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/27 02:09:30 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/27 02:09:30 init_clickhouse.go:65: ClickHouse table created successfully
+2024/08/27 02:09:30 init_mysql.go:41: MySQL initialized successfully
+2024/08/27 02:09:30 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/27 02:09:30 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:09:30 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:09:30 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:09:30 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:09:30 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:09:30 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:09:30 main.go:48: Starting Hertz server on :8080
+2024/08/27 02:09:30 icmp_probe.go:92: Registering consumer for queue: result_queue
+2024/08/27 02:09:30 icmp_probe.go:121: Consumer registered successfully
+2024/08/27 02:10:30 main.go:35: Automatically sending task to client
+2024/08/27 02:10:30 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:10:30.000782362 +0000 UTC m=+89.987828308 UpdatedAt:2024-08-27 02:10:30.000782661 +0000 UTC m=+89.987828608 DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC m=+89.987835161}
+2024/08/27 02:10:30 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:10:30.000782362 +0000 UTC m=+89.987828308 UpdatedAt:2024-08-27 02:10:30.000782661 +0000 UTC m=+89.987828608 DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC m=+89.987835161}
+2024/08/27 02:10:30 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:10:33 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:10:33.134388578Z","packet_loss":0,"min_rtt":7173081,"max_rtt":26394506,"avg_rtt":13881449,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:10:30.000789209Z"}
+2024/08/27 02:10:33 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:10:33.134388578 +0000 UTC PacketLoss:0 MinRTT:7.173081ms MaxRTT:26.394506ms AvgRTT:13.881449ms Threshold:10 Success:true DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC}
+2024/08/27 02:10:33 icmp_probe.go:137: Total latency from task dispatch to result receive: 3137 ms
+2024/08/27 02:10:33 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724724633, ip=8.8.8.8, packet_loss=0.000000, min_rtt=7173.000000, max_rtt=26394.000000, avg_rtt=13881.000000, latency_ms=%!d(MISSING)
+2024/08/27 02:11:30 main.go:35: Automatically sending task to client
+2024/08/27 02:11:30 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:11:30.001122635 +0000 UTC m=+149.988168578 UpdatedAt:2024-08-27 02:11:30.001122871 +0000 UTC m=+149.988168797 DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC m=+149.988180604}
+2024/08/27 02:11:30 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:11:30.001122635 +0000 UTC m=+149.988168578 UpdatedAt:2024-08-27 02:11:30.001122871 +0000 UTC m=+149.988168797 DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC m=+149.988180604}
+2024/08/27 02:11:30 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:11:33 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:11:33.102727769Z","packet_loss":0,"min_rtt":8726761,"max_rtt":31656899,"avg_rtt":15939838,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:11:30.001134672Z"}
+2024/08/27 02:11:33 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:11:33.102727769 +0000 UTC PacketLoss:0 MinRTT:8.726761ms MaxRTT:31.656899ms AvgRTT:15.939838ms Threshold:10 Success:true DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC}
+2024/08/27 02:11:33 icmp_probe.go:137: Total latency from task dispatch to result receive: 3109 ms
+2024/08/27 02:11:33 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724724693, ip=8.8.8.8, packet_loss=0.000000, min_rtt=8726.000000, max_rtt=31656.000000, avg_rtt=15939.000000, latency_ms=%!d(MISSING)
+2024/08/27 02:20:03 log_config.go:33: Log initialized successfully
+2024/08/27 02:20:03 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:20:03 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:20:03 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:20:13 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/27 02:20:13 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:20:23 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/27 02:20:23 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:20:33 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/27 02:20:33 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:20:43 server_config.go:61: Attempt 5: Connecting to RabbitMQ...
+2024/08/27 02:20:43 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:20:43 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:20:43 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:20:43 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:20:43 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/27 02:20:43 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/27 02:20:43 init_clickhouse.go:65: ClickHouse table created successfully
+2024/08/27 02:20:43 init_mysql.go:41: MySQL initialized successfully
+2024/08/27 02:20:43 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/27 02:20:43 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:20:43 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:20:43 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:20:43 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:20:43 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:20:43 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:20:43 main.go:48: Starting Hertz server on :8080
+2024/08/27 02:20:43 icmp_probe.go:92: Registering consumer for queue: result_queue
+2024/08/27 02:20:43 icmp_probe.go:121: Consumer registered successfully
+2024/08/27 02:21:43 main.go:35: Automatically sending task to client
+2024/08/27 02:21:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:21:43.005130626 +0000 UTC m=+99.258802452 UpdatedAt:2024-08-27 02:21:43.005130796 +0000 UTC m=+99.258802614 DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC m=+99.258803783}
+2024/08/27 02:21:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:21:43.005130626 +0000 UTC m=+99.258802452 UpdatedAt:2024-08-27 02:21:43.005130796 +0000 UTC m=+99.258802614 DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC m=+99.258803783}
+2024/08/27 02:21:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:22:43 main.go:35: Automatically sending task to client
+2024/08/27 02:22:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:22:43.007354488 +0000 UTC m=+159.261026312 UpdatedAt:2024-08-27 02:22:43.007354683 +0000 UTC m=+159.261026492 DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC m=+159.261028142}
+2024/08/27 02:22:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:22:43.007354488 +0000 UTC m=+159.261026312 UpdatedAt:2024-08-27 02:22:43.007354683 +0000 UTC m=+159.261026492 DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC m=+159.261028142}
+2024/08/27 02:22:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:23:32 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:23:32.131710229Z","packet_loss":0,"min_rtt":11013052,"max_rtt":14052878,"avg_rtt":12851185,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:21:43.005131967Z"}
+2024/08/27 02:23:32 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:23:32.131710229 +0000 UTC PacketLoss:0 MinRTT:11.013052ms MaxRTT:14.052878ms AvgRTT:12.851185ms Threshold:10 Success:true DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC}
+2024/08/27 02:23:32 icmp_probe.go:137: Total latency from task dispatch to result receive: 109130 ms
+2024/08/27 02:23:32 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725412, ip=8.8.8.8, packet_loss=0.000000, min_rtt=11013.000000, max_rtt=14052.000000, avg_rtt=12851.000000, latency_ms=109130
+2024/08/27 02:23:35 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:23:35.220844233Z","packet_loss":0,"min_rtt":6903592,"max_rtt":15083786,"avg_rtt":9847739,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:22:43.007356333Z"}
+2024/08/27 02:23:35 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:23:35.220844233 +0000 UTC PacketLoss:0 MinRTT:6.903592ms MaxRTT:15.083786ms AvgRTT:9.847739ms Threshold:10 Success:true DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC}
+2024/08/27 02:23:35 icmp_probe.go:137: Total latency from task dispatch to result receive: 52218 ms
+2024/08/27 02:23:35 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725415, ip=8.8.8.8, packet_loss=0.000000, min_rtt=6903.000000, max_rtt=15083.000000, avg_rtt=9847.000000, latency_ms=52218
+2024/08/27 02:23:43 main.go:35: Automatically sending task to client
+2024/08/27 02:23:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:23:43.00269343 +0000 UTC m=+219.256365269 UpdatedAt:2024-08-27 02:23:43.002693584 +0000 UTC m=+219.256365401 DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC m=+219.256367389}
+2024/08/27 02:23:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:23:43.00269343 +0000 UTC m=+219.256365269 UpdatedAt:2024-08-27 02:23:43.002693584 +0000 UTC m=+219.256365401 DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC m=+219.256367389}
+2024/08/27 02:23:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:23:46 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:23:46.128244684Z","packet_loss":0,"min_rtt":6808070,"max_rtt":12227493,"avg_rtt":8968011,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:23:43.002695551Z"}
+2024/08/27 02:23:46 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:23:46.128244684 +0000 UTC PacketLoss:0 MinRTT:6.80807ms MaxRTT:12.227493ms AvgRTT:8.968011ms Threshold:10 Success:true DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC}
+2024/08/27 02:23:46 icmp_probe.go:137: Total latency from task dispatch to result receive: 3131 ms
+2024/08/27 02:23:46 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725426, ip=8.8.8.8, packet_loss=0.000000, min_rtt=6808.000000, max_rtt=12227.000000, avg_rtt=8968.000000, latency_ms=3131
+2024/08/27 02:24:43 main.go:35: Automatically sending task to client
+2024/08/27 02:24:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:24:43.000998084 +0000 UTC m=+279.254669909 UpdatedAt:2024-08-27 02:24:43.000998242 +0000 UTC m=+279.254670058 DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC m=+279.254671426}
+2024/08/27 02:24:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:24:43.000998084 +0000 UTC m=+279.254669909 UpdatedAt:2024-08-27 02:24:43.000998242 +0000 UTC m=+279.254670058 DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC m=+279.254671426}
+2024/08/27 02:24:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:24:46 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:24:46.108987939Z","packet_loss":0,"min_rtt":5213264,"max_rtt":16599099,"avg_rtt":8471264,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:24:43.00099961Z"}
+2024/08/27 02:24:46 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:24:46.108987939 +0000 UTC PacketLoss:0 MinRTT:5.213264ms MaxRTT:16.599099ms AvgRTT:8.471264ms Threshold:10 Success:true DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC}
+2024/08/27 02:24:46 icmp_probe.go:137: Total latency from task dispatch to result receive: 3112 ms
+2024/08/27 02:24:46 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725486, ip=8.8.8.8, packet_loss=0.000000, min_rtt=5213.000000, max_rtt=16599.000000, avg_rtt=8471.000000, latency_ms=3112
+2024/08/27 02:25:43 main.go:35: Automatically sending task to client
+2024/08/27 02:25:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:25:43.000749555 +0000 UTC m=+339.254421368 UpdatedAt:2024-08-27 02:25:43.000749673 +0000 UTC m=+339.254421469 DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC m=+339.254425843}
+2024/08/27 02:25:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:25:43.000749555 +0000 UTC m=+339.254421368 UpdatedAt:2024-08-27 02:25:43.000749673 +0000 UTC m=+339.254421469 DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC m=+339.254425843}
+2024/08/27 02:25:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:25:46 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:25:46.076816928Z","packet_loss":0,"min_rtt":8213392,"max_rtt":37978472,"avg_rtt":17221043,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:25:43.000754047Z"}
+2024/08/27 02:25:46 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:25:46.076816928 +0000 UTC PacketLoss:0 MinRTT:8.213392ms MaxRTT:37.978472ms AvgRTT:17.221043ms Threshold:10 Success:true DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC}
+2024/08/27 02:25:46 icmp_probe.go:137: Total latency from task dispatch to result receive: 3080 ms
+2024/08/27 02:25:46 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725546, ip=8.8.8.8, packet_loss=0.000000, min_rtt=8213.000000, max_rtt=37978.000000, avg_rtt=17221.000000, latency_ms=3080
+2024/08/27 02:26:43 main.go:35: Automatically sending task to client
+2024/08/27 02:26:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:26:43.000688756 +0000 UTC m=+399.254360557 UpdatedAt:2024-08-27 02:26:43.000688833 +0000 UTC m=+399.254360625 DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC m=+399.254361538}
+2024/08/27 02:26:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:26:43.000688756 +0000 UTC m=+399.254360557 UpdatedAt:2024-08-27 02:26:43.000688833 +0000 UTC m=+399.254360625 DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC m=+399.254361538}
+2024/08/27 02:26:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:26:46 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:26:46.105185673Z","packet_loss":0,"min_rtt":5455490,"max_rtt":15136951,"avg_rtt":9264756,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:26:43.000689754Z"}
+2024/08/27 02:26:46 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:26:46.105185673 +0000 UTC PacketLoss:0 MinRTT:5.45549ms MaxRTT:15.136951ms AvgRTT:9.264756ms Threshold:10 Success:true DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC}
+2024/08/27 02:26:46 icmp_probe.go:137: Total latency from task dispatch to result receive: 3108 ms
+2024/08/27 02:26:46 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725606, ip=8.8.8.8, packet_loss=0.000000, min_rtt=5455.000000, max_rtt=15136.000000, avg_rtt=9264.000000, latency_ms=3108
+2024/08/27 02:27:43 main.go:35: Automatically sending task to client
+2024/08/27 02:27:43 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:27:43.001935052 +0000 UTC m=+459.255606891 UpdatedAt:2024-08-27 02:27:43.001935231 +0000 UTC m=+459.255607069 DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC m=+459.255608639}
+2024/08/27 02:27:43 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:27:43.001935052 +0000 UTC m=+459.255606891 UpdatedAt:2024-08-27 02:27:43.001935231 +0000 UTC m=+459.255607069 DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC m=+459.255608639}
+2024/08/27 02:27:43 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:27:46 icmp_probe.go:124: Received message from RabbitMQ: {"ip":"8.8.8.8","timestamp":"2024-08-27T02:27:46.108791978Z","packet_loss":0,"min_rtt":6017097,"max_rtt":22713312,"avg_rtt":11756967,"threshold":10,"success":true,"dispatch_time":"2024-08-27T02:27:43.001936802Z"}
+2024/08/27 02:27:46 icmp_probe.go:133: Processed probe result: {IP:8.8.8.8 Timestamp:2024-08-27 02:27:46.108791978 +0000 UTC PacketLoss:0 MinRTT:6.017097ms MaxRTT:22.713312ms AvgRTT:11.756967ms Threshold:10 Success:true DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC}
+2024/08/27 02:27:46 icmp_probe.go:137: Total latency from task dispatch to result receive: 3111 ms
+2024/08/27 02:27:46 probe_result_dao.go:39: Successfully inserted into ClickHouse: timestamp=1724725666, ip=8.8.8.8, packet_loss=0.000000, min_rtt=6017.000000, max_rtt=22713.000000, avg_rtt=11756.000000, latency_ms=3111
+2024/08/27 02:29:03 log_config.go:33: Log initialized successfully
+2024/08/27 02:29:03 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:29:03 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:29:03 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:29:13 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/27 02:29:13 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:29:23 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/27 02:29:23 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.2:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:29:33 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/27 02:29:33 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:29:33 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:29:33 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:29:33 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:29:33 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/27 02:29:33 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/27 02:29:33 init_clickhouse.go:65: ClickHouse table created successfully
+2024/08/27 02:29:33 init_mysql.go:41: MySQL initialized successfully
+2024/08/27 02:29:33 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/27 02:29:33 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:29:33 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:29:33 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:29:33 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:29:33 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:29:33 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:29:33 main.go:48: Starting Hertz server on :8080
+2024/08/27 02:29:33 icmp_probe.go:92: Registering consumer for queue: result_queue
+2024/08/27 02:29:33 icmp_probe.go:121: Consumer registered successfully
+2024/08/27 02:32:36 log_config.go:33: Log initialized successfully
+2024/08/27 02:32:36 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:32:36 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:32:36 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:32:46 server_config.go:61: Attempt 2: Connecting to RabbitMQ...
+2024/08/27 02:32:46 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:32:56 server_config.go:61: Attempt 3: Connecting to RabbitMQ...
+2024/08/27 02:32:56 server_config.go:65: Failed to connect to RabbitMQ: dial tcp 172.26.0.4:5672: connect: connection refused, retrying in 10 seconds...
+2024/08/27 02:33:06 server_config.go:61: Attempt 4: Connecting to RabbitMQ...
+2024/08/27 02:33:06 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:33:06 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:33:06 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:33:06 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:33:06 init_clickhouse.go:28: Successfully connected to ClickHouse
+2024/08/27 02:33:06 init_clickhouse.go:45: ClickHouse database created successfully or already exists
+2024/08/27 02:33:06 init_clickhouse.go:65: ClickHouse table created successfully
+2024/08/27 02:33:06 init_mysql.go:41: MySQL initialized successfully
+2024/08/27 02:33:06 init_mysql.go:68: Table probe_tasks ensured.
+2024/08/27 02:33:06 server_config.go:58: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:33:06 server_config.go:61: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:33:06 server_config.go:70: Successfully connected to RabbitMQ, creating channel...
+2024/08/27 02:33:06 server_config.go:80: Successfully created RabbitMQ channel
+2024/08/27 02:33:06 server_config.go:117: Successfully declared task_queue
+2024/08/27 02:33:06 server_config.go:136: Successfully declared result_queue
+2024/08/27 02:33:06 main.go:48: Starting Hertz server on :8080
+2024/08/27 02:33:06 icmp_probe.go:92: Registering consumer for queue: result_queue
+2024/08/27 02:33:06 icmp_probe.go:121: Consumer registered successfully
+2024/08/27 02:34:06 main.go:35: Automatically sending task to client
+2024/08/27 02:34:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:34:06.00099744 +0000 UTC m=+89.733622959 UpdatedAt:2024-08-27 02:34:06.000997512 +0000 UTC m=+89.733623018 DispatchTime:2024-08-27 02:34:06.000998948 +0000 UTC m=+89.733624453}
+2024/08/27 02:34:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:34:06.00099744 +0000 UTC m=+89.733622959 UpdatedAt:2024-08-27 02:34:06.000997512 +0000 UTC m=+89.733623018 DispatchTime:2024-08-27 02:34:06.000998948 +0000 UTC m=+89.733624453}
+2024/08/27 02:34:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:35:06 main.go:35: Automatically sending task to client
+2024/08/27 02:35:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:35:06.00249856 +0000 UTC m=+149.735124152 UpdatedAt:2024-08-27 02:35:06.002498789 +0000 UTC m=+149.735124356 DispatchTime:2024-08-27 02:35:06.002500831 +0000 UTC m=+149.735126381}
+2024/08/27 02:35:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:35:06.00249856 +0000 UTC m=+149.735124152 UpdatedAt:2024-08-27 02:35:06.002498789 +0000 UTC m=+149.735124356 DispatchTime:2024-08-27 02:35:06.002500831 +0000 UTC m=+149.735126381}
+2024/08/27 02:35:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:36:06 main.go:35: Automatically sending task to client
+2024/08/27 02:36:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:36:06.002805594 +0000 UTC m=+209.735431107 UpdatedAt:2024-08-27 02:36:06.002805677 +0000 UTC m=+209.735431181 DispatchTime:2024-08-27 02:36:06.002808164 +0000 UTC m=+209.735433669}
+2024/08/27 02:36:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:36:06.002805594 +0000 UTC m=+209.735431107 UpdatedAt:2024-08-27 02:36:06.002805677 +0000 UTC m=+209.735431181 DispatchTime:2024-08-27 02:36:06.002808164 +0000 UTC m=+209.735433669}
+2024/08/27 02:36:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:37:06 main.go:35: Automatically sending task to client
+2024/08/27 02:37:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:37:06.001624288 +0000 UTC m=+269.734249843 UpdatedAt:2024-08-27 02:37:06.001624468 +0000 UTC m=+269.734250021 DispatchTime:2024-08-27 02:37:06.001626266 +0000 UTC m=+269.734251820}
+2024/08/27 02:37:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:37:06.001624288 +0000 UTC m=+269.734249843 UpdatedAt:2024-08-27 02:37:06.001624468 +0000 UTC m=+269.734250021 DispatchTime:2024-08-27 02:37:06.001626266 +0000 UTC m=+269.734251820}
+2024/08/27 02:37:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:38:06 main.go:35: Automatically sending task to client
+2024/08/27 02:38:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:38:06.001598179 +0000 UTC m=+329.734223749 UpdatedAt:2024-08-27 02:38:06.001598425 +0000 UTC m=+329.734223977 DispatchTime:2024-08-27 02:38:06.001606425 +0000 UTC m=+329.734231957}
+2024/08/27 02:38:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:38:06.001598179 +0000 UTC m=+329.734223749 UpdatedAt:2024-08-27 02:38:06.001598425 +0000 UTC m=+329.734223977 DispatchTime:2024-08-27 02:38:06.001606425 +0000 UTC m=+329.734231957}
+2024/08/27 02:38:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:39:06 main.go:35: Automatically sending task to client
+2024/08/27 02:39:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:39:06.002049634 +0000 UTC m=+389.734675207 UpdatedAt:2024-08-27 02:39:06.002049831 +0000 UTC m=+389.734675384 DispatchTime:2024-08-27 02:39:06.002053522 +0000 UTC m=+389.734679077}
+2024/08/27 02:39:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:39:06.002049634 +0000 UTC m=+389.734675207 UpdatedAt:2024-08-27 02:39:06.002049831 +0000 UTC m=+389.734675384 DispatchTime:2024-08-27 02:39:06.002053522 +0000 UTC m=+389.734679077}
+2024/08/27 02:39:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:40:06 main.go:35: Automatically sending task to client
+2024/08/27 02:40:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:40:06.001464882 +0000 UTC m=+449.734090463 UpdatedAt:2024-08-27 02:40:06.001465073 +0000 UTC m=+449.734090653 DispatchTime:2024-08-27 02:40:06.001467498 +0000 UTC m=+449.734093079}
+2024/08/27 02:40:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:40:06.001464882 +0000 UTC m=+449.734090463 UpdatedAt:2024-08-27 02:40:06.001465073 +0000 UTC m=+449.734090653 DispatchTime:2024-08-27 02:40:06.001467498 +0000 UTC m=+449.734093079}
+2024/08/27 02:40:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:41:06 main.go:35: Automatically sending task to client
+2024/08/27 02:41:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:41:06.00149963 +0000 UTC m=+509.734125143 UpdatedAt:2024-08-27 02:41:06.001499705 +0000 UTC m=+509.734125209 DispatchTime:2024-08-27 02:41:06.001501805 +0000 UTC m=+509.734127319}
+2024/08/27 02:41:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:41:06.00149963 +0000 UTC m=+509.734125143 UpdatedAt:2024-08-27 02:41:06.001499705 +0000 UTC m=+509.734125209 DispatchTime:2024-08-27 02:41:06.001501805 +0000 UTC m=+509.734127319}
+2024/08/27 02:41:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:42:06 main.go:35: Automatically sending task to client
+2024/08/27 02:42:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:42:06.001366441 +0000 UTC m=+569.733992028 UpdatedAt:2024-08-27 02:42:06.001366663 +0000 UTC m=+569.733992245 DispatchTime:2024-08-27 02:42:06.001368796 +0000 UTC m=+569.733994382}
+2024/08/27 02:42:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:42:06.001366441 +0000 UTC m=+569.733992028 UpdatedAt:2024-08-27 02:42:06.001366663 +0000 UTC m=+569.733992245 DispatchTime:2024-08-27 02:42:06.001368796 +0000 UTC m=+569.733994382}
+2024/08/27 02:42:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:43:06 main.go:35: Automatically sending task to client
+2024/08/27 02:43:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:43:06.000663328 +0000 UTC m=+629.733288839 UpdatedAt:2024-08-27 02:43:06.000663411 +0000 UTC m=+629.733288933 DispatchTime:2024-08-27 02:43:06.000665623 +0000 UTC m=+629.733291134}
+2024/08/27 02:43:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:43:06.000663328 +0000 UTC m=+629.733288839 UpdatedAt:2024-08-27 02:43:06.000663411 +0000 UTC m=+629.733288933 DispatchTime:2024-08-27 02:43:06.000665623 +0000 UTC m=+629.733291134}
+2024/08/27 02:43:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:44:06 main.go:35: Automatically sending task to client
+2024/08/27 02:44:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:44:06.001338064 +0000 UTC m=+689.733963633 UpdatedAt:2024-08-27 02:44:06.001338229 +0000 UTC m=+689.733963784 DispatchTime:2024-08-27 02:44:06.00134272 +0000 UTC m=+689.733968275}
+2024/08/27 02:44:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:44:06.001338064 +0000 UTC m=+689.733963633 UpdatedAt:2024-08-27 02:44:06.001338229 +0000 UTC m=+689.733963784 DispatchTime:2024-08-27 02:44:06.00134272 +0000 UTC m=+689.733968275}
+2024/08/27 02:44:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:45:06 main.go:35: Automatically sending task to client
+2024/08/27 02:45:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:45:06.001223353 +0000 UTC m=+749.733848888 UpdatedAt:2024-08-27 02:45:06.001223467 +0000 UTC m=+749.733848993 DispatchTime:2024-08-27 02:45:06.001225942 +0000 UTC m=+749.733851469}
+2024/08/27 02:45:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:45:06.001223353 +0000 UTC m=+749.733848888 UpdatedAt:2024-08-27 02:45:06.001223467 +0000 UTC m=+749.733848993 DispatchTime:2024-08-27 02:45:06.001225942 +0000 UTC m=+749.733851469}
+2024/08/27 02:45:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:46:06 main.go:35: Automatically sending task to client
+2024/08/27 02:46:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:46:06.002217013 +0000 UTC m=+809.734842590 UpdatedAt:2024-08-27 02:46:06.002217257 +0000 UTC m=+809.734842790 DispatchTime:2024-08-27 02:46:06.002221274 +0000 UTC m=+809.734846807}
+2024/08/27 02:46:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:46:06.002217013 +0000 UTC m=+809.734842590 UpdatedAt:2024-08-27 02:46:06.002217257 +0000 UTC m=+809.734842790 DispatchTime:2024-08-27 02:46:06.002221274 +0000 UTC m=+809.734846807}
+2024/08/27 02:46:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:47:06 main.go:35: Automatically sending task to client
+2024/08/27 02:47:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:47:06.001424408 +0000 UTC m=+869.734049996 UpdatedAt:2024-08-27 02:47:06.001424648 +0000 UTC m=+869.734050212 DispatchTime:2024-08-27 02:47:06.001426148 +0000 UTC m=+869.734051710}
+2024/08/27 02:47:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:47:06.001424408 +0000 UTC m=+869.734049996 UpdatedAt:2024-08-27 02:47:06.001424648 +0000 UTC m=+869.734050212 DispatchTime:2024-08-27 02:47:06.001426148 +0000 UTC m=+869.734051710}
+2024/08/27 02:47:06 icmp_probe.go:73: Task published successfully to RabbitMQ
+2024/08/27 02:48:06 main.go:35: Automatically sending task to client
+2024/08/27 02:48:06 probe_task_dao.go:23: Successfully inserted probe task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:48:06.000558553 +0000 UTC m=+929.733184121 UpdatedAt:2024-08-27 02:48:06.000558737 +0000 UTC m=+929.733184268 DispatchTime:2024-08-27 02:48:06.000562257 +0000 UTC m=+929.733187811}
+2024/08/27 02:48:06 icmp_probe.go:39: Assigned probe task to client: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:48:06.000558553 +0000 UTC m=+929.733184121 UpdatedAt:2024-08-27 02:48:06.000558737 +0000 UTC m=+929.733184268 DispatchTime:2024-08-27 02:48:06.000562257 +0000 UTC m=+929.733187811}
+2024/08/27 02:48:06 icmp_probe.go:73: Task published successfully to RabbitMQ

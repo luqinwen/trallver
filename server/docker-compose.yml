@@ -47,6 +47,9 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin      # 设置用户名
+      - GF_SECURITY_ADMIN_PASSWORD=Jl666666  # 设置密码
     networks:
       - my_network
 

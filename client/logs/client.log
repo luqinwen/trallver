@@ -3022,3 +3022,249 @@
 2024/08/25 07:34:56 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
 2024/08/25 07:34:56 icmp_probe.go:82: Failed to bind queue to exchange: Exception (504) Reason: "channel/connection is not open"
 2024/08/25 07:34:56 main.go:25: No task received, retrying in 5 seconds...
+2024/08/26 12:33:22 log_config.go:33: Log initialized successfully
+2024/08/26 12:33:22 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:33:22 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:33:22 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/26 12:33:22 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:33:22 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 12:34:03 icmp_probe.go:111: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T12:34:03.003214164Z","updated_at":"2024-08-26T12:34:03.003214394Z"}
+2024/08/26 12:34:03 icmp_probe.go:118: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:34:03.003214164 +0000 UTC UpdatedAt:2024-08-26 12:34:03.003214394 +0000 UTC}
+2024/08/26 12:34:03 main.go:30: Received task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:34:03.003214164 +0000 UTC UpdatedAt:2024-08-26 12:34:03.003214394 +0000 UTC}
+2024/08/26 12:34:03 icmp_probe.go:43: Starting probe to 8.8.8.8
+2024/08/26 12:34:03 icmp_probe.go:30: Received packet from 8.8.8.8: time=12.009034ms
+2024/08/26 12:34:04 icmp_probe.go:30: Received packet from 8.8.8.8: time=7.416072ms
+2024/08/26 12:34:05 icmp_probe.go:30: Received packet from 8.8.8.8: time=9.849576ms
+2024/08/26 12:34:06 icmp_probe.go:30: Received packet from 8.8.8.8: time=7.967244ms
+2024/08/26 12:34:06 icmp_probe.go:34: Probe finished. Packet loss: 0%, Min RTT: 7.416072ms, Max RTT: 12.009034ms, Avg RTT: 9.310482ms
+2024/08/26 12:34:06 main.go:37: Reporting results to RabbitMQ...
+2024/08/26 12:34:06 icmp_probe.go:128: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 12:34:06.081059924 +0000 UTC m=+43.803853930 PacketLoss:0 MinRTT:7.416072ms MaxRTT:12.009034ms AvgRTT:9.310482ms Threshold:10 Success:true}
+2024/08/26 12:34:06 icmp_probe.go:170: Probe results reported successfully to server via RabbitMQ
+2024/08/26 12:34:06 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:34:06 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 12:36:03 icmp_probe.go:111: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T12:36:03.002830925Z","updated_at":"2024-08-26T12:36:03.002831125Z"}
+2024/08/26 12:36:03 icmp_probe.go:118: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:36:03.002830925 +0000 UTC UpdatedAt:2024-08-26 12:36:03.002831125 +0000 UTC}
+2024/08/26 12:36:03 main.go:30: Received task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:36:03.002830925 +0000 UTC UpdatedAt:2024-08-26 12:36:03.002831125 +0000 UTC}
+2024/08/26 12:36:03 icmp_probe.go:43: Starting probe to 8.8.8.8
+2024/08/26 12:36:03 icmp_probe.go:30: Received packet from 8.8.8.8: time=144.455653ms
+2024/08/26 12:36:04 icmp_probe.go:30: Received packet from 8.8.8.8: time=7.317671ms
+2024/08/26 12:36:05 icmp_probe.go:30: Received packet from 8.8.8.8: time=10.626002ms
+2024/08/26 12:36:06 icmp_probe.go:30: Received packet from 8.8.8.8: time=97.239118ms
+2024/08/26 12:36:06 icmp_probe.go:34: Probe finished. Packet loss: 0%, Min RTT: 7.317671ms, Max RTT: 144.455653ms, Avg RTT: 64.909611ms
+2024/08/26 12:36:06 main.go:37: Reporting results to RabbitMQ...
+2024/08/26 12:36:06 icmp_probe.go:128: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 12:36:06.184425915 +0000 UTC m=+163.907219935 PacketLoss:0 MinRTT:7.317671ms MaxRTT:144.455653ms AvgRTT:64.909611ms Threshold:10 Success:true}
+2024/08/26 12:36:06 icmp_probe.go:170: Probe results reported successfully to server via RabbitMQ
+2024/08/26 12:36:06 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:36:06 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 12:39:38 log_config.go:33: Log initialized successfully
+2024/08/26 12:39:38 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:39:38 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:39:38 client_config.go:59: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/26 12:39:43 client_config.go:55: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 12:39:43 client_config.go:59: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/26 12:39:48 client_config.go:55: Attempt 3: Connecting to RabbitMQ...
+2024/08/26 12:39:48 client_config.go:59: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/26 12:39:53 client_config.go:55: Attempt 4: Connecting to RabbitMQ...
+2024/08/26 12:39:53 client_config.go:59: Failed to connect to RabbitMQ: dial tcp 172.26.0.3:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/26 12:40:12 log_config.go:33: Log initialized successfully
+2024/08/26 12:40:12 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 12:40:12 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 12:40:12 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/26 12:40:12 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:40:12 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 12:41:08 icmp_probe.go:111: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T12:41:08.003702397Z","updated_at":"2024-08-26T12:41:08.00370273Z"}
+2024/08/26 12:41:08 icmp_probe.go:118: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:41:08.003702397 +0000 UTC UpdatedAt:2024-08-26 12:41:08.00370273 +0000 UTC}
+2024/08/26 12:41:08 main.go:30: Received task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:41:08.003702397 +0000 UTC UpdatedAt:2024-08-26 12:41:08.00370273 +0000 UTC}
+2024/08/26 12:41:08 icmp_probe.go:43: Starting probe to 8.8.8.8
+2024/08/26 12:41:08 icmp_probe.go:30: Received packet from 8.8.8.8: time=10.069723ms
+2024/08/26 12:41:09 icmp_probe.go:30: Received packet from 8.8.8.8: time=11.832104ms
+2024/08/26 12:41:10 icmp_probe.go:30: Received packet from 8.8.8.8: time=11.264825ms
+2024/08/26 12:41:11 icmp_probe.go:30: Received packet from 8.8.8.8: time=12.609474ms
+2024/08/26 12:41:11 icmp_probe.go:34: Probe finished. Packet loss: 0%, Min RTT: 10.069723ms, Max RTT: 12.609474ms, Avg RTT: 11.444031ms
+2024/08/26 12:41:11 main.go:37: Reporting results to RabbitMQ...
+2024/08/26 12:41:11 icmp_probe.go:128: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 12:41:11.125404059 +0000 UTC m=+58.629602422 PacketLoss:0 MinRTT:10.069723ms MaxRTT:12.609474ms AvgRTT:11.444031ms Threshold:10 Success:true}
+2024/08/26 12:41:11 icmp_probe.go:170: Probe results reported successfully to server via RabbitMQ
+2024/08/26 12:41:11 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:41:11 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 12:43:08 icmp_probe.go:111: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T12:43:08.00276992Z","updated_at":"2024-08-26T12:43:08.002770174Z"}
+2024/08/26 12:43:08 icmp_probe.go:118: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:43:08.00276992 +0000 UTC UpdatedAt:2024-08-26 12:43:08.002770174 +0000 UTC}
+2024/08/26 12:43:08 main.go:30: Received task: &{IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 12:43:08.00276992 +0000 UTC UpdatedAt:2024-08-26 12:43:08.002770174 +0000 UTC}
+2024/08/26 12:43:08 icmp_probe.go:43: Starting probe to 8.8.8.8
+2024/08/26 12:43:08 icmp_probe.go:30: Received packet from 8.8.8.8: time=9.556809ms
+2024/08/26 12:43:09 icmp_probe.go:30: Received packet from 8.8.8.8: time=10.175198ms
+2024/08/26 12:43:10 icmp_probe.go:30: Received packet from 8.8.8.8: time=9.09654ms
+2024/08/26 12:43:11 icmp_probe.go:30: Received packet from 8.8.8.8: time=8.574242ms
+2024/08/26 12:43:11 icmp_probe.go:34: Probe finished. Packet loss: 0%, Min RTT: 8.574242ms, Max RTT: 10.175198ms, Avg RTT: 9.350698ms
+2024/08/26 12:43:11 main.go:37: Reporting results to RabbitMQ...
+2024/08/26 12:43:11 icmp_probe.go:128: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 12:43:11.103880923 +0000 UTC m=+178.608079223 PacketLoss:0 MinRTT:8.574242ms MaxRTT:10.175198ms AvgRTT:9.350698ms Threshold:10 Success:true}
+2024/08/26 12:43:11 icmp_probe.go:170: Probe results reported successfully to server via RabbitMQ
+2024/08/26 12:43:11 main.go:22: Waiting to receive probe task from RabbitMQ...
+2024/08/26 12:43:11 icmp_probe.go:72: Waiting for tasks from RabbitMQ...
+2024/08/26 13:02:58 log_config.go:33: Log initialized successfully
+2024/08/26 13:02:58 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/26 13:02:58 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/26 13:02:58 client_config.go:59: Failed to connect to RabbitMQ: dial tcp 172.26.0.7:5672: connect: connection refused, retrying in 5 seconds...
+2024/08/26 13:03:03 client_config.go:55: Attempt 2: Connecting to RabbitMQ...
+2024/08/26 13:03:03 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/26 13:03:03 icmp_probe.go:17: Starting to consume messages from RabbitMQ...
+2024/08/26 13:03:03 icmp_probe.go:33: Consumer is now listening for messages...
+2024/08/26 13:04:02 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T13:04:02.001149282Z","updated_at":"2024-08-26T13:04:02.001149399Z"}
+2024/08/26 13:04:02 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:04:02.001149282 +0000 UTC UpdatedAt:2024-08-26 13:04:02.001149399 +0000 UTC}
+2024/08/26 13:04:02 icmp_probe.go:87: Starting probe to 8.8.8.8
+2024/08/26 13:04:02 icmp_probe.go:74: Received packet from 8.8.8.8: time=10.170682ms
+2024/08/26 13:04:03 icmp_probe.go:74: Received packet from 8.8.8.8: time=11.90338ms
+2024/08/26 13:04:04 icmp_probe.go:74: Received packet from 8.8.8.8: time=6.016772ms
+2024/08/26 13:04:05 icmp_probe.go:74: Received packet from 8.8.8.8: time=18.55716ms
+2024/08/26 13:04:05 icmp_probe.go:78: Probe finished. Packet loss: 0%, Min RTT: 6.016772ms, Max RTT: 18.55716ms, Avg RTT: 11.661999ms
+2024/08/26 13:04:05 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-26 13:04:05.137521973 +0000 UTC m=+66.728110897 PacketLoss:0 MinRTT:6.016772ms MaxRTT:18.55716ms AvgRTT:11.661999ms Threshold:10 Success:true}
+2024/08/26 13:04:05 icmp_probe.go:107: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 13:04:05.137521973 +0000 UTC m=+66.728110897 PacketLoss:0 MinRTT:6.016772ms MaxRTT:18.55716ms AvgRTT:11.661999ms Threshold:10 Success:true}
+2024/08/26 13:04:05 icmp_probe.go:149: Probe results reported successfully to server via RabbitMQ
+2024/08/26 13:05:02 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-26T13:05:02.002282293Z","updated_at":"2024-08-26T13:05:02.002282442Z"}
+2024/08/26 13:05:02 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-26 13:05:02.002282293 +0000 UTC UpdatedAt:2024-08-26 13:05:02.002282442 +0000 UTC}
+2024/08/26 13:05:02 icmp_probe.go:87: Starting probe to 8.8.8.8
+2024/08/26 13:05:02 icmp_probe.go:74: Received packet from 8.8.8.8: time=26.996134ms
+2024/08/26 13:05:03 icmp_probe.go:74: Received packet from 8.8.8.8: time=9.889665ms
+2024/08/26 13:05:04 icmp_probe.go:74: Received packet from 8.8.8.8: time=37.478936ms
+2024/08/26 13:05:05 icmp_probe.go:74: Received packet from 8.8.8.8: time=8.256165ms
+2024/08/26 13:05:05 icmp_probe.go:78: Probe finished. Packet loss: 0%, Min RTT: 8.256165ms, Max RTT: 37.478936ms, Avg RTT: 20.655225ms
+2024/08/26 13:05:05 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-26 13:05:05.077111639 +0000 UTC m=+126.667700587 PacketLoss:0 MinRTT:8.256165ms MaxRTT:37.478936ms AvgRTT:20.655225ms Threshold:10 Success:true}
+2024/08/26 13:05:05 icmp_probe.go:107: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-26 13:05:05.077111639 +0000 UTC m=+126.667700587 PacketLoss:0 MinRTT:8.256165ms MaxRTT:37.478936ms AvgRTT:20.655225ms Threshold:10 Success:true}
+2024/08/26 13:05:05 icmp_probe.go:149: Probe results reported successfully to server via RabbitMQ
+2024/08/27 01:58:29 log_config.go:33: Log initialized successfully
+2024/08/27 01:58:29 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 01:58:29 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 01:58:29 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/27 01:58:29 icmp_probe.go:17: Starting to consume messages from RabbitMQ...
+2024/08/27 01:58:29 icmp_probe.go:33: Consumer is now listening for messages...
+2024/08/27 01:59:17 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T01:59:17.000852025Z","updated_at":"2024-08-27T01:59:17.000852328Z","dispatch_time":"2024-08-27T01:59:17.000854298Z"}
+2024/08/27 01:59:17 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 01:59:17.000852025 +0000 UTC UpdatedAt:2024-08-27 01:59:17.000852328 +0000 UTC DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC}
+2024/08/27 01:59:17 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 01:59:17 icmp_probe.go:77: Received packet from 8.8.8.8: time=23.489427ms
+2024/08/27 01:59:18 icmp_probe.go:77: Received packet from 8.8.8.8: time=49.610996ms
+2024/08/27 01:59:19 icmp_probe.go:77: Received packet from 8.8.8.8: time=11.271105ms
+2024/08/27 01:59:20 icmp_probe.go:77: Received packet from 8.8.8.8: time=6.479904ms
+2024/08/27 01:59:20 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 6.479904ms, Max RTT: 49.610996ms, Avg RTT: 22.712859ms
+2024/08/27 01:59:20 icmp_probe.go:95: Processing latency: 3066 ms
+2024/08/27 01:59:20 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 01:59:20.085723719 +0000 UTC m=+50.207063668 PacketLoss:0 MinRTT:6.479904ms MaxRTT:49.610996ms AvgRTT:22.712859ms Threshold:10 Success:true DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC}
+2024/08/27 01:59:20 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 01:59:20.085723719 +0000 UTC m=+50.207063668 PacketLoss:0 MinRTT:6.479904ms MaxRTT:49.610996ms AvgRTT:22.712859ms Threshold:10 Success:true DispatchTime:2024-08-27 01:59:17.000854298 +0000 UTC}
+2024/08/27 01:59:20 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:09:35 log_config.go:33: Log initialized successfully
+2024/08/27 02:09:35 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:09:35 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:09:35 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/27 02:09:35 icmp_probe.go:17: Starting to consume messages from RabbitMQ...
+2024/08/27 02:09:35 icmp_probe.go:33: Consumer is now listening for messages...
+2024/08/27 02:10:30 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:10:30.000782362Z","updated_at":"2024-08-27T02:10:30.000782661Z","dispatch_time":"2024-08-27T02:10:30.000789209Z"}
+2024/08/27 02:10:30 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:10:30.000782362 +0000 UTC UpdatedAt:2024-08-27 02:10:30.000782661 +0000 UTC DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC}
+2024/08/27 02:10:30 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:10:30 icmp_probe.go:77: Received packet from 8.8.8.8: time=7.173081ms
+2024/08/27 02:10:31 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.822616ms
+2024/08/27 02:10:32 icmp_probe.go:77: Received packet from 8.8.8.8: time=26.394506ms
+2024/08/27 02:10:33 icmp_probe.go:77: Received packet from 8.8.8.8: time=13.135595ms
+2024/08/27 02:10:33 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 7.173081ms, Max RTT: 26.394506ms, Avg RTT: 13.881449ms
+2024/08/27 02:10:33 icmp_probe.go:95: Processing latency: 3113 ms
+2024/08/27 02:10:33 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:10:33.134388578 +0000 UTC m=+58.036491640 PacketLoss:0 MinRTT:7.173081ms MaxRTT:26.394506ms AvgRTT:13.881449ms Threshold:10 Success:true DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC}
+2024/08/27 02:10:33 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:10:33.134388578 +0000 UTC m=+58.036491640 PacketLoss:0 MinRTT:7.173081ms MaxRTT:26.394506ms AvgRTT:13.881449ms Threshold:10 Success:true DispatchTime:2024-08-27 02:10:30.000789209 +0000 UTC}
+2024/08/27 02:10:33 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:11:30 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:11:30.001122635Z","updated_at":"2024-08-27T02:11:30.001122871Z","dispatch_time":"2024-08-27T02:11:30.001134672Z"}
+2024/08/27 02:11:30 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:11:30.001122635 +0000 UTC UpdatedAt:2024-08-27 02:11:30.001122871 +0000 UTC DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC}
+2024/08/27 02:11:30 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:11:30 icmp_probe.go:77: Received packet from 8.8.8.8: time=31.656899ms
+2024/08/27 02:11:31 icmp_probe.go:77: Received packet from 8.8.8.8: time=12.841247ms
+2024/08/27 02:11:32 icmp_probe.go:77: Received packet from 8.8.8.8: time=10.53444ms
+2024/08/27 02:11:33 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.726761ms
+2024/08/27 02:11:33 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 8.726761ms, Max RTT: 31.656899ms, Avg RTT: 15.939838ms
+2024/08/27 02:11:33 icmp_probe.go:95: Processing latency: 3083 ms
+2024/08/27 02:11:33 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:11:33.102727769 +0000 UTC m=+118.004830741 PacketLoss:0 MinRTT:8.726761ms MaxRTT:31.656899ms AvgRTT:15.939838ms Threshold:10 Success:true DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC}
+2024/08/27 02:11:33 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:11:33.102727769 +0000 UTC m=+118.004830741 PacketLoss:0 MinRTT:8.726761ms MaxRTT:31.656899ms AvgRTT:15.939838ms Threshold:10 Success:true DispatchTime:2024-08-27 02:11:30.001134672 +0000 UTC}
+2024/08/27 02:11:33 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:23:28 log_config.go:33: Log initialized successfully
+2024/08/27 02:23:28 client_config.go:52: Initializing RabbitMQ connection with URL: amqp://guest:guest@server_rabbitmq:5672/
+2024/08/27 02:23:28 client_config.go:55: Attempt 1: Connecting to RabbitMQ...
+2024/08/27 02:23:29 client_config.go:71: Successfully connected to RabbitMQ and created channel
+2024/08/27 02:23:29 icmp_probe.go:17: Starting to consume messages from RabbitMQ...
+2024/08/27 02:23:29 icmp_probe.go:33: Consumer is now listening for messages...
+2024/08/27 02:23:29 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:21:43.005130626Z","updated_at":"2024-08-27T02:21:43.005130796Z","dispatch_time":"2024-08-27T02:21:43.005131967Z"}
+2024/08/27 02:23:29 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:21:43.005130626 +0000 UTC UpdatedAt:2024-08-27 02:21:43.005130796 +0000 UTC DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC}
+2024/08/27 02:23:29 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:23:29 icmp_probe.go:77: Received packet from 8.8.8.8: time=13.949712ms
+2024/08/27 02:23:30 icmp_probe.go:77: Received packet from 8.8.8.8: time=14.052878ms
+2024/08/27 02:23:31 icmp_probe.go:77: Received packet from 8.8.8.8: time=12.389095ms
+2024/08/27 02:23:32 icmp_probe.go:77: Received packet from 8.8.8.8: time=11.013052ms
+2024/08/27 02:23:32 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 11.013052ms, Max RTT: 14.052878ms, Avg RTT: 12.851185ms
+2024/08/27 02:23:32 icmp_probe.go:95: Processing latency: 3113 ms
+2024/08/27 02:23:32 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:32.131710229 +0000 UTC m=+3.156606708 PacketLoss:0 MinRTT:11.013052ms MaxRTT:14.052878ms AvgRTT:12.851185ms Threshold:10 Success:true DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC}
+2024/08/27 02:23:32 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:32.131710229 +0000 UTC m=+3.156606708 PacketLoss:0 MinRTT:11.013052ms MaxRTT:14.052878ms AvgRTT:12.851185ms Threshold:10 Success:true DispatchTime:2024-08-27 02:21:43.005131967 +0000 UTC}
+2024/08/27 02:23:32 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:23:32 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:22:43.007354488Z","updated_at":"2024-08-27T02:22:43.007354683Z","dispatch_time":"2024-08-27T02:22:43.007356333Z"}
+2024/08/27 02:23:32 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:22:43.007354488 +0000 UTC UpdatedAt:2024-08-27 02:22:43.007354683 +0000 UTC DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC}
+2024/08/27 02:23:32 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:23:32 icmp_probe.go:77: Received packet from 8.8.8.8: time=15.083786ms
+2024/08/27 02:23:33 icmp_probe.go:77: Received packet from 8.8.8.8: time=6.903592ms
+2024/08/27 02:23:34 icmp_probe.go:77: Received packet from 8.8.8.8: time=7.98942ms
+2024/08/27 02:23:35 icmp_probe.go:77: Received packet from 8.8.8.8: time=9.414157ms
+2024/08/27 02:23:35 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 6.903592ms, Max RTT: 15.083786ms, Avg RTT: 9.847739ms
+2024/08/27 02:23:35 icmp_probe.go:95: Processing latency: 3086 ms
+2024/08/27 02:23:35 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:35.220844233 +0000 UTC m=+6.245740707 PacketLoss:0 MinRTT:6.903592ms MaxRTT:15.083786ms AvgRTT:9.847739ms Threshold:10 Success:true DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC}
+2024/08/27 02:23:35 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:35.220844233 +0000 UTC m=+6.245740707 PacketLoss:0 MinRTT:6.903592ms MaxRTT:15.083786ms AvgRTT:9.847739ms Threshold:10 Success:true DispatchTime:2024-08-27 02:22:43.007356333 +0000 UTC}
+2024/08/27 02:23:35 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:23:43 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:23:43.00269343Z","updated_at":"2024-08-27T02:23:43.002693584Z","dispatch_time":"2024-08-27T02:23:43.002695551Z"}
+2024/08/27 02:23:43 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:23:43.00269343 +0000 UTC UpdatedAt:2024-08-27 02:23:43.002693584 +0000 UTC DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC}
+2024/08/27 02:23:43 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:23:43 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.239909ms
+2024/08/27 02:23:44 icmp_probe.go:77: Received packet from 8.8.8.8: time=6.80807ms
+2024/08/27 02:23:45 icmp_probe.go:77: Received packet from 8.8.8.8: time=12.227493ms
+2024/08/27 02:23:46 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.596569ms
+2024/08/27 02:23:46 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 6.80807ms, Max RTT: 12.227493ms, Avg RTT: 8.968011ms
+2024/08/27 02:23:46 icmp_probe.go:95: Processing latency: 3108 ms
+2024/08/27 02:23:46 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:46.128244684 +0000 UTC m=+17.153141177 PacketLoss:0 MinRTT:6.80807ms MaxRTT:12.227493ms AvgRTT:8.968011ms Threshold:10 Success:true DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC}
+2024/08/27 02:23:46 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:23:46.128244684 +0000 UTC m=+17.153141177 PacketLoss:0 MinRTT:6.80807ms MaxRTT:12.227493ms AvgRTT:8.968011ms Threshold:10 Success:true DispatchTime:2024-08-27 02:23:43.002695551 +0000 UTC}
+2024/08/27 02:23:46 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:24:43 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:24:43.000998084Z","updated_at":"2024-08-27T02:24:43.000998242Z","dispatch_time":"2024-08-27T02:24:43.00099961Z"}
+2024/08/27 02:24:43 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:24:43.000998084 +0000 UTC UpdatedAt:2024-08-27 02:24:43.000998242 +0000 UTC DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC}
+2024/08/27 02:24:43 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:24:43 icmp_probe.go:77: Received packet from 8.8.8.8: time=6.42235ms
+2024/08/27 02:24:44 icmp_probe.go:77: Received packet from 8.8.8.8: time=5.213264ms
+2024/08/27 02:24:45 icmp_probe.go:77: Received packet from 8.8.8.8: time=5.650342ms
+2024/08/27 02:24:46 icmp_probe.go:77: Received packet from 8.8.8.8: time=16.599099ms
+2024/08/27 02:24:46 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 5.213264ms, Max RTT: 16.599099ms, Avg RTT: 8.471264ms
+2024/08/27 02:24:46 icmp_probe.go:95: Processing latency: 3098 ms
+2024/08/27 02:24:46 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:24:46.108987939 +0000 UTC m=+77.133884448 PacketLoss:0 MinRTT:5.213264ms MaxRTT:16.599099ms AvgRTT:8.471264ms Threshold:10 Success:true DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC}
+2024/08/27 02:24:46 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:24:46.108987939 +0000 UTC m=+77.133884448 PacketLoss:0 MinRTT:5.213264ms MaxRTT:16.599099ms AvgRTT:8.471264ms Threshold:10 Success:true DispatchTime:2024-08-27 02:24:43.00099961 +0000 UTC}
+2024/08/27 02:24:46 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:25:43 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:25:43.000749555Z","updated_at":"2024-08-27T02:25:43.000749673Z","dispatch_time":"2024-08-27T02:25:43.000754047Z"}
+2024/08/27 02:25:43 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:25:43.000749555 +0000 UTC UpdatedAt:2024-08-27 02:25:43.000749673 +0000 UTC DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC}
+2024/08/27 02:25:43 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:25:43 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.213392ms
+2024/08/27 02:25:44 icmp_probe.go:77: Received packet from 8.8.8.8: time=10.278818ms
+2024/08/27 02:25:45 icmp_probe.go:77: Received packet from 8.8.8.8: time=37.978472ms
+2024/08/27 02:25:46 icmp_probe.go:77: Received packet from 8.8.8.8: time=12.413491ms
+2024/08/27 02:25:46 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 8.213392ms, Max RTT: 37.978472ms, Avg RTT: 17.221043ms
+2024/08/27 02:25:46 icmp_probe.go:95: Processing latency: 3066 ms
+2024/08/27 02:25:46 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:25:46.076816928 +0000 UTC m=+137.101713449 PacketLoss:0 MinRTT:8.213392ms MaxRTT:37.978472ms AvgRTT:17.221043ms Threshold:10 Success:true DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC}
+2024/08/27 02:25:46 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:25:46.076816928 +0000 UTC m=+137.101713449 PacketLoss:0 MinRTT:8.213392ms MaxRTT:37.978472ms AvgRTT:17.221043ms Threshold:10 Success:true DispatchTime:2024-08-27 02:25:43.000754047 +0000 UTC}
+2024/08/27 02:25:46 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:26:43 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:26:43.000688756Z","updated_at":"2024-08-27T02:26:43.000688833Z","dispatch_time":"2024-08-27T02:26:43.000689754Z"}
+2024/08/27 02:26:43 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:26:43.000688756 +0000 UTC UpdatedAt:2024-08-27 02:26:43.000688833 +0000 UTC DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC}
+2024/08/27 02:26:43 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:26:43 icmp_probe.go:77: Received packet from 8.8.8.8: time=5.649192ms
+2024/08/27 02:26:44 icmp_probe.go:77: Received packet from 8.8.8.8: time=15.136951ms
+2024/08/27 02:26:45 icmp_probe.go:77: Received packet from 8.8.8.8: time=10.817391ms
+2024/08/27 02:26:46 icmp_probe.go:77: Received packet from 8.8.8.8: time=5.45549ms
+2024/08/27 02:26:46 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 5.45549ms, Max RTT: 15.136951ms, Avg RTT: 9.264756ms
+2024/08/27 02:26:46 icmp_probe.go:95: Processing latency: 3095 ms
+2024/08/27 02:26:46 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:26:46.105185673 +0000 UTC m=+197.130082176 PacketLoss:0 MinRTT:5.45549ms MaxRTT:15.136951ms AvgRTT:9.264756ms Threshold:10 Success:true DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC}
+2024/08/27 02:26:46 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:26:46.105185673 +0000 UTC m=+197.130082176 PacketLoss:0 MinRTT:5.45549ms MaxRTT:15.136951ms AvgRTT:9.264756ms Threshold:10 Success:true DispatchTime:2024-08-27 02:26:43.000689754 +0000 UTC}
+2024/08/27 02:26:46 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
+2024/08/27 02:27:43 icmp_probe.go:35: Received a message from RabbitMQ: {"ip":"8.8.8.8","count":4,"port":0,"threshold":10,"timeout":5,"created_at":"2024-08-27T02:27:43.001935052Z","updated_at":"2024-08-27T02:27:43.001935231Z","dispatch_time":"2024-08-27T02:27:43.001936802Z"}
+2024/08/27 02:27:43 icmp_probe.go:42: Received probe task from server: {IP:8.8.8.8 Count:4 Port:0 Threshold:10 Timeout:5 CreatedAt:2024-08-27 02:27:43.001935052 +0000 UTC UpdatedAt:2024-08-27 02:27:43.001935231 +0000 UTC DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC}
+2024/08/27 02:27:43 icmp_probe.go:90: Starting probe to 8.8.8.8
+2024/08/27 02:27:43 icmp_probe.go:77: Received packet from 8.8.8.8: time=8.720153ms
+2024/08/27 02:27:44 icmp_probe.go:77: Received packet from 8.8.8.8: time=6.017097ms
+2024/08/27 02:27:45 icmp_probe.go:77: Received packet from 8.8.8.8: time=22.713312ms
+2024/08/27 02:27:46 icmp_probe.go:77: Received packet from 8.8.8.8: time=9.577306ms
+2024/08/27 02:27:46 icmp_probe.go:81: Probe finished. Packet loss: 0%, Min RTT: 6.017097ms, Max RTT: 22.713312ms, Avg RTT: 11.756967ms
+2024/08/27 02:27:46 icmp_probe.go:95: Processing latency: 3095 ms
+2024/08/27 02:27:46 icmp_probe.go:50: Task executed successfully, reporting result: &{IP:8.8.8.8 Timestamp:2024-08-27 02:27:46.108791978 +0000 UTC m=+257.133688481 PacketLoss:0 MinRTT:6.017097ms MaxRTT:22.713312ms AvgRTT:11.756967ms Threshold:10 Success:true DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC}
+2024/08/27 02:27:46 icmp_probe.go:116: Attempting to publish probe results: &{IP:8.8.8.8 Timestamp:2024-08-27 02:27:46.108791978 +0000 UTC m=+257.133688481 PacketLoss:0 MinRTT:6.017097ms MaxRTT:22.713312ms AvgRTT:11.756967ms Threshold:10 Success:true DispatchTime:2024-08-27 02:27:43.001936802 +0000 UTC}
+2024/08/27 02:27:46 icmp_probe.go:158: Probe results reported successfully to server via RabbitMQ
