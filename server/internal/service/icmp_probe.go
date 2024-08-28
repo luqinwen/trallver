@@ -7,6 +7,7 @@ import (
 	"log"
 	"my_project/server/internal/dao"
 	"my_project/server/internal/model"
+	"sync"
 	"time"
 
 	"github.com/cloudwego/hertz/pkg/app"
@@ -15,6 +16,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/streadway/amqp"
 )
+
 
 func CreateProbeTask() *model.ProbeTask {
     return &model.ProbeTask{
@@ -44,21 +46,25 @@ func ProcessProbeTask(ch *amqp.Channel, task *model.ProbeTask) error {
         return err
     }
 
-    err = ch.QueueBind(
-        viper.GetString("rabbitmq.task_queue"),
-        viper.GetString("rabbitmq.task_routing_key"),
-        viper.GetString("rabbitmq.exchange"),
-        false,
-        nil,
+    // 声明fanout交换机，确保交换机存在
+    err = ch.ExchangeDeclare(
+        viper.GetString("rabbitmq.task_exchange"),
+        "fanout",  // 交换机类型
+        true,      // durable
+        false,     // auto-deleted
+        false,     // internal
+        false,     // no-wait
+        nil,       // arguments
     )
     if err != nil {
-        log.Printf("Failed to bind queue to exchange: %v", err)
+        log.Printf("Failed to declare exchange: %v", err)
         return err
     }
 
+    // 发布消息到fanout交换机，不需要指定routing key
     err = ch.Publish(
-        viper.GetString("rabbitmq.exchange"),
-        viper.GetString("rabbitmq.task_routing_key"),
+        viper.GetString("rabbitmq.task_exchange"),
+        "",  // 对于fanout交换机，routing key可以留空
         false,
         false,
         amqp.Publishing{
@@ -66,7 +72,7 @@ func ProcessProbeTask(ch *amqp.Channel, task *model.ProbeTask) error {
             Body:        body,
         })
     if err != nil {
-        log.Printf("Failed to publish task to queue: %v", err)
+        log.Printf("Failed to publish task to exchange: %v", err)
         return err
     }
 
@@ -87,41 +93,36 @@ func HandleProbeTask(ch *amqp.Channel) app.HandlerFunc {
     }
 }
 
+var (
+	roundCounter   int
+	roundMutex     sync.Mutex
+	resultsStorage map[int][]model.ProbeResult
+	storageMutex   sync.Mutex
+)
 
-func HandleProbeResults(ch *amqp.Channel) {
-    log.Printf("Registering consumer for queue: %s", viper.GetString("rabbitmq.result_queue"))
+func init() {
+	roundCounter = 1
+	resultsStorage = make(map[int][]model.ProbeResult)
+}
 
-    // 绑定队列到交换机
-    err := ch.QueueBind(
-        viper.GetString("rabbitmq.result_queue"),
-        viper.GetString("rabbitmq.result_routing_key"),
-        viper.GetString("rabbitmq.exchange"),
-        false,
-        nil,
-    )
-    if err != nil {
-        log.Fatalf("Failed to bind queue to exchange: %v", err)
-        return
-    }
-
+func consumeResultQueue(ch *amqp.Channel, queueName string, queueID int, resultsChan chan model.ProbeResult) {
     msgs, err := ch.Consume(
-        viper.GetString("rabbitmq.result_queue"),
-        "",
-        true,
-        false,
-        false,
-        false,
+        queueName, 
+        "",        
+        true,      
+        false,     
+        false,     
+        false,     
         nil,
     )
     if err != nil {
-        log.Fatalf("Failed to register a consumer: %v", err)
-        return
+        log.Fatalf("Failed to register a consumer for queue %s: %v", queueName, err)
     }
 
-    log.Println("Consumer registered successfully")
+    log.Printf("Started consumer for queue: %s", queueName)
 
     for msg := range msgs {
-        log.Printf("Received message from RabbitMQ: %s", string(msg.Body))
+        log.Printf("Received message from %s: %s", queueName, string(msg.Body))
     
         var result model.ProbeResult
         err := json.Unmarshal(msg.Body, &result)
@@ -130,27 +131,77 @@ func HandleProbeResults(ch *amqp.Channel) {
             continue
         }
 
-        log.Printf("Processed probe result: %+v", result)
+        log.Printf("Processed probe result from %s: %+v", queueName, result)
 
-        receiveTime := time.Now() // 记录接收时间
+        // 计算总时延
+        receiveTime := time.Now()
         totalLatency := receiveTime.Sub(result.DispatchTime).Milliseconds()
-        log.Printf("Total latency from task dispatch to result receive: %v ms", totalLatency)
 
+        // 存储独立结果到 queue_results 表
         timestamp := result.Timestamp.Unix()
-        
-        err = dao.StoreClickHouse(timestamp, result.IP, result.PacketLoss, float64(result.MinRTT.Microseconds()), float64(result.MaxRTT.Microseconds()), float64(result.AvgRTT.Microseconds()), uint32(totalLatency),)
+        err = dao.StoreQueueResults(timestamp, queueID, result.IP, result.PacketLoss, 
+            float64(result.MinRTT.Microseconds()), float64(result.MaxRTT.Microseconds()), 
+            float64(result.AvgRTT.Microseconds()), uint32(totalLatency))
         if err != nil {
-            log.Printf("Failed to store probe result to ClickHouse: %v", err)
+            log.Printf("Failed to store queue result to ClickHouse: %v", err)
             continue
         }
 
-        if result.PacketLoss > float64(result.Threshold) {
-            log.Printf("Packet loss exceeds threshold, reporting to Prometheus: %f > %f", result.PacketLoss, result.Threshold)
-            ReportToPrometheus(&result, timestamp)
+        // 将结果存储到当前回合的累积器
+        storageMutex.Lock()
+        resultsStorage[roundCounter] = append(resultsStorage[roundCounter], result)
+        storageMutex.Unlock()
+
+        // 检查当前回合是否已经收集完所有队列的结果
+        storageMutex.Lock()
+        if len(resultsStorage[roundCounter]) == 3 {
+            // 聚合处理并存储结果
+            aggregateAndStoreResults(resultsStorage[roundCounter])
+
+            // 清空累积器并开始新一回合
+            delete(resultsStorage, roundCounter)
+            roundCounter++
+        }
+        storageMutex.Unlock()
+    }
+}
+
+func aggregateAndStoreResults(results []model.ProbeResult) {
+    var totalPacketLoss float64
+    var totalLatencyMs uint32
+    var messageCount int
+
+    for _, result := range results {
+        totalPacketLoss += result.PacketLoss
+        receiveTime := time.Now()
+        totalLatency := receiveTime.Sub(result.DispatchTime).Milliseconds()
+        totalLatencyMs += uint32(totalLatency)
+        messageCount++
+    }
+
+    if messageCount > 0 {
+        avgPacketLoss := totalPacketLoss / float64(messageCount)
+        avgLatencyMs := totalLatencyMs / uint32(messageCount)
+
+        log.Printf("Aggregated Average Packet Loss: %f, Average Latency: %d ms", avgPacketLoss, avgLatencyMs)
+
+        // 存储聚合后的结果
+        timestamp := time.Now().Unix()
+        err := dao.StoreAggregatedResults(timestamp, avgPacketLoss, avgLatencyMs)
+        if err != nil {
+            log.Printf("Failed to store aggregated probe result to ClickHouse: %v", err)
         }
     }
 }
 
+func StartConsumingResults(ch *amqp.Channel) {
+    resultQueues := []string{"result_queue1", "result_queue2", "result_queue3"}
+    resultsChan := make(chan model.ProbeResult, len(resultQueues))
+
+    for i, queueName := range resultQueues {
+        go consumeResultQueue(ch, queueName, i+1, resultsChan)
+    }
+}
 
 // ReportToPrometheus 上报探测结果到 Prometheus
 func ReportToPrometheus(result *model.ProbeResult, timestamp int64) {

@@ -10,12 +10,13 @@ func main() {
     config.InitConfig()
     config.InitLog()
     
-    ch, err := config.InitRabbitMQ()
+    conn, ch, err := config.InitRabbitMQ()
     if err != nil {
         log.Fatalf("Failed to initialize RabbitMQ: %v", err)
         return
     }
     defer ch.Close()
+    defer conn.Close()
 
     service.StartConsuming(ch)
     

@@ -1,9 +1,11 @@
 package config
 
 import (
-    "log"
-    "os"
-    "github.com/spf13/viper"
+	"log"
+	"os"
+	"path/filepath"
+
+	"github.com/spf13/viper"
 )
 
 // InitLog 初始化日志记录
@@ -15,7 +17,7 @@ func InitLog() {
         return
     }
 
-    logDir := "/root/logs" // 使用绝对路径，确保与 Dockerfile 中的路径一致
+    logDir := filepath.Dir(logFile) 
     if _, err := os.Stat(logDir); os.IsNotExist(err) {
         err := os.Mkdir(logDir, 0755)
         if err != nil {

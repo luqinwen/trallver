@@ -44,23 +44,37 @@ func InitClickHouse() {
     }
     log.Println("ClickHouse database created successfully or already exists")
 
-    // 创建表
+    // 创建 aggregated_results 表
     _, err = ClickHouseDB.Exec(`
-        CREATE TABLE IF NOT EXISTS my_database.my_table (
+        CREATE TABLE IF NOT EXISTS my_database.aggregated_results (
             timestamp DateTime,
+            avg_packet_loss Float64,
+            avg_latency_ms UInt32
+        ) ENGINE = MergeTree()
+        ORDER BY timestamp
+    `)
+    if err != nil {
+        log.Fatalf("Error creating table aggregated_results: %v", err)
+    }
+    log.Println("ClickHouse table aggregated_results created successfully")
+
+    // 创建 queue_results 表
+    _, err = ClickHouseDB.Exec(`
+        CREATE TABLE IF NOT EXISTS my_database.queue_results (
+            timestamp DateTime,
+            queue_id Int32,
             ip String,
             packet_loss Float64,
             min_rtt Float64,
             max_rtt Float64,
             avg_rtt Float64,
-            threshold   Int32,
-            success     UInt8,
-            latency_ms     UInt32
+            latency_ms UInt32
         ) ENGINE = MergeTree()
         ORDER BY timestamp
     `)
     if err != nil {
-        log.Fatalf("Error creating table: %v", err)
+        log.Fatalf("Error creating table queue_results: %v", err)
     }
-    log.Println("ClickHouse table created successfully")
+
+    log.Println("ClickHouse table queue_results created successfully")
 }

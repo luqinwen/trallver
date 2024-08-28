@@ -16,8 +16,36 @@ import (
 func StartConsuming(ch *amqp.Channel) {
     log.Println("Starting to consume messages from RabbitMQ...")
 
+    // 声明任务队列
+    queueName := viper.GetString("rabbitmq.task_queue")
+    _, err := ch.QueueDeclare(
+        queueName,
+        true,
+        false,
+        false,
+        false,
+        nil,
+    )
+    if err != nil {
+        log.Fatalf("Failed to declare task queue: %v", err)
+        return
+    }
+
+    // 绑定任务队列到fanout交换机
+    err = ch.QueueBind(
+        queueName,                        // 队列名称
+        "",                               // 对于fanout交换机，routing key留空
+        viper.GetString("rabbitmq.task_exchange"), // fanout交换机名称
+        false,
+        nil,
+    )
+    if err != nil {
+        log.Fatalf("Failed to bind task queue to exchange: %v", err)
+        return
+    }
+
     msgs, err := ch.Consume(
-        viper.GetString("rabbitmq.task_queue"),
+        queueName, // 从声明的任务队列中消费消息
         "",
         true,  // 自动确认
         false, // 非独占
@@ -27,6 +55,7 @@ func StartConsuming(ch *amqp.Channel) {
     )
     if err != nil {
         log.Fatalf("Failed to register a consumer: %v", err)
+        return
     }
 
     go func() {
@@ -54,6 +83,7 @@ func StartConsuming(ch *amqp.Channel) {
         log.Println("Consumer loop has exited, no more messages are being processed.")
     }()
 }
+
 
 
 // ExecuteProbeTask 执行探测任务
@@ -115,47 +145,46 @@ func ExecuteProbeTask(task *model.ProbeTask) *model.ProbeResult {
 func ReportResultsToMQ(ch *amqp.Channel, result *model.ProbeResult) {
     log.Printf("Attempting to publish probe results: %+v", result)
 
-    // 绑定队列到交换机，确保队列绑定到正确的路由键
-    err := ch.QueueBind(
-        viper.GetString("rabbitmq.result_queue"),       // 队列名称
-        viper.GetString("rabbitmq.result_routing_key"), // 路由键
-        viper.GetString("rabbitmq.exchange"),           // 交换机名称
-        false,                                          // 是否阻塞
-        nil,                                            // 其他属性
-    )
-    if err != nil {
-        log.Printf("Failed to bind queue to exchange: %v", err)
-        return
-    }
-
     body, err := json.Marshal(result)
     if err != nil {
         log.Printf("Failed to encode report data to JSON: %v", err)
         return
     }
 
-    err = ch.Publish(
-        viper.GetString("rabbitmq.exchange"),
-        viper.GetString("rabbitmq.result_routing_key"),  
-        false,
-        false,
-        amqp.Publishing{
-            ContentType: "application/json",
-            Body:        body,
-        })
-    if err != nil {
+    for attempts := 0; attempts < 3; attempts++ { // 限制重试次数
+        err = ch.Publish(
+            viper.GetString("rabbitmq.result_exchange"),   // 使用direct交换机上报结果
+            viper.GetString("rabbitmq.result_routing_key"),  
+            false,
+            false,
+            amqp.Publishing{
+                ContentType: "application/json",
+                Body:        body,
+            })
+
+        if err == nil {
+            log.Println("Probe results reported successfully to server via RabbitMQ")
+            return
+        }
+
         log.Printf("Failed to publish result to queue: %v", err)
         if err == amqp.ErrClosed {
             log.Println("Channel is closed. Attempting to reconnect...")
-            ch, err = config.InitRabbitMQ()
+
+            // 显式关闭现有连接
+            ch.Close()
+
+            // 重试建立连接
+            var conn *amqp.Connection
+            conn, ch, err = config.InitRabbitMQ()
             if err != nil {
                 log.Printf("Failed to reconnect to RabbitMQ: %v", err)
                 return
             }
-            ReportResultsToMQ(ch, result)
+            defer conn.Close()  // 确保在函数退出时关闭连接
         }
-    } else {
-        log.Println("Probe results reported successfully to server via RabbitMQ")
     }
+
+    log.Println("Failed to report probe results after multiple attempts")
 }
 

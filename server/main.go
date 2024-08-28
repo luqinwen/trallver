@@ -30,6 +30,7 @@ func main() {
     // 初始化路由并传递 RabbitMQ 通道
     router.InitializeRoutes(h, ch)
 
+    // 设置定时任务，每分钟发送一次任务
     c := cron.New(cron.WithSeconds())
     c.AddFunc("@every 1m", func() { // 每分钟发送一次任务
         log.Println("Automatically sending task to client")
@@ -42,7 +43,8 @@ func main() {
 
     c.Start() // 启动 cron 调度
 
-    go service.HandleProbeResults(ch)
+    // 启动结果处理逻辑，消费多个结果队列并存储数据
+    go service.StartConsumingResults(ch)
     
     // 启动 Hertz 服务器
     log.Println("Starting Hertz server on :8080")
