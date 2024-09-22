@@ -62,15 +62,16 @@ func InitClickHouse() {
     _, err = ClickHouseDB.Exec(`
         CREATE TABLE IF NOT EXISTS my_database.queue_results (
             timestamp DateTime,
+            task_id UInt32,          -- 添加 task_id 字段以关联任务
             queue_id Int32,
-            ip String,
-            packet_loss Float64,
-            min_rtt Float64,
-            max_rtt Float64,
-            avg_rtt Float64,
-            latency_ms UInt32
+            ip FixedString(16),      -- 使用 FixedString(16) 存储 IPv4 或 IPv6 地址
+            packet_loss UInt8,       -- 丢包率百分比，使用 UInt8 类型
+            min_rtt UInt16,          -- 最小往返时间（毫秒），使用 UInt16 类型
+            max_rtt UInt16,          -- 最大往返时间（毫秒），使用 UInt16 类型
+            avg_rtt UInt16,          -- 平均往返时间（毫秒），使用 UInt16 类型
+            latency_ms UInt32        -- 总时延（毫秒），使用 UInt32 类型
         ) ENGINE = MergeTree()
-        ORDER BY timestamp
+        ORDER BY timestamp;
     `)
     if err != nil {
         log.Fatalf("Error creating table queue_results: %v", err)

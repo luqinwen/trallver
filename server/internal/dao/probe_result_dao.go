@@ -1,8 +1,9 @@
 package dao
 
 import (
-    "my_project/server/internal/common"
-    "log"
+	"log"
+	"my_project/server/internal/common"
+	"net"
 )
 
 // 存储聚合结果到 aggregated_results 表
@@ -41,8 +42,7 @@ func StoreAggregatedResults(timestamp int64, avgPacketLoss float64, avgLatencyMs
     return nil
 }
 
-// 存储每个队列的独立结果到 queue_results 表
-func StoreQueueResults(timestamp int64, queueID int, ip string, packetLoss, minRtt, maxRtt, avgRtt float64, latencyMs uint32) error {
+func StoreQueueResults(timestamp int64, taskID uint32, queueID int, ip [16]byte, packetLoss uint8, minRtt, maxRtt, avgRtt uint16, latencyMs uint32) error {
     // 开始事务
     tx, err := common.ClickHouseDB.Begin()
     if err != nil {
@@ -51,7 +51,7 @@ func StoreQueueResults(timestamp int64, queueID int, ip string, packetLoss, minR
     }
 
     // 准备插入语句
-    stmt, err := tx.Prepare("INSERT INTO my_database.queue_results (timestamp, queue_id, ip, packet_loss, min_rtt, max_rtt, avg_rtt, latency_ms) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+    stmt, err := tx.Prepare("INSERT INTO my_database.queue_results (timestamp, task_id, queue_id, ip, packet_loss, min_rtt, max_rtt, avg_rtt, latency_ms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
     if err != nil {
         log.Printf("Error preparing statement: %v", err)
         return err
@@ -59,7 +59,7 @@ func StoreQueueResults(timestamp int64, queueID int, ip string, packetLoss, minR
     defer stmt.Close()
 
     // 执行插入
-    _, err = stmt.Exec(timestamp, queueID, ip, packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
+    _, err = stmt.Exec(timestamp, taskID, queueID, ip[:], packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
     if err != nil {
         log.Printf("Error executing statement: %v", err)
         // 如果插入失败，回滚事务
@@ -73,6 +73,9 @@ func StoreQueueResults(timestamp int64, queueID int, ip string, packetLoss, minR
         return err
     }
 
-    log.Printf("Successfully inserted into queue_results: timestamp=%d, queue_id=%d, ip=%s, packet_loss=%f, min_rtt=%f, max_rtt=%f, avg_rtt=%f, latency_ms=%d", timestamp, queueID, ip, packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
+    log.Printf("Successfully inserted into queue_results: timestamp=%d, task_id=%d, queue_id=%d, ip=%s, packet_loss=%d, min_rtt=%d, max_rtt=%d, avg_rtt=%d, latency_ms=%d",
+        timestamp, taskID, queueID, net.IP(ip[:]).String(), packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
     return nil
 }
+
+

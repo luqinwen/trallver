@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"log"
+	"net"
 	"os"
 	"time"
 
@@ -13,13 +14,14 @@ import (
 // Config 结构体保存配置文件中解析的值
 type Config struct {
     Probe struct {
-        IP        string
-        Count     int
-        Threshold int
-        Timeout   int
+        IP        [16]byte  // 改为 [16]byte 以匹配新的 IP 字段定义
+        Count     uint8     // 改为 uint8 以匹配新的 Count 字段类型
+        Timeout   uint16    // 改为 uint16 以匹配新的 Timeout 字段类型
+        Threshold uint8     // 新增的字段，存储丢包率阈值
     }
     LogFile string
 }
+
 
 // 全局变量，用于存储加载的配置
 var ClientConfig Config
@@ -43,6 +45,10 @@ func InitConfig() {
     if err != nil {
         log.Fatalf("Unable to decode into struct: %v", err)
     }
+
+    // 解析 IP 地址字符串为 [16]byte
+    ip := net.ParseIP(viper.GetString("probe.ip"))
+    copy(ClientConfig.Probe.IP[:], ip.To16())
 
     log.Println("Config file loaded successfully")
 }
@@ -109,7 +115,25 @@ func InitRabbitMQ() (*amqp.Connection, *amqp.Channel, error) {
             conn.Close()  // 关闭连接
             continue
         }
+        
+        // 声明确认消息的 direct 交换机
+        err = ch.ExchangeDeclare(
+            viper.GetString("rabbitmq.confirmation_exchange"), // 确认交换机名称
+            "direct",                                          // 交换机类型
+            true,                                              // 是否持久化
+            false,                                             // 是否自动删除
+            false,                                             // 是否排他
+            false,                                             // 是否阻塞
+            nil,                                               // 额外属性
+        )
+        if err != nil {
+            log.Printf("Failed to declare confirmation exchange: %v", err)
+            ch.Close()
+            conn.Close()  // 关闭连接
+            continue
+        }
 
+        
         return conn, ch, nil  // 返回连接和通道
     }
 

@@ -115,6 +115,22 @@ func InitRabbitMQ() (*amqp.Connection, *amqp.Channel, error) {
             continue
         }
 
+        // 声明确认消息的 direct 交换机
+        err = ch.ExchangeDeclare(
+            viper.GetString("rabbitmq.confirmation_exchange"), // 确认交换机名称
+            "direct",                                          // 交换机类型为 direct
+            true,                                              // 是否持久化
+            false,                                             // 是否自动删除
+            false,                                             // 是否排他
+            false,                                             // 是否阻塞
+            nil,                                               // 其他属性
+        )
+        if err != nil {
+            log.Printf("Failed to declare confirmation exchange '%s': %v", viper.GetString("rabbitmq.confirmation_exchange"), err)
+            ch.Close()
+            time.Sleep(5 * time.Second)
+            continue
+        }
 
         // 声明 task_queue 队列，确保在初始化后队列存在
         _, err = ch.QueueDeclare(
@@ -176,6 +192,42 @@ func InitRabbitMQ() (*amqp.Connection, *amqp.Channel, error) {
         return conn, ch, nil  // 返回连接和通道
     }
 
+        // 声明 confirmation_queue 队列，用于接收服务器发送的确认消息
+        _, err = ch.QueueDeclare(
+            viper.GetString("rabbitmq.confirmation_queue"),
+            true,
+            false,
+            false,
+            false,
+            nil,
+        )
+        if err != nil {
+            log.Printf("Failed to declare confirmation_queue: %v", err)
+            ch.Close()
+            conn.Close()
+            time.Sleep(5 * time.Second)
+            return nil, nil, fmt.Errorf("failed to declare confirmation_queue: %v", err)  // 替换 continue 为 return
+        }
+
+        // 将 confirmation_queue 绑定到确认交换机
+        err = ch.QueueBind(
+            viper.GetString("rabbitmq.confirmation_queue"),       // 队列名称
+            viper.GetString("rabbitmq.confirmation_routing_key"), // routing key
+            viper.GetString("rabbitmq.confirmation_exchange"),    // 交换机名称
+            false,
+            nil,
+        )
+        if err != nil {
+            log.Printf("Failed to bind confirmation_queue to confirmation exchange: %v", err)
+            ch.Close()
+            conn.Close()
+            time.Sleep(5 * time.Second)
+            return nil, nil, fmt.Errorf("failed to bind confirmation_queue: %v", err)  // 替换 continue 为 return
+        }
+
+        log.Println("Successfully declared and bound confirmation_queue")
+
+    
     if conn != nil {
         log.Println("Closing RabbitMQ connection due to repeated failures")
         conn.Close()  // 最终失败时关闭连接

@@ -17,3 +17,8 @@ rabbitmq:
   result_queue: "result_queue1"             # 客户端1的结果队列
   task_routing_key: ""                      # 对于fanout交换机，routing key留空
   result_routing_key: "result_routing_key1" # 客户端1使用的routing key
+
+  # 添加消息确认相关的配置
+  confirmation_exchange: "my_confirmation_exchange"
+  confirmation_queue: "confirmation_queue1"
+  confirmation_routing_key: "confirmation_routing_key1"

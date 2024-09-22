@@ -49,15 +49,12 @@ func InitMySQL() {
     // 创建表结构
     createTableQuery := `
     CREATE TABLE IF NOT EXISTS probe_tasks (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        ip VARCHAR(255) NOT NULL,
-        count INT NOT NULL,
-        port INT DEFAULT 0,
-        threshold INT NOT NULL,
-        timeout INT NOT NULL,
-        status VARCHAR(50) NOT NULL DEFAULT 'pending',
-        created_at DATETIME NOT NULL,
-        updated_at DATETIME NOT NULL
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        ip VARBINARY(16) NOT NULL,     -- 使用 VARBINARY(16) 存储 IPv4 或 IPv6 地址
+        count TINYINT NOT NULL,        -- 使用 TINYINT 存储执行次数
+        timeout SMALLINT NOT NULL,     -- 使用 SMALLINT 存储超时时间（秒）
+        dispatch_time BIGINT NOT NULL, -- 使用 BIGINT 存储 Unix 时间戳（秒）
+        status TINYINT NOT NULL        -- 使用 TINYINT 存储任务状态
     );`
     
     _, err = MySQLDB.Exec(createTableQuery)
