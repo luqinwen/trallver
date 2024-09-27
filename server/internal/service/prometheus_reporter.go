@@ -16,8 +16,11 @@ func ReportToPrometheus(result *model.ProbeResult, timestamp int64) {
     prometheusJob := viper.GetString("prometheus.job")
 
     uri := fmt.Sprintf("http://%s:%d/metrics/job/%s", prometheusHost, prometheusPort, prometheusJob)
-    
-    metrics := fmt.Sprintf("packet_loss{ip=\"%s\", timestamp=\"%d\"} %f\n", result.IP, timestamp, result.PacketLoss)
+
+    // 解包 Packed 字段，获取 PacketLoss
+    packetLoss, _ := model.UnpackResultFields(result.Packed)
+
+    metrics := fmt.Sprintf("packet_loss{ip=\"%s\", timestamp=\"%d\"} %d\n", result.IP, timestamp, packetLoss)
     log.Printf("Sending data to Prometheus: %s", metrics)
 
     hertzClient, err := client.NewClient()
@@ -39,3 +42,4 @@ func ReportToPrometheus(result *model.ProbeResult, timestamp int64) {
         log.Printf("Successfully sent data to Prometheus: %s, Response: %s", metrics, resp.Body())
     }
 }
+

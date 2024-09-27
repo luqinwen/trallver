@@ -9,12 +9,16 @@ const (
     StatusFailed                        // 3 - 任务失败
 )
 
-type ProbeTask struct {
-    ID           uint32    `json:"id"`            // 添加ID字段，类型为uint32
-    IP           [16]byte  `json:"ip"`           // 固定长度数组，保存IPv4或IPv6地址
-    Count        uint8     `json:"count"`        // 任务的执行次数
-    Timeout      uint16    `json:"timeout"`      // 超时时间（秒）
-    DispatchTime int64     `json:"dispatch_time"`// Unix 时间戳 (秒)
-    Status       TaskStatus `json:"status"`      // 任务状态
+
+type ProbeTaskFixed struct {
+    ID       uint32  `json:"id"`       // 唯一的任务ID
+    IP       uint32  `json:"ip"`       // 优化为IPv4存储
+    Packed   uint32  `json:"packed"`   // 打包Timeout, Count, Threshold
 }
 
+
+type ProbeTaskDynamic struct {
+    DispatchTime uint32     `json:"dispatch_time"`// 动态字段，任务下发时间（使用uint32代替int64）
+    ID           uint32     `json:"id"`           // 动态字段，任务ID
+    Status       TaskStatus `json:"status"`       // 动态字段，任务状态
+}

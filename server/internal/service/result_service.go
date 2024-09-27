@@ -1,15 +1,15 @@
 package service
 
 import (
-	"encoding/json"
-	"log"
-	"my_project/server/internal/dao"
-	"my_project/server/internal/model"
-	"sync"
-	"time"
+    "encoding/json"
+    "log"
+    "my_project/server/internal/dao"
+    "my_project/server/internal/model"
+    "sync"
+    "time"
 
-	"github.com/spf13/viper"
-	"github.com/streadway/amqp"
+    "github.com/spf13/viper"
+    "github.com/streadway/amqp"
 )
 
 var (
@@ -59,14 +59,17 @@ func consumeResultQueue(ch *amqp.Channel, queueName string, queueID int, results
 
         // 计算总时延
         receiveTime := time.Now()
-        dispatchTime := time.Unix(result.DispatchTime, 0)
+        dispatchTime := time.Unix(int64(result.DispatchTime), 0)
         totalLatency := receiveTime.Sub(dispatchTime).Milliseconds()
+
+        // 解包 PacketLoss 和 Threshold
+        packetLoss, _ := model.UnpackResultFields(result.Packed)
 
         // 存储独立结果到 queue_results 表
         timestamp := result.Timestamp
-        taskID := result.TaskID  // 从 result 中获取 TaskID
+        taskID := result.TaskID
 
-        err = dao.StoreQueueResults(timestamp, taskID, queueID, result.IP, result.PacketLoss, 
+        err = dao.StoreQueueResults(timestamp, taskID, queueID, result.IP, packetLoss, 
             result.MinRTT, result.MaxRTT, result.AvgRTT, uint32(totalLatency))
 
         if err != nil {
@@ -119,9 +122,12 @@ func aggregateAndStoreResults(results []model.ProbeResult) {
     var messageCount int
 
     for _, result := range results {
-        totalPacketLoss += float64(result.PacketLoss)
+        // 解包 PacketLoss 和 Threshold
+        packetLoss, _ := model.UnpackResultFields(result.Packed)
+        totalPacketLoss += float64(packetLoss)
+
         receiveTime := time.Now()
-        dispatchTime := time.Unix(result.DispatchTime, 0)
+        dispatchTime := time.Unix(int64(result.DispatchTime), 0)
         totalLatency := receiveTime.Sub(dispatchTime).Milliseconds()
         totalLatencyMs += uint32(totalLatency)
         messageCount++

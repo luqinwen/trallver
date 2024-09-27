@@ -6,7 +6,6 @@ import (
 	"net"
 )
 
-// 存储聚合结果到 aggregated_results 表
 func StoreAggregatedResults(timestamp int64, avgPacketLoss float64, avgLatencyMs uint32) error {
     // 开始事务
     tx, err := common.ClickHouseDB.Begin()
@@ -27,8 +26,7 @@ func StoreAggregatedResults(timestamp int64, avgPacketLoss float64, avgLatencyMs
     _, err = stmt.Exec(timestamp, avgPacketLoss, avgLatencyMs)
     if err != nil {
         log.Printf("Error executing statement: %v", err)
-        // 如果插入失败，回滚事务
-        tx.Rollback()
+        tx.Rollback() // 回滚事务
         return err
     }
 
@@ -42,7 +40,8 @@ func StoreAggregatedResults(timestamp int64, avgPacketLoss float64, avgLatencyMs
     return nil
 }
 
-func StoreQueueResults(timestamp int64, taskID uint32, queueID int, ip [16]byte, packetLoss uint8, minRtt, maxRtt, avgRtt uint16, latencyMs uint32) error {
+
+func StoreQueueResults(timestamp uint32, taskID uint32, queueID int, ip uint32, packetLoss uint8, minRtt, maxRtt, avgRtt uint16, latencyMs uint32) error {
     // 开始事务
     tx, err := common.ClickHouseDB.Begin()
     if err != nil {
@@ -59,11 +58,10 @@ func StoreQueueResults(timestamp int64, taskID uint32, queueID int, ip [16]byte,
     defer stmt.Close()
 
     // 执行插入
-    _, err = stmt.Exec(timestamp, taskID, queueID, ip[:], packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
+    _, err = stmt.Exec(timestamp, taskID, queueID, ip, packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
     if err != nil {
         log.Printf("Error executing statement: %v", err)
-        // 如果插入失败，回滚事务
-        tx.Rollback()
+        tx.Rollback() // 回滚事务
         return err
     }
 
@@ -74,8 +72,6 @@ func StoreQueueResults(timestamp int64, taskID uint32, queueID int, ip [16]byte,
     }
 
     log.Printf("Successfully inserted into queue_results: timestamp=%d, task_id=%d, queue_id=%d, ip=%s, packet_loss=%d, min_rtt=%d, max_rtt=%d, avg_rtt=%d, latency_ms=%d",
-        timestamp, taskID, queueID, net.IP(ip[:]).String(), packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
+        timestamp, taskID, queueID, net.IPv4(byte(ip>>24), byte(ip>>16), byte(ip>>8), byte(ip)).String(), packetLoss, minRtt, maxRtt, avgRtt, latencyMs)
     return nil
 }
-
-
