@@ -1,19 +1,42 @@
 version: '3.8'
 
 services:
-  client-app:
+  client-app1:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: client_app
+    container_name: client_app1
     environment:
-      - CONFIG_PATH=/root/config/client_config.yaml
+      - CONFIG_PATH=/root/config/client_config1.yaml  # 使用不同的配置文件
     volumes:
       - ./config:/root/config  # 挂载本地 config 目录到容器内的 /root/config 目录
-      - ./logs:/root/logs  # 挂载本地 logs 目录到容器内的 /root/logs 目录
-    ports:
-      - "8081:8081"
-    command: ["./client-app"]
+      - ./logs/client1:/root/logs  # 挂载本地 logs 目录到容器内的 /root/logs 目录，使用不同的子目录
+    networks:
+      - my_network
+
+  client-app2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: client_app2
+    environment:
+      - CONFIG_PATH=/root/config/client_config2.yaml  # 使用不同的配置文件
+    volumes:
+      - ./config:/root/config  # 挂载本地 config 目录到容器内的 /root/config 目录
+      - ./logs/client2:/root/logs  # 挂载本地 logs 目录到容器内的 /root/logs 目录，使用不同的子目录
+    networks:
+      - my_network
+
+  client-app3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: client_app3
+    environment:
+      - CONFIG_PATH=/root/config/client_config3.yaml  # 使用不同的配置文件
+    volumes:
+      - ./config:/root/config  # 挂载本地 config 目录到容器内的 /root/config 目录
+      - ./logs/client3:/root/logs  # 挂载本地 logs 目录到容器内的 /root/logs 目录，使用不同的子目录
     networks:
       - my_network
 

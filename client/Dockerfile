@@ -25,6 +25,9 @@ WORKDIR /root/
 # 从构建阶段复制编译后的二进制文件
 COPY --from=builder /app/client-app .
 
+# 复制配置文件
+COPY config /root/config
+
 # 创建日志目录
 RUN mkdir -p /root/logs
 

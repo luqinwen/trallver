@@ -1,17 +1,24 @@
 package model
 
-import (
-    "time"
+type TaskStatus uint8
+
+const (
+    StatusPending    TaskStatus = iota // 0 - 任务待处理
+    StatusInProgress                    // 1 - 任务进行中
+    StatusCompleted                     // 2 - 任务已完成
+    StatusFailed                        // 3 - 任务失败
 )
 
-type ProbeTask struct {
-    IP        string    `json:"ip"`          // 探测目标的IP地址
-    Count     int       `json:"count"`       // 探测的次数
-    Port      int       `json:"port"`        // 探测目标的端口（ICMP可不设置）
-    Threshold int       `json:"threshold"`   // 丢包率阈值
-    Timeout   int       `json:"timeout"`     // 探测超时时间（秒）
-    CreatedAt time.Time `json:"created_at"`  // 任务创建时间
-    UpdatedAt time.Time `json:"updated_at"`  // 任务更新时间
+
+type ProbeTaskFixed struct {
+    ID       uint32  `json:"id"`       // 唯一的任务ID
+    IP       uint32  `json:"ip"`       // 优化为IPv4存储
+    Packed   uint32  `json:"packed"`   // 打包Timeout, Count, Threshold
 }
 
 
+type ProbeTaskDynamic struct {
+    DispatchTime uint32     `json:"dispatch_time"`// 动态字段，任务下发时间（使用uint32代替int64）
+    ID           uint32     `json:"id"`           // 动态字段，任务ID
+    Status       TaskStatus `json:"status"`       // 动态字段，任务状态
+}

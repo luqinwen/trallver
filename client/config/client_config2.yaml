@@ -1,0 +1,24 @@
+probe:
+  ip: "8.8.8.8"           # 探测目标 IP
+  count: 4                # 探测次数
+  threshold: 90           # 丢包率阈值
+  timeout: 5              # 探测超时时间（秒）
+log_file: "/root/logs/client2.log" # 日志文件路径
+
+server:
+  url: "http://server_app:8080/probe_results"
+  task_url: "http://server_app:8080/probe_task"
+
+rabbitmq:
+  url: "amqp://guest:guest@server_rabbitmq:5672/"
+  task_exchange: "my_fanout_exchange"       # 用于任务下发的fanout交换机
+  result_exchange: "my_direct_exchange"     # 用于结果上传的direct交换机
+  task_queue: "task_queue2"                 # 客户端1的任务队列
+  result_queue: "result_queue2"             # 客户端1的结果队列
+  task_routing_key: ""                      # 对于fanout交换机，routing key留空
+  result_routing_key: "result_routing_key2" # 客户端1使用的routing key
+  
+  # 添加消息确认相关的配置
+  confirmation_exchange: "my_confirmation_exchange"
+  confirmation_queue: "confirmation_queue2"
+  confirmation_routing_key: "confirmation_routing_key2"

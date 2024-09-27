@@ -1,28 +1,42 @@
 mysql:
   user: "root"              # MySQL 用户名
-  password: ""      # MySQL 密码
-  host: "mysql"         # MySQL 主机地址
+  password: ""              # MySQL 密码
+  host: "mysql"             # MySQL 主机地址
   port: 3306                # MySQL 端口
   database: "my_database"   # MySQL 数据库名称
 
 clickhouse:
-  host: "clickhouse"         # ClickHouse 主机地址
+  host: "clickhouse"        # ClickHouse 主机地址
   port: 9000                # ClickHouse 端口
 
 prometheus:
-  host: "prometheus"  # Prometheus的主机地址
-  port: 9091            # Prometheus的端口号
-  job: "random"         # Job名称，可根据需要配置
+  host: "prometheus"        # Prometheus的主机地址
+  port: 9091                # Prometheus的端口号
+  job: "random"             # Job名称，可根据需要配置
 
 rabbitmq:
-  url: "amqp://guest:guest@server_rabbitmq:5672/"
-  exchange: "my_exchange"
-  task_queue: "task_queue"
-  result_queue: "result_queue"
-  task_routing_key: "task_routing_key"
-  result_routing_key: "result_routing_key"
+  url: "amqp://guest:guest@server_rabbitmq:5672/"    # RabbitMQ URL
+  task_exchange: "my_fanout_exchange"                # 用于任务分发的fanout交换机
+  result_exchange: "my_direct_exchange"              # 用于结果上传的direct交换机
+  confirmation_exchange: "my_confirmation_exchange"
+  task_queue: "task_queue"                           # 任务队列（服务端使用，客户端会动态创建各自队列）
+  result_queue1: "result_queue1"                     # 客户端1的结果队列
+  result_queue2: "result_queue2"                     # 客户端2的结果队列
+  result_queue3: "result_queue3"                     # 客户端3的结果队列
+  task_routing_key: "task_routing_key"               # routing key（在fanout交换机中不使用）
+  result_routing_key1: "result_routing_key1"                # 客户端1使用的routing key
+  result_routing_key2: "result_routing_key1"                # 客户端2使用的routing key
+  result_routing_key3: "result_routing_key1"                # 客户端3使用的routing key
 
 
-log_file: "/root/logs/server.log" # 日志文件路径
+  confirmation_queue1: "confirmation_queue1"         # 客户端1的确认队列
+  confirmation_queue2: "confirmation_queue2"         # 客户端2的确认队列
+  confirmation_queue3: "confirmation_queue3"         # 客户端3的确认队列
 
+  confirmation_routing_key1: "confirmation_routing_key1"  # 客户端1使用的routing key
+  confirmation_routing_key2: "confirmation_routing_key2"  # 客户端2使用的routing key
+  confirmation_routing_key3: "confirmation_routing_key3"  # 客户端3使用的routing key
+
+
+log_file: "/root/logs/server.log"                    # 日志文件路径
 
